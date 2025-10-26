@@ -11,7 +11,7 @@ export default defineConfig(({ mode }) => {
       proxy: {
         "/api": {
           target: isProduction
-            ? "https://production-api-endpoint.com"
+            ? "https://nz-only-ferns-production.up.railway.app/"
             : "http://localhost:3000",
           changeOrigin: true,
         },
