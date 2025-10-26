@@ -1,0 +1,1615 @@
+[
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [],
+    "scientificName": "Abrodictyum caudatum",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Threatened – Nationally Critical"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["bristle fern"],
+    "scientificName": "Abrodictyum elongatum",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["erect bristle fern"],
+    "scientificName": "Abrodictyum strictum",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["maidenhair", "makaka", "true maidenhair"],
+    "scientificName": "Adiantum aethiopicum",
+    "family": "Pteridaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["common maidenhair", "Cunningham's maidenhair"],
+    "scientificName": "Adiantum cunninghamii",
+    "family": "Pteridaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["tuberous maidenhair", "small maidenhair"],
+    "scientificName": "Adiantum diaphanum",
+    "family": "Pteridaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["giant maidenhair", "plumed maidenhair"],
+    "scientificName": "Adiantum formosum",
+    "family": "Pteridaceae",
+    "conservationStatus": "At Risk – Relict"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["maidenhair"],
+    "scientificName": "Adiantum fulvum",
+    "family": "Pteridaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["rosy maidenhair"],
+    "scientificName": "Adiantum hispidulum",
+    "family": "Pteridaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["maidenhair"],
+    "scientificName": "Adiantum viridescens",
+    "family": "Pteridaceae",
+    "conservationStatus": "Taxonomically Indistinct"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["rough tree fern", "mountain tree fern"],
+    "scientificName": "Alsophila colensoi",
+    "family": "Cyatheaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["gully tree fern", "slender tree fern", "ponga"],
+    "scientificName": "Alsophila cunninghamii",
+    "family": "Cyatheaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["silver fern", "ponga"],
+    "scientificName": "Alsophila dealbata",
+    "family": "Cyatheaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["Kermadec tree fern"],
+    "scientificName": "Alsophila kermadecensis",
+    "family": "Cyatheaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["Milne's tree fern"],
+    "scientificName": "Alsophila milnei",
+    "family": "Cyatheaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["kātote", "Smith's tree fern", "soft tree fern"],
+    "scientificName": "Alsophila smithii",
+    "family": "Cyatheaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["Jersey fern", "annual fern"],
+    "scientificName": "Anogramma leptophylla",
+    "family": "Pteridaceae",
+    "conservationStatus": "At Risk – Declining"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [],
+    "scientificName": "Arachniodes aristata",
+    "family": "Dryopteridaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["jointed fern"],
+    "scientificName": "Arthropteris tenella",
+    "family": "Tectariaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["ground spleenwort"],
+    "scientificName": "Asplenium appendiculatum subsp. appendiculatum",
+    "family": "Aspleniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["coastal spleenwort"],
+    "scientificName": "Asplenium appendiculatum subsp. maritimum",
+    "family": "Aspleniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["hen and chicken fern", "pikopiko", "mother spleenwort"],
+    "scientificName": "Asplenium bulbiferum",
+    "family": "Aspleniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["Chatham Island spleenwort"],
+    "scientificName": "Asplenium chathamense",
+    "family": "Aspleniaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["cave spleenwort"],
+    "scientificName": "Asplenium cimmeriorum",
+    "family": "Aspleniaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["northern shore spleenwort"],
+    "scientificName": "Asplenium decurrens",
+    "family": "Aspleniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["butterfly fern", "walking fern", "necklace fern"],
+    "scientificName": "Asplenium flabellifolium",
+    "family": "Aspleniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["drooping spleenwort", "hanging spleenwort"],
+    "scientificName": "Asplenium flaccidum",
+    "family": "Aspleniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["hen & chicken fern"],
+    "scientificName": "Asplenium gracillimum",
+    "family": "Aspleniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["Hauraki Gulf spleenwort"],
+    "scientificName": "Asplenium haurakiense",
+    "family": "Aspleniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["Colenso's spleenwort"],
+    "scientificName": "Asplenium hookerianum var. colensoi",
+    "family": "Aspleniaceae",
+    "conservationStatus": "Not Assessed"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["Hooker's spleenwort"],
+    "scientificName": "Asplenium hookerianum var. hookerianum",
+    "family": "Aspleniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [],
+    "scientificName": "Asplenium lamprophyllum",
+    "family": "Aspleniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [],
+    "scientificName": "Asplenium lepidotum",
+    "family": "Aspleniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["Lyall's spleenwort"],
+    "scientificName": "Asplenium lyallii",
+    "family": "Aspleniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["huruhuruwhenua", "shining spleenwort"],
+    "scientificName": "Asplenium oblongifolium",
+    "family": "Aspleniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["shore spleenwort"],
+    "scientificName": "Asplenium obtusatum",
+    "family": "Aspleniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["Poor Knights spleenwort"],
+    "scientificName": "Asplenium pauperequitum",
+    "family": "Aspleniaceae",
+    "conservationStatus": "Threatened – Nationally Endangered"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["sickle spleenwort"],
+    "scientificName": "Asplenium polyodon",
+    "family": "Aspleniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["Richard's spleenwort"],
+    "scientificName": "Asplenium richardii",
+    "family": "Aspleniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["southern shore spleenwort"],
+    "scientificName": "Asplenium scleroprium",
+    "family": "Aspleniaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["Shuttleworth's spleenwort"],
+    "scientificName": "Asplenium shuttleworthianum",
+    "family": "Aspleniaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["blanket fern"],
+    "scientificName": "Asplenium subglandulosum",
+    "family": "Aspleniaceae",
+    "conservationStatus": "At Risk – Declining"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["spleenwort"],
+    "scientificName": "Asplenium trichomanes",
+    "family": "Aspleniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["spleenwort"],
+    "scientificName": "Asplenium trichomanes subsp. quadrivalens",
+    "family": "Aspleniaceae",
+    "conservationStatus": "Threatened – Nationally Critical"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["shore hard fern"],
+    "scientificName": "Austroblechnum banksii",
+    "family": "Blechnaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["Colenso's hard fern", "peretao", "petako"],
+    "scientificName": "Austroblechnum colensoi",
+    "family": "Blechnaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [],
+    "scientificName": "Austroblechnum durum",
+    "family": "Blechnaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["lance fern", "nini", "rereti"],
+    "scientificName": "Austroblechnum lanceolatum",
+    "family": "Blechnaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [],
+    "scientificName": "Austroblechnum membranaceum",
+    "family": "Blechnaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [],
+    "scientificName": "Austroblechnum norfolkianum",
+    "family": "Blechnaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["little hard fern", "alpine hard fern"],
+    "scientificName": "Austroblechnum penna-marina subsp. alpina",
+    "family": "Blechnaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["Pacific azolla", "azolla", "red azolla"],
+    "scientificName": "Azolla rubra",
+    "family": "Salviniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["parsley fern", "pātotara"],
+    "scientificName": "Botrychium australe",
+    "family": "Ophioglossaceae",
+    "conservationStatus": "At Risk – Declining"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["fine-leaved parsley fern"],
+    "scientificName": "Botrychium biforme",
+    "family": "Ophioglossaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["moonwort"],
+    "scientificName": "Botrychium lunaria",
+    "family": "Ophioglossaceae",
+    "conservationStatus": "Threatened – Nationally Critical"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["woolly cloak fern", "woolly rock fern"],
+    "scientificName": "Cheilanthes distans",
+    "family": "Pteridaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["rock fern"],
+    "scientificName": "Cheilanthes sieberi subsp. sieberi",
+    "family": "Pteridaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["christella"],
+    "scientificName": "Christella dentata",
+    "family": "Thelypteridaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["korokio", "mountain hard fern"],
+    "scientificName": "Cranfillia deltoides",
+    "family": "Blechnaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["kiwikiwi", "kiwakiwa", "creek fern"],
+    "scientificName": "Cranfillia fluviatilis",
+    "family": "Blechnaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["black hard fern"],
+    "scientificName": "Cranfillia nigra",
+    "family": "Blechnaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [],
+    "scientificName": "Crepidomanes humile",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Threatened – Nationally Critical"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [],
+    "scientificName": "Cyclosorus interruptus",
+    "family": "Thelypteridaceae",
+    "conservationStatus": "At Risk – Declining"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["bladder fern"],
+    "scientificName": "Cystopteris tasmanica",
+    "family": "Cystopteridaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["Puketi hare'sfoot fern"],
+    "scientificName": "Davallia tasmanii subsp. cristata",
+    "family": "Davalliaceae",
+    "conservationStatus": "Threatened – Nationally Critical"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["davallia", "Three Kings davallia"],
+    "scientificName": "Davallia tasmanii subsp. tasmanii",
+    "family": "Davalliaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["fragrant fern", "mokimoki"],
+    "scientificName": "Dendroconche scandens",
+    "family": "Polypodiaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [],
+    "scientificName": "Deparia petersenii subsp. congrua",
+    "family": "Athyriaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "wheki-ponga",
+      "wheki-kohoonga",
+      "golden tree fern",
+      "kuripaka"
+    ],
+    "scientificName": "Dicksonia fibrosa",
+    "family": "Dicksoniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["stumpy tree fern"],
+    "scientificName": "Dicksonia lanata subsp. hispida",
+    "family": "Dicksoniaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [],
+    "scientificName": "Dicksonia lanata subsp. lanata",
+    "family": "Dicksoniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["wheki", "rough tree fern", "harsh tree fern"],
+    "scientificName": "Dicksonia squarrosa",
+    "family": "Dicksoniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [],
+    "scientificName": "Dicranopteris linearis",
+    "family": "Gleicheniaceae",
+    "conservationStatus": "Threatened – Nationally Endangered"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [],
+    "scientificName": "Diplazium australe",
+    "family": "Athyriaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [],
+    "scientificName": "Diploblechnum fraseri",
+    "family": "Blechnaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["prickly rasp fern"],
+    "scientificName": "Doodia aspera",
+    "family": "Blechnaceae",
+    "conservationStatus": "Non-resident Native – Vagrant"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["rasp fern"],
+    "scientificName": "Doodia australis",
+    "family": "Blechnaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [],
+    "scientificName": "Doodia milnei",
+    "family": "Blechnaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["mokimoki", "mukimuki"],
+    "scientificName": "Doodia mollis",
+    "family": "Blechnaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [],
+    "scientificName": "Doodia squarrosa",
+    "family": "Blechnaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["alpine tangle fern"],
+    "scientificName": "Gleichenia alpina",
+    "family": "Gleicheniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["tangle fern", "swamp umbrella fern"],
+    "scientificName": "Gleichenia dicarpa",
+    "family": "Gleicheniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["tangle fern"],
+    "scientificName": "Gleichenia inclusisora",
+    "family": "Gleicheniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["carrier tangle fern", "parasol fern"],
+    "scientificName": "Gleichenia microphylla",
+    "family": "Gleicheniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["histiopteris", "water fern", "mātātā", "bat's wing fern"],
+    "scientificName": "Histiopteris incisa",
+    "family": "Dennstaedtiaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [],
+    "scientificName": "Hiya distans",
+    "family": "Dennstaedtiaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["filmy fern"],
+    "scientificName": "Hymenophyllum armstrongii",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["filmy fern"],
+    "scientificName": "Hymenophyllum australe",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["filmy fern"],
+    "scientificName": "Hymenophyllum bivalve",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [],
+    "scientificName": "Hymenophyllum cupressiforme",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["drooping filmy fern", "Irirangi", "piripiri"],
+    "scientificName": "Hymenophyllum demissum",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["filmy fern", "matua mauku"],
+    "scientificName": "Hymenophyllum dilatatum",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [],
+    "scientificName": "Hymenophyllum falklandicum",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Evaluated"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["filmy fern"],
+    "scientificName": "Hymenophyllum flabellatum",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["filmy fern"],
+    "scientificName": "Hymenophyllum flexuosum",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["rusty filmy fern"],
+    "scientificName": "Hymenophyllum frankliniae",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["filmy fern"],
+    "scientificName": "Hymenophyllum lyallii",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["filmy fern"],
+    "scientificName": "Hymenophyllum malingii",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["filmy fern"],
+    "scientificName": "Hymenophyllum minimum",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["much-divided filmy fern"],
+    "scientificName": "Hymenophyllum multifidum",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["kidney fern", "konehu", "kopakopa", "raurenga"],
+    "scientificName": "Hymenophyllum nephrophyllum",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["one-sided filmy fern"],
+    "scientificName": "Hymenophyllum peltatum",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["filmy fern"],
+    "scientificName": "Hymenophyllum pluviatile",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["cloud filmy fern"],
+    "scientificName": "Hymenophyllum polyanthos",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Data Deficient"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["tufted filmy fern"],
+    "scientificName": "Hymenophyllum pulcherrimum",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["filmy fern"],
+    "scientificName": "Hymenophyllum rarum",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Evaluated"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["filmy fern"],
+    "scientificName": "Hymenophyllum revolutum",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["filmy fern"],
+    "scientificName": "Hymenophyllum rufescens",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["filmy fern", "piripiri"],
+    "scientificName": "Hymenophyllum sanguinolentum",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["rough filmy fern"],
+    "scientificName": "Hymenophyllum scabrum",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["hairy filmy fern"],
+    "scientificName": "Hymenophyllum villosum",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [],
+    "scientificName": "Hypolepis amaurorachis",
+    "family": "Dennstaedtiaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [],
+    "scientificName": "Hypolepis ambigua",
+    "family": "Dennstaedtiaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["giant hypolepis", "ground fern (Norfolk Island only)"],
+    "scientificName": "Hypolepis dicksonioides",
+    "family": "Dennstaedtiaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [],
+    "scientificName": "Hypolepis lactea",
+    "family": "Dennstaedtiaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["thousand leaved fern"],
+    "scientificName": "Hypolepis millefolium",
+    "family": "Dennstaedtiaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [],
+    "scientificName": "Hypolepis rufobarbata",
+    "family": "Dennstaedtiaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["thread fern", "climbing hard fern"],
+    "scientificName": "Icarus filiformis",
+    "family": "Blechnaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["hairy fern"],
+    "scientificName": "Lastreopsis hispida",
+    "family": "Dryopteridaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["velvet fern"],
+    "scientificName": "Lastreopsis velutina",
+    "family": "Dryopteridaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["lace fern"],
+    "scientificName": "Leptolepia novae-zelandiae",
+    "family": "Dennstaedtiaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["crêpe fern", "single crêpe fern", "heruheru"],
+    "scientificName": "Leptopteris hymenophylloides",
+    "family": "Osmundaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["heruheru", "crêpe fern", "Prince of Wales feathers"],
+    "scientificName": "Leptopteris superba",
+    "family": "Osmundaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [],
+    "scientificName": "Lindsaea linearis",
+    "family": "Lindsaeaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [],
+    "scientificName": "Lindsaea trichomanoides",
+    "family": "Lindsaeaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [],
+    "scientificName": "Lindsaea viridis",
+    "family": "Lindsaeaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["crown fern", "petipeti", "piupiu"],
+    "scientificName": "Lomaria discolor",
+    "family": "Blechnaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["lance fern", "whare ngārara"],
+    "scientificName": "Loxogramme dictyopteris",
+    "family": "Polypodiaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [],
+    "scientificName": "Loxsoma cunninghamii",
+    "family": "Loxsomataceae",
+    "conservationStatus": "At Risk – Declining"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["mangemange", "bushman's mattress", "makamaka"],
+    "scientificName": "Lygodium articulatum",
+    "family": "Lygodiaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [],
+    "scientificName": "Macrothelypteris torresiana",
+    "family": "Thelypteridaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["southern comb fern"],
+    "scientificName": "Microschizaea australis",
+    "family": "Schizaeaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["comb fern"],
+    "scientificName": "Microschizaea fistulosa",
+    "family": "Schizaeaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["rough sword fern"],
+    "scientificName": "Nephrolepis brownii",
+    "family": "Nephrolepidaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [],
+    "scientificName": "Nephrolepis flexuosa",
+    "family": "Nephrolepidaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [],
+    "scientificName": "Notogrammitis angustifolia subsp. angustifolia",
+    "family": "Polypodiaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["strapfern"],
+    "scientificName": "Notogrammitis angustifolia subsp. nothofageti",
+    "family": "Polypodiaceae",
+    "conservationStatus": "Taxonomically Indistinct"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["common strap fern"],
+    "scientificName": "Notogrammitis billardierei",
+    "family": "Polypodiaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["strapfern"],
+    "scientificName": "Notogrammitis ciliata",
+    "family": "Polypodiaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["dwarf strap fern"],
+    "scientificName": "Notogrammitis crassior",
+    "family": "Polypodiaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["strapfern"],
+    "scientificName": "Notogrammitis givenii",
+    "family": "Polypodiaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["strapfern"],
+    "scientificName": "Notogrammitis gunnii",
+    "family": "Polypodiaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["taupeka", "comb fern"],
+    "scientificName": "Notogrammitis heterophylla",
+    "family": "Polypodiaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["strapfern"],
+    "scientificName": "Notogrammitis patagonica",
+    "family": "Polypodiaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["strapfern"],
+    "scientificName": "Notogrammitis pseudociliata",
+    "family": "Polypodiaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["Rawlings's strapfern"],
+    "scientificName": "Notogrammitis rawlingsii",
+    "family": "Polypodiaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["southern strapfern"],
+    "scientificName": "Notogrammitis rigida",
+    "family": "Polypodiaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["adder's tongue"],
+    "scientificName": "Ophioglossum coriaceum",
+    "family": "Ophioglossaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["stalked adder’s tongue fern"],
+    "scientificName": "Ophioglossum petiolatum",
+    "family": "Ophioglossaceae",
+    "conservationStatus": "Threatened – Nationally Vulnerable"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["lace fern", "ring fern", "scented fern", "pig fern"],
+    "scientificName": "Paesia scaberula",
+    "family": "Dennstaedtiaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["gully fern", "feather fern", "piupiu"],
+    "scientificName": "Pakau pennigera",
+    "family": "Thelypteridaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["swamp kiokio"],
+    "scientificName": "Parablechnum minus",
+    "family": "Blechnaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["mountain kiokio", "Dunedin-Cass blechnum"],
+    "scientificName": "Parablechnum montanum",
+    "family": "Blechnaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["kiokio", "horokio", "palm leaf fern"],
+    "scientificName": "Parablechnum novae-zelandiae",
+    "family": "Blechnaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["small kiokio"],
+    "scientificName": "Parablechnum procerum",
+    "family": "Blechnaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["kiokio", "Green Bay kiokio"],
+    "scientificName": "Parablechnum triangularifolium",
+    "family": "Blechnaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["smooth shield fern"],
+    "scientificName": "Parapolystichum glabellum",
+    "family": "Dryopteridaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["Raoul Island shield fern"],
+    "scientificName": "Parapolystichum kermadecense",
+    "family": "Dryopteridaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [],
+    "scientificName": "Parapolystichum microsorum",
+    "family": "Dryopteridaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [],
+    "scientificName": "Pellaea calidirupium",
+    "family": "Pteridaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["sickle fern", "Australian cliff brake"],
+    "scientificName": "Pellaea falcata",
+    "family": "Pteridaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["round-leaved fern", "New Zealand cliff brake"],
+    "scientificName": "Pellaea rotundifolia",
+    "family": "Pteridaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["pillwort"],
+    "scientificName": "Pilularia novae-hollandiae",
+    "family": "Marsileaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["bristle fern"],
+    "scientificName": "Polyphlebium colensoi",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [],
+    "scientificName": "Polyphlebium endlicherianum",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["veined bristle fern", "veined filmy fern"],
+    "scientificName": "Polyphlebium venosum",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["mountain shield fern"],
+    "scientificName": "Polystichum cystostegia",
+    "family": "Dryopteridaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [],
+    "scientificName": "Polystichum neozelandicum subsp. neozelandicum",
+    "family": "Dryopteridaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["shield fern"],
+    "scientificName": "Polystichum neozelandicum subsp. zerophyllum",
+    "family": "Dryopteridaceae",
+    "conservationStatus": "Taxonomically Indistinct"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [],
+    "scientificName": "Polystichum oculatum",
+    "family": "Dryopteridaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [],
+    "scientificName": "Polystichum sylvaticum",
+    "family": "Dryopteridaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["pūniu", "prickly shield fern"],
+    "scientificName": "Polystichum vestitum",
+    "family": "Dryopteridaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [],
+    "scientificName": "Polystichum wawranum",
+    "family": "Dryopteridaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["whisk fern", "skeleton fork fern"],
+    "scientificName": "Psilotum nudum",
+    "family": "Psilotaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["bracken", "rarauhe", "bracken fern"],
+    "scientificName": "Pteridium esculentum",
+    "family": "Dennstaedtiaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["coastal brake", "netted brake"],
+    "scientificName": "Pteris carsei",
+    "family": "Pteridaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [],
+    "scientificName": "Pteris epaleata",
+    "family": "Pteridaceae",
+    "conservationStatus": "Data Deficient"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["sweet fern"],
+    "scientificName": "Pteris macilenta",
+    "family": "Pteridaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [],
+    "scientificName": "Pteris saxatilis",
+    "family": "Pteridaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["shaking brake", "tender brake", "Australian bracken"],
+    "scientificName": "Pteris tremula",
+    "family": "Pteridaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["ladder brake", "Chinese brake"],
+    "scientificName": "Pteris vittata",
+    "family": "Pteridaceae",
+    "conservationStatus": "Not Evaluated"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["king fern", "para", "tawhiti para", "horseshoe fern"],
+    "scientificName": "Ptisana salicina",
+    "family": "Marattiaceae",
+    "conservationStatus": "At Risk – Declining"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["leather-leaf fern", "pyrrosia"],
+    "scientificName": "Pyrrosia eleagnifolia",
+    "family": "Polypodiaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [],
+    "scientificName": "Pyrrosia serpens",
+    "family": "Polypodiaceae",
+    "conservationStatus": "Threatened – Nationally Critical"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["leathery shield fern", "florists fern"],
+    "scientificName": "Rumohra adiantiformis",
+    "family": "Dryopteridaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["forked comb fern"],
+    "scientificName": "Schizaea bifida",
+    "family": "Schizaeaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["fan fern"],
+    "scientificName": "Schizaea dichotoma",
+    "family": "Schizaeaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["mamaku", "black tree fern"],
+    "scientificName": "Sphaeropteris medullaris",
+    "family": "Cyatheaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["umbrella fern", "waekura", "tapuwae kotuku"],
+    "scientificName": "Sticherus cunninghamii",
+    "family": "Gleicheniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["umbrella fern"],
+    "scientificName": "Sticherus flabellatus var. flabellatus",
+    "family": "Gleicheniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["silky fan fern"],
+    "scientificName": "Sticherus tener",
+    "family": "Gleicheniaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["umbrella fern"],
+    "scientificName": "Sticherus urceolatus",
+    "family": "Gleicheniaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["marsh fern", "swamp fern"],
+    "scientificName": "Thelypteris confluens",
+    "family": "Thelypteridaceae",
+    "conservationStatus": "At Risk – Declining"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["fork fern"],
+    "scientificName": "Tmesipteris elongata",
+    "family": "Psilotaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["Banks Peninsula fork fern"],
+    "scientificName": "Tmesipteris horomaka",
+    "family": "Psilotaceae",
+    "conservationStatus": "Threatened – Nationally Endangered"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["fork fern"],
+    "scientificName": "Tmesipteris lanceolata",
+    "family": "Psilotaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["fossil fern", "fork fern"],
+    "scientificName": "Tmesipteris sigmatifolia",
+    "family": "Psilotaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["fork fern"],
+    "scientificName": "Tmesipteris tannensis",
+    "family": "Psilotaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["royal fern", "hard todea", "king fern"],
+    "scientificName": "Todea barbara",
+    "family": "Osmundaceae",
+    "conservationStatus": "Threatened – Nationally Vulnerable"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": ["mountain hound's tongue fern"],
+    "scientificName": "Zealandia novae-zealandiae",
+    "family": "Polypodiaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": ["hound's tongue", "kōwaowao", "pāraharaha"],
+    "scientificName": "Zealandia pustulata subsp. pustulata",
+    "family": "Polypodiaceae",
+    "conservationStatus": "Not Threatened"
+  }
+]
