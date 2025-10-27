@@ -2,6 +2,7 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import fs from "fs";
 import { FernModel } from "../models/Fern.js";
+import { fetchFernImage } from "./fetchFernImages.js";
 
 dotenv.config();
 
@@ -18,6 +19,13 @@ async function seedFerns() {
     });
 
     const data = JSON.parse(fs.readFileSync(dataPath, "utf-8"));
+
+    for (const fern of data) {
+      const image = await fetchFernImage(fern.scientificName);
+      fern.imageUrl = image || null;
+      console.log(` ${fern.scientificName}: ${image ? "found" : "none"}`);
+    }
+
     await FernModel.deleteMany({});
     await FernModel.insertMany(data);
     await mongoose.connection.close();

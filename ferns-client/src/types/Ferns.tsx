@@ -5,4 +5,5 @@ export interface FernRecord {
   scientificName: string;
   family: string;
   conservationStatus: string | null;
+  imageUrl?: string;
 }

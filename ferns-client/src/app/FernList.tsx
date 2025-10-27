@@ -41,6 +41,9 @@ export default function FernList() {
             <thead className="bg-gray-100 border-b border-gray-300">
               <tr>
                 <th className="w-10 bg-[#f8f9fa] text-gray-500 font-normal text-xs text-center border-r border-gray-300"></th>
+                <th className="px-4 py-2 text-left font-semibold border-r border-gray-300">
+                  Image
+                </th>
 
                 <th className="px-4 py-2 text-left font-semibold border-r border-gray-300">
                   Scientific Name
@@ -68,6 +71,19 @@ export default function FernList() {
                 >
                   <td className="w-10 text-center bg-[#f8f9fa] text-gray-500 text-xs border-r border-gray-300 select-none">
                     {index + 1}
+                  </td>
+                  <td className="px-4 py-2 border-t border-gray-300">
+                    {fern.imageUrl ? (
+                      <img
+                        src={fern.imageUrl}
+                        alt={fern.scientificName}
+                        className="h-20 w-20 object-cover rounded-md border border-gray-200 shadow-sm"
+                      />
+                    ) : (
+                      <div className="h-20 w-20 flex items-center justify-center bg-gray-200 text-gray-500 text-xs rounded-md">
+                        No image
+                      </div>
+                    )}
                   </td>
 
                   <td className="px-4 py-2 border-t border-gray-300">
