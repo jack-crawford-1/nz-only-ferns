@@ -19,7 +19,7 @@ export default function FernList() {
 
   return (
     <div className="bg-[#f1f3f4] min-h-screen flex justify-center">
-      <Navbar />
+      <Navbar ferns={ferns} />
 
       <div className="bg-white w-[95%] max-w-8xl border border-gray-300 rounded-t-lg shadow-sm overflow-hidden mt-[140px]">
         <div className="flex text-sm bg-[#f8f9fa] border-b border-gray-300 text-gray-600">

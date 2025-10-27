@@ -1,11 +1,19 @@
 import { useState } from "react";
 import { useNavigate, useLocation } from "react-router";
+import { convertToCSV, downloadCSV } from "../../utils/csv";
+import type { FernRecord } from "../../types/Ferns";
 
-export default function Navbar() {
+export default function Navbar({ ferns }: { ferns: FernRecord[] }) {
   const navigate = useNavigate();
   const location = useLocation();
 
   const [_activeItem, setActiveItem] = useState("Endemic List");
+
+  const handleExport = () => {
+    const csv = convertToCSV(ferns);
+    const today = new Date().toLocaleDateString().split("T")[0];
+    downloadCSV(csv, `ferns-${today}.csv`);
+  };
 
   const menuItems = [
     { label: "Endemic List", path: "/ferns" },
@@ -14,7 +22,7 @@ export default function Navbar() {
     { label: "Habitats", path: "/habitats" },
     { label: "Status", path: "/status" },
     { label: "Tools", path: "/tools" },
-    { label: "Export", path: "/export" },
+    { label: "Export.csv", action: handleExport },
   ];
 
   return (
@@ -29,12 +37,16 @@ export default function Navbar() {
           </div>
 
           <div className="flex items-center space-x-2">
-            {menuItems.map(({ label, path }) => (
+            {menuItems.map(({ label, path, action }) => (
               <span
                 key={label}
                 onClick={() => {
                   setActiveItem(label);
-                  navigate(path);
+                  if (path) {
+                    navigate(path);
+                  } else if (action) {
+                    action();
+                  }
                 }}
                 className={`px-2 py-1 cursor-pointer border-b-2 transition-colors duration-150
                 ${
