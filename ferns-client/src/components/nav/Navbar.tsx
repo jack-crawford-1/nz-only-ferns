@@ -8,7 +8,11 @@ type NavbarProps = {
   onSearchChange?: (value: string) => void;
 };
 
-export default function Navbar({ ferns, searchQuery = "", onSearchChange }: NavbarProps) {
+export default function Navbar({
+  ferns,
+  searchQuery = "",
+  onSearchChange,
+}: NavbarProps) {
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -31,12 +35,16 @@ export default function Navbar({ ferns, searchQuery = "", onSearchChange }: Navb
     <div className="fixed top-0 left-0 z-50 w-full bg-white/80 backdrop-blur">
       <nav className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-4 py-4">
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-[#1e60d4] to-[#0fb59c] text-white shadow-lg">
+          <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient from-[#1e60d4] to-[#0fb59c] text-white shadow-lg">
             <span className="text-lg font-black">OF</span>
           </div>
           <div className="flex flex-col leading-tight">
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0f4fa4]">NZ Only Ferns</span>
-            <span className="text-lg font-bold text-gray-900">Learning Hub</span>
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0f4fa4]">
+              NZ Only Ferns
+            </span>
+            <span className="text-lg font-bold text-gray-900">
+              Learning Hub
+            </span>
           </div>
         </div>
 
@@ -64,7 +72,9 @@ export default function Navbar({ ferns, searchQuery = "", onSearchChange }: Navb
 
         <div className="flex flex-1 items-center justify-end gap-3">
           <div className="relative w-full max-w-xs">
-            <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">🔍</span>
+            <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
+              🔍
+            </span>
             <input
               type="search"
               value={searchQuery}
@@ -78,12 +88,15 @@ export default function Navbar({ ferns, searchQuery = "", onSearchChange }: Navb
 
           <button
             onClick={handleExport}
-            className="flex items-center gap-2 rounded-full bg-gradient-to-r from-[#1e60d4] to-[#0fb59c] px-4 py-2 text-sm font-semibold text-white shadow-lg transition hover:shadow-xl"
+            className="flex items-center gap-2 rounded-full bg-gradient from-[#1e60d4] to-[#0fb59c] px-4 py-2 text-sm font-semibold text-white shadow-lg transition hover:shadow-xl"
           >
             <span>Export CSV</span>
           </button>
       </nav>
-      <div className="h-px w-full bg-gradient-to-r from-transparent via-[#c9d8ff] to-transparent" aria-hidden />
+      <div
+        className="h-px w-full bg-gradient from-transparent via-[#c9d8ff] to-transparent"
+        aria-hidden
+      />
     </div>
   );
 }

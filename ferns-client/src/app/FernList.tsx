@@ -93,13 +93,10 @@ export default function FernList() {
 
   const columnsById = useMemo(
     () =>
-      COLUMN_DEFINITIONS.reduce(
-        (acc, column) => {
-          acc[column.id] = column;
-          return acc;
-        },
-        {} as Record<ColumnId, ColumnDefinition>
-      ),
+      COLUMN_DEFINITIONS.reduce((acc, column) => {
+        acc[column.id] = column;
+        return acc;
+      }, {} as Record<ColumnId, ColumnDefinition>),
     []
   );
 
@@ -140,12 +137,18 @@ export default function FernList() {
     );
   }, [ferns, searchQuery]);
 
-  const handleDragStart = (event: React.DragEvent<HTMLElement>, columnId: ColumnId) => {
+  const handleDragStart = (
+    event: React.DragEvent<HTMLElement>,
+    columnId: ColumnId
+  ) => {
     event.dataTransfer.setData("text/plain", columnId);
     event.dataTransfer.effectAllowed = "move";
   };
 
-  const handleDrop = (event: React.DragEvent<HTMLElement>, targetId: ColumnId) => {
+  const handleDrop = (
+    event: React.DragEvent<HTMLElement>,
+    targetId: ColumnId
+  ) => {
     event.preventDefault();
     const draggedId = event.dataTransfer.getData("text/plain") as ColumnId;
 
@@ -172,7 +175,7 @@ export default function FernList() {
   if (isLoading) return <p className="text-center">Loading ferns...</p>;
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#e9f3ff] via-white to-[#f6f8fb]">
+    <div className="min-h-screen bg-gradient from-[#e9f3ff] via-white to-[#f6f8fb]">
       <Navbar
         ferns={ferns}
         searchQuery={searchQuery}
@@ -182,16 +185,25 @@ export default function FernList() {
         <div className="mb-6 flex flex-col gap-3 rounded-2xl bg-white/80 p-6 shadow-lg ring-1 ring-gray-100 backdrop-blur">
           <div className="flex items-start justify-between gap-4 flex-wrap">
             <div className="space-y-2">
-              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#1967d2]">Learning library</p>
-              <h1 className="text-3xl font-bold text-gray-900">Explore Aotearoa’s native ferns</h1>
+              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#1967d2]">
+                Learning library
+              </p>
+              <h1 className="text-3xl font-bold text-gray-900">
+                Explore Aotearoa’s native ferns
+              </h1>
               <p className="max-w-3xl text-sm text-gray-600">
-                Reorder columns to focus on the details that matter, and use the search to instantly filter by name,
-                whānau, status, or endemicity. Each record links to a deeper profile for classroom projects.
+                Reorder columns to focus on the details that matter, and use the
+                search to instantly filter by name, whānau, status, or
+                endemicity. Each record links to a deeper profile for classroom
+                projects.
               </p>
             </div>
             <div className="rounded-xl bg-[#e4f0ff] px-4 py-3 text-sm text-[#0f4fa4] shadow-inner">
               <p className="font-semibold">Tip</p>
-              <p>Drag column headers to rearrange your view. Results update live as you type.</p>
+              <p>
+                Drag column headers to rearrange your view. Results update live
+                as you type.
+              </p>
             </div>
           </div>
 
@@ -202,7 +214,10 @@ export default function FernList() {
               </span>
               <span className="font-medium">Ferns visible</span>
             </div>
-            <span className="hidden h-4 w-px bg-gray-200 sm:inline-block" aria-hidden />
+            <span
+              className="hidden h-4 w-px bg-gray-200 sm:inline-block"
+              aria-hidden
+            />
             <span className="text-gray-500">Column guide</span>
             <div className="flex flex-wrap gap-2" aria-label="Column letters">
               {orderedColumns.map((column, index) => (
@@ -222,7 +237,10 @@ export default function FernList() {
 
         <div className="overflow-hidden rounded-2xl bg-white shadow-xl ring-1 ring-gray-100">
           <div className="overflow-x-auto">
-            <table className="min-w-full text-sm" style={{ tableLayout: "fixed" }}>
+            <table
+              className="min-w-full text-sm"
+              style={{ tableLayout: "fixed" }}
+            >
               <colgroup>
                 <col style={{ width: ROW_NUMBER_WIDTH }} />
                 {orderedColumns.map((column) => (
@@ -250,7 +268,9 @@ export default function FernList() {
                       <div className="flex items-center justify-between gap-2">
                         <span>{column.header}</span>
                         <span className="hidden h-6 w-6 items-center justify-center rounded-full bg-white text-[10px] font-bold text-[#1e60d4] shadow-sm group-hover:inline-flex">
-                          {String.fromCharCode(65 + columnOrder.indexOf(column.id))}
+                          {String.fromCharCode(
+                            65 + columnOrder.indexOf(column.id)
+                          )}
                         </span>
                       </div>
                     </th>
@@ -264,7 +284,8 @@ export default function FernList() {
                       colSpan={orderedColumns.length + 1}
                       className="px-4 py-8 text-center text-sm text-gray-500"
                     >
-                      No ferns match your search yet. Try another name or status.
+                      No ferns match your search yet. Try another name or
+                      status.
                     </td>
                   </tr>
                 )}
