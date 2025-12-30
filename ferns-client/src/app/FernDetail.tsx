@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router";
 import { fetchFernByName } from "../api/fetchFernByName";
 import type { FernRecord } from "../types/Ferns";
 import Navbar from "../components/nav/Navbar";
+import LoadingScreen from "../components/LoadingScreen";
 
 export default function FernDetail() {
   const { name } = useParams();
@@ -21,7 +22,13 @@ export default function FernDetail() {
       .finally(() => setLoading(false));
   }, [decodedName]);
 
-  if (loading) return <p className="text-center mt-10">Loading fern...</p>;
+  if (loading)
+    return (
+      <LoadingScreen
+        title="Loading fern profile"
+        description="Pulling the latest details for this fern."
+      />
+    );
   if (error)
     return <p className="text-red-500 text-center mt-10">Error: {error}</p>;
   if (!fern) return <p className="text-center mt-10">Fern not found.</p>;
@@ -104,10 +111,7 @@ export default function FernDetail() {
             </div>
 
             <div className="flex items-center justify-between pt-2 text-sm text-gray-600">
-              <Link
-                to={fern.links?.collection ? "/ferns" : "/ferns"}
-                className="text-[#1967d2] hover:underline"
-              >
+              <Link to="/" className="text-[#1967d2] hover:underline">
                 View all ferns
               </Link>
             </div>

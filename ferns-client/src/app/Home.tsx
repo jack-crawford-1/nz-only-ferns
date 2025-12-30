@@ -2,137 +2,180 @@ import { Link } from "react-router";
 
 export default function Home() {
   return (
-    <div className="min-h-screen w-screen bg-gray-700 m-0 flex flex-col justify-center items-center pt-20 pb-40">
-      <div className="max-w-3xl text-gray-300 space-y-4">
-        <h2 className="text-2xl font-bold">New Zealand Only Ferns</h2>
+    <div className="min-h-screen bg-linear-to-b from-[#e9f3ff] via-white to-[#f6f8fb]">
+      <main className="mx-auto max-w-6xl px-4 pb-16 pt-20">
+        <section className="mb-8 flex flex-col gap-6 rounded-2xl bg-white/80 p-6 shadow-lg ring-1 ring-gray-100 backdrop-blur">
+          <div className="flex flex-wrap items-start justify-between gap-6">
+            <div className="space-y-3">
+              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#1967d2]">
+                About the project
+              </p>
+              <h1 className="text-3xl font-bold text-gray-900">
+                New Zealand Only Ferns
+              </h1>
+              <p className="max-w-2xl text-sm text-gray-600">
+                A library documenting New Zealand native and endemic fern
+                species, with conservation status and distribution notes.
+              </p>
+            </div>
+          </div>
 
-        <p>
-          This is an early attempt at creating a clear, open resource for
-          documenting New Zealand’s endemic fern species.I’d heard we had
-          hundreds of native ferns, but finding a definitive list of species
-          unique to NZ wasn't straightforward. The data looks to exists, but
-          it’s scattered across scientific databases, papers, and older field
-          guides.
-        </p>
+          <div className="flex flex-wrap items-center gap-3 text-xs text-gray-600">
+            <span className="inline-flex items-center gap-2 rounded-full bg-[#e0edff] px-3 py-1 font-semibold text-[#1e60d4]">
+              5 sources
+            </span>
+            <span
+              className="hidden h-4 w-px bg-gray-200 sm:inline-block"
+              aria-hidden
+            />
+          </div>
 
-        <p>
-          I started with the{" "}
-          <a
-            href="https://www.nzpcn.org.nz/flora/species/?structural_class=3861&native=1"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-400 underline"
-          >
-            New Zealand Plant Conservation Network (NZPCN) dataset
-          </a>{" "}
-          of 201 native ferns and lycophytes.
-        </p>
+          <div className="flex flex-wrap gap-3">
+            <Link to="/">
+              <button className="rounded-full bg-linear-to-r from-[#1e60d4] to-[#0fb59c] px-5 py-2 text-sm font-semibold text-white shadow-lg transition hover:shadow-xl">
+                Explore the fern list
+              </button>
+            </Link>
+          </div>
+        </section>
 
-        <p>
-          From there, I used GPT to cross reference multiple sources to isolate{" "}
-          endemic only species:
-        </p>
+        <section className="space-y-4">
+          <div className="flex flex-wrap items-end justify-between gap-3">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#1967d2]">
+                Sources
+              </p>
+            </div>
+          </div>
 
-        <div className="space-y-3 pl-4">
-          <ol className="list-decimal space-y-2">
-            <li>
-              <strong>New Zealand Plant Conservation Network (NZPCN)</strong> —{" "}
+          <div className="grid gap-4 md:grid-cols-2">
+            <article className="rounded-2xl bg-white p-5 shadow-lg ring-1 ring-gray-100">
+              <div className="flex items-start justify-between gap-3">
+                <h3 className="text-base font-semibold text-gray-900">
+                  New Zealand Plant Conservation Network
+                </h3>
+                <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#1e60d4]">
+                  NZPCN
+                </span>
+              </div>
+              <p className="mt-3 text-sm text-gray-600">
+                The main flora database used to confirm endemic, indigenous, or
+                introduced biostatus and link each taxon to conservation status.
+              </p>
               <a
                 href="https://www.nzpcn.org.nz/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-400 underline"
+                className="mt-4 inline-flex items-center text-sm font-semibold text-[#1e60d4] hover:text-[#0f4fa4]"
               >
                 nzpcn.org.nz
               </a>
-              <br />
-              The main flora database used to confirm “Endemic,” “Indigenous,”
-              or “Introduced” biostatus and link each taxon to its conservation
-              status.
-            </li>
+            </article>
 
-            <li>
-              <strong>NZFlora / Landcare Research – Manaaki Whenua</strong> —{" "}
+            <article className="rounded-2xl bg-white p-5 shadow-lg ring-1 ring-gray-100">
+              <div className="flex items-start justify-between gap-3">
+                <h3 className="text-base font-semibold text-gray-900">
+                  NZFlora / Landcare Research
+                </h3>
+                <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#1e60d4]">
+                  NZFlora
+                </span>
+              </div>
+              <p className="mt-3 text-sm text-gray-600">
+                Verified endemism, synonymy, and island distribution for genera
+                such as <em>Notogrammitis</em>, <em>Tmesipteris</em>, and{" "}
+                <em>Loxsoma</em>.
+              </p>
               <a
                 href="https://nzflora.landcareresearch.co.nz/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-400 underline"
+                className="mt-4 inline-flex items-center text-sm font-semibold text-[#1e60d4] hover:text-[#0f4fa4]"
               >
                 nzflora.landcareresearch.co.nz
               </a>
-              <br />
-              Verified endemism, synonymy, and island distribution for genera
-              such as <em>Notogrammitis</em>, <em>Tmesipteris</em>, and{" "}
-              <em>Loxsoma</em>.
-            </li>
+            </article>
 
-            <li>
-              <strong>Global Biodiversity Information Facility (GBIF)</strong> —{" "}
+            <article className="rounded-2xl bg-white p-5 shadow-lg ring-1 ring-gray-100">
+              <div className="flex items-start justify-between gap-3">
+                <h3 className="text-base font-semibold text-gray-900">
+                  Global Biodiversity Information Facility
+                </h3>
+                <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#1e60d4]">
+                  GBIF
+                </span>
+              </div>
+              <p className="mt-3 text-sm text-gray-600">
+                Used to confirm that each NZ-only record had no verified
+                occurrences overseas.
+              </p>
               <a
                 href="https://www.gbif.org/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-400 underline"
+                className="mt-4 inline-flex items-center text-sm font-semibold text-[#1e60d4] hover:text-[#0f4fa4]"
               >
                 gbif.org
               </a>
-              <br />
-              Used to confirm that each “NZ only” record had no verified
-              occurrences overseas.
-            </li>
+            </article>
 
-            <li>
-              <strong>Department of Conservation (DOC)</strong> —{" "}
+            <article className="rounded-2xl bg-white p-5 shadow-lg ring-1 ring-gray-100">
+              <div className="flex items-start justify-between gap-3">
+                <h3 className="text-base font-semibold text-gray-900">
+                  Department of Conservation
+                </h3>
+                <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#1e60d4]">
+                  DOC
+                </span>
+              </div>
+              <p className="mt-3 text-sm text-gray-600">
+                Cross-referenced conservation categories such as{" "}
+                <em>Threatened - Nationally Endangered</em> or{" "}
+                <em>At Risk - Relict</em>.
+              </p>
               <a
                 href="https://www.doc.govt.nz/nature/biodiversity/nz-threat-classification-system/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-400 underline"
+                className="mt-4 inline-flex items-center text-sm font-semibold text-[#1e60d4] hover:text-[#0f4fa4]"
               >
                 doc.govt.nz/nature/biodiversity/nz-threat-classification-system/
               </a>
-              <br />
-              Cross-referenced conservation categories such as{" "}
-              <em>Threatened – Nationally Endangered</em> or{" "}
-              <em>At Risk – Relict</em>.
-            </li>
+            </article>
 
-            <li>
-              <strong>Supporting Literature</strong> — Brownsey, P. J. & Perrie,
-              L. R. (2015).{" "}
-              <em>New Zealand Ferns and Lycophytes: A Guide to Species.</em> Te
-              Papa Press. Includes data from Allan Herbarium (CHR) and NZFlora
-              archives.
-              <br />A fern was treated as <strong>endemic</strong> if:
-              <ul className="list-disc pl-6 mt-1 space-y-1">
-                <li>NZPCN Biostatus = Endemic</li>
+            <article className="rounded-2xl bg-white p-5 shadow-lg ring-1 ring-gray-100 md:col-span-2">
+              <div className="flex items-start justify-between gap-3">
+                <h3 className="text-base font-semibold text-gray-900">
+                  Supporting literature
+                </h3>
+                <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#1e60d4]">
+                  Guides
+                </span>
+              </div>
+              <p className="mt-3 text-sm text-gray-600">
+                Brownsey, P. J. &amp; Perrie, L. R. (2015).{" "}
+                <em>New Zealand Ferns and Lycophytes: A Guide to Species.</em>{" "}
+                Te Papa Press. Includes data from Allan Herbarium (CHR) and
+                NZFlora archives.
+              </p>
+              <p className="mt-3 text-sm font-semibold text-gray-800">
+                A fern was treated as endemic if:
+              </p>
+              <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-gray-600">
+                <li>NZPCN biostatus = Endemic.</li>
                 <li>
-                  NZFlora distribution = “North, South, Stewart, and Chatham
-                  Islands only”
+                  NZFlora distribution = North, South, Stewart, and Chatham
+                  Islands only.
                 </li>
                 <li>
-                  GBIF + literature showed no verified records outside New
-                  Zealand
+                  GBIF plus literature showed no verified records outside New
+                  Zealand.
                 </li>
               </ul>
-            </li>
-          </ol>
-        </div>
-
-        <p>
-          The current dataset lists each fern’s scientific name , family, common
-          names, endemic status, and conservation status. Some entries seem
-          accurate, others need review but it’s intended as a living reference
-          that will grow with more data, photos, and mapping over time.
-        </p>
-
-        <Link to="/ferns">
-          <button className="mt-20 px-4 py-2 text-blue-400 hover:text-blue-500 underline">
-            Go to Ferns Page
-          </button>
-        </Link>
-      </div>
+            </article>
+          </div>
+        </section>
+      </main>
     </div>
   );
 }

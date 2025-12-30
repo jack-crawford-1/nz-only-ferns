@@ -23,27 +23,21 @@ export default function Navbar({
   };
 
   const menuItems = [
-    { label: "Endemic List", path: "/ferns" },
-    { label: "About", path: "/" },
-    { label: "Families", path: "/families" },
+    { label: "Ferns", path: "/" },
     { label: "Habitats", path: "/habitats" },
     { label: "Status", path: "/status" },
-    { label: "Tools", path: "/tools" },
   ];
 
   return (
     <div className="fixed top-0 left-0 z-50 w-full bg-white/80 backdrop-blur">
       <nav className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-4 py-4">
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient from-[#1e60d4] to-[#0fb59c] text-white shadow-lg">
-            <span className="text-lg font-black">OF</span>
-          </div>
           <div className="flex flex-col leading-tight">
             <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0f4fa4]">
               NZ Only Ferns
             </span>
             <span className="text-lg font-bold text-gray-900">
-              Learning Hub
+              Fern Library
             </span>
           </div>
         </div>
@@ -89,7 +83,7 @@ export default function Navbar({
 
         <button
           onClick={handleExport}
-          className="flex items-center gap-2 rounded-full bg-gradient from-[#1e60d4] to-[#0fb59c] px-4 py-2 text-sm font-semibold text-white shadow-lg transition hover:shadow-xl"
+          className="flex items-center gap-2 rounded-full bg-[#96b5eb] px-4 py-2 text-sm font-semibold text-black shadow-lg transition hover:shadow-xl"
         >
           <span>Export CSV</span>
         </button>

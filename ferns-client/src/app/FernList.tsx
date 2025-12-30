@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import { fetchFerns } from "../api/fetchFerns";
 import type { FernRecord } from "../types/Ferns";
 import Navbar from "../components/nav/Navbar";
+import LoadingScreen from "../components/LoadingScreen";
 
 type ColumnId =
   | "image"
@@ -90,6 +91,7 @@ export default function FernList() {
   const [columnOrder, setColumnOrder] = useState<ColumnId[]>(
     COLUMN_DEFINITIONS.map((column) => column.id)
   );
+  const [dropTargetId, setDropTargetId] = useState<ColumnId | null>(null);
 
   const columnsById = useMemo(
     () =>
@@ -152,7 +154,10 @@ export default function FernList() {
     event.preventDefault();
     const draggedId = event.dataTransfer.getData("text/plain") as ColumnId;
 
-    if (!draggedId || draggedId === targetId) return;
+    if (!draggedId || draggedId === targetId) {
+      setDropTargetId(null);
+      return;
+    }
 
     setColumnOrder((prev) => {
       const withoutDragged = prev.filter((id) => id !== draggedId);
@@ -164,15 +169,27 @@ export default function FernList() {
       updated.splice(targetIndex, 0, draggedId);
       return updated;
     });
+    setDropTargetId(null);
   };
 
-  const handleDragOver = (event: React.DragEvent<HTMLElement>) => {
+  const handleDragOver = (
+    event: React.DragEvent<HTMLElement>,
+    columnId: ColumnId
+  ) => {
     event.preventDefault();
     event.dataTransfer.dropEffect = "move";
+    setDropTargetId((prev) => (prev === columnId ? prev : columnId));
+  };
+
+  const handleDragEnd = () => {
+    setDropTargetId(null);
   };
 
   if (error) return <p className="text-red-500 text-center">Error: {error}</p>;
-  if (isLoading) return <p className="text-center">Loading ferns...</p>;
+  if (isLoading)
+    return (
+      <LoadingScreen title="Loading fern library" description="..........." />
+    );
 
   return (
     <div className="min-h-screen bg-linear from-[#e9f3ff] via-white to-[#f6f8fb]">
@@ -185,31 +202,15 @@ export default function FernList() {
         <div className="mb-6 flex flex-col gap-3 rounded-2xl bg-white/80 p-6 shadow-lg ring-1 ring-gray-100 backdrop-blur">
           <div className="flex items-start justify-between gap-4 flex-wrap">
             <div className="space-y-2">
-              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#1967d2]">
-                Learning library
-              </p>
               <h1 className="text-3xl font-bold text-gray-900">
                 Explore Aotearoa’s native ferns
               </h1>
-              <p className="max-w-3xl text-sm text-gray-600">
-                Reorder columns to focus on the details that matter, and use the
-                search to instantly filter by name, whānau, status, or
-                endemicity. Each record links to a deeper profile for classroom
-                projects.
-              </p>
-            </div>
-            <div className="rounded-xl bg-[#e4f0ff] px-4 py-3 text-sm text-[#0f4fa4] shadow-inner">
-              <p className="font-semibold">Tip</p>
-              <p>
-                Drag column headers to rearrange your view. Results update live
-                as you type.
-              </p>
             </div>
           </div>
 
           <div className="flex flex-wrap items-center gap-3 text-xs text-gray-600">
             <div className="flex items-center gap-2">
-              <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-[#e0edff] font-semibold text-[#1e60d4]">
+              <span className="inline-flex h-7 w-10 items-center justify-center rounded-full bg-[#e0edff] font-semibold text-[#1e60d4] ">
                 {filteredFerns.length}
               </span>
               <span className="font-medium">Ferns visible</span>
@@ -218,20 +219,6 @@ export default function FernList() {
               className="hidden h-4 w-px bg-gray-200 sm:inline-block"
               aria-hidden
             />
-            <span className="text-gray-500">Column guide</span>
-            <div className="flex flex-wrap gap-2" aria-label="Column letters">
-              {orderedColumns.map((column, index) => (
-                <span
-                  key={column.id}
-                  className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-[11px] font-medium text-gray-700 shadow-sm"
-                >
-                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white text-gray-800 shadow-inner">
-                    {String.fromCharCode(65 + index)}
-                  </span>
-                  {column.header}
-                </span>
-              ))}
-            </div>
           </div>
         </div>
 
@@ -253,28 +240,41 @@ export default function FernList() {
                   <th className="px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-[0.14em] text-gray-500">
                     #
                   </th>
-                  {orderedColumns.map((column) => (
-                    <th
-                      key={column.id}
-                      draggable
-                      onDragStart={(event) => handleDragStart(event, column.id)}
-                      onDrop={(event) => handleDrop(event, column.id)}
-                      onDragOver={handleDragOver}
-                      className={`group relative px-4 py-3 text-left text-xs font-semibold text-gray-800 transition-colors hover:bg-[#e6edff] ${
-                        column.align === "center" ? "text-center" : ""
-                      }`}
-                      title="Drag to reorder"
-                    >
-                      <div className="flex items-center justify-between gap-2">
-                        <span>{column.header}</span>
-                        <span className="hidden h-6 w-6 items-center justify-center rounded-full bg-white text-[10px] font-bold text-[#1e60d4] shadow-sm group-hover:inline-flex">
-                          {String.fromCharCode(
-                            65 + columnOrder.indexOf(column.id)
-                          )}
-                        </span>
-                      </div>
-                    </th>
-                  ))}
+                  {orderedColumns.map((column) => {
+                    const isDropTarget = dropTargetId === column.id;
+
+                    return (
+                      <th
+                        key={column.id}
+                        draggable
+                        onDragStart={(event) =>
+                          handleDragStart(event, column.id)
+                        }
+                        onDrop={(event) => handleDrop(event, column.id)}
+                        onDragOver={(event) => handleDragOver(event, column.id)}
+                        onDragEnd={handleDragEnd}
+                        className={`group relative px-4 py-3 text-left text-xs font-semibold text-gray-800 transition-colors hover:bg-[#e6edff] ${
+                          isDropTarget ? "bg-[#e6edff]" : ""
+                        } ${column.align === "center" ? "text-center" : ""}`}
+                        title="Drag to reorder"
+                      >
+                        {isDropTarget && (
+                          <span
+                            className="pointer-events-none absolute inset-1 rounded-xl shadow-[0_0_0_3px_rgba(30,96,212,0.25)]"
+                            aria-hidden
+                          />
+                        )}
+                        <div className="relative z-10 flex items-center justify-between gap-2">
+                          <span>{column.header}</span>
+                          <span className="hidden h-6 w-6 items-center justify-center rounded-full bg-white text-[10px] font-bold text-[#1e60d4] shadow-sm group-hover:inline-flex group-hover:cursor-grab">
+                            {String.fromCharCode(
+                              65 + columnOrder.indexOf(column.id)
+                            )}
+                          </span>
+                        </div>
+                      </th>
+                    );
+                  })}
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100">
