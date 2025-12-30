@@ -1,4 +1,4 @@
-export function convertToCSV(data: any[]) {
+export function convertToCSV<T extends Record<string, unknown>>(data: T[]) {
   if (!data || data.length === 0) {
     return "";
   }
@@ -8,7 +8,11 @@ export function convertToCSV(data: any[]) {
 
   for (const row of data) {
     const values = headers.map((header) => {
-      const escaped = ("" + row[header]).replace(/"/g, '"');
+      const cell = row[header];
+      const escaped =
+        cell === undefined || cell === null
+          ? ""
+          : String(cell).replace(/"/g, '""');
       return `"${escaped}"`;
     });
     csvRows.push(values.join(","));

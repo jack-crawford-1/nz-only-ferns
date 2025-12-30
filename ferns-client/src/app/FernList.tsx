@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router";
 import { fetchFerns } from "../api/fetchFerns";
 import type { FernRecord } from "../types/Ferns";
 import Navbar from "../components/nav/Navbar";
@@ -87,7 +88,12 @@ export default function FernList() {
                   </td>
 
                   <td className="px-4 py-2 border-t border-gray-300">
-                    {fern.scientificName}
+                    <Link
+                      to={`/ferns/${encodeURIComponent(fern.scientificName)}`}
+                      className="text-[#1967d2] hover:underline"
+                    >
+                      {fern.scientificName}
+                    </Link>
                   </td>
                   <td className="px-4 py-2 border-t border-gray-300 text-center">
                     {fern.isEndemic ? "Yes" : "No"}
