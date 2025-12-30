@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { fetchRegions } from "../api/fetchRegions";
 
 type GeoFeature = {
   type: "Feature";
@@ -142,8 +143,7 @@ export default function DistributionMap({
   useEffect(() => {
     let isActive = true;
 
-    fetch("/nz-regions.geojson")
-      .then((response) => response.json())
+    fetchRegions()
       .then((data: GeoCollection) => {
         if (isActive) setGeoData(data);
       })
