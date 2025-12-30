@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useNavigate, useLocation } from "react-router";
 import { convertToCSV, downloadCSV } from "../../utils/csv";
 import type { FernRecord } from "../../types/Ferns";
@@ -6,8 +5,6 @@ import type { FernRecord } from "../../types/Ferns";
 export default function Navbar({ ferns }: { ferns: FernRecord[] }) {
   const navigate = useNavigate();
   const location = useLocation();
-
-  const [_activeItem, setActiveItem] = useState("Endemic List");
 
   const handleExport = () => {
     const csv = convertToCSV(ferns);
@@ -41,7 +38,6 @@ export default function Navbar({ ferns }: { ferns: FernRecord[] }) {
               <span
                 key={label}
                 onClick={() => {
-                  setActiveItem(label);
                   if (path) {
                     navigate(path);
                   } else if (action) {
@@ -50,7 +46,8 @@ export default function Navbar({ ferns }: { ferns: FernRecord[] }) {
                 }}
                 className={`px-2 py-1 cursor-pointer border-b-2 transition-colors duration-150
                 ${
-                  location.pathname === path
+                  location.pathname === path ||
+                  (path === "/ferns" && location.pathname.startsWith("/ferns"))
                     ? "border-[#1967d2] text-[#1967d2] font-semibold"
                     : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
                 }`}
