@@ -85,13 +85,14 @@ export default function Navbar({
               disabled={!onSearchChange}
             />
           </div>
+        </div>
 
-          <button
-            onClick={handleExport}
-            className="flex items-center gap-2 rounded-full bg-gradient from-[#1e60d4] to-[#0fb59c] px-4 py-2 text-sm font-semibold text-white shadow-lg transition hover:shadow-xl"
-          >
-            <span>Export CSV</span>
-          </button>
+        <button
+          onClick={handleExport}
+          className="flex items-center gap-2 rounded-full bg-gradient from-[#1e60d4] to-[#0fb59c] px-4 py-2 text-sm font-semibold text-white shadow-lg transition hover:shadow-xl"
+        >
+          <span>Export CSV</span>
+        </button>
       </nav>
       <div
         className="h-px w-full bg-gradient from-transparent via-[#c9d8ff] to-transparent"

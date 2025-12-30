@@ -175,7 +175,7 @@ export default function FernList() {
   if (isLoading) return <p className="text-center">Loading ferns...</p>;
 
   return (
-    <div className="min-h-screen bg-gradient from-[#e9f3ff] via-white to-[#f6f8fb]">
+    <div className="min-h-screen bg-linear from-[#e9f3ff] via-white to-[#f6f8fb]">
       <Navbar
         ferns={ferns}
         searchQuery={searchQuery}
