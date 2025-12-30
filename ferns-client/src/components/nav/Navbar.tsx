@@ -25,93 +25,65 @@ export default function Navbar({ ferns, searchQuery = "", onSearchChange }: Navb
     { label: "Habitats", path: "/habitats" },
     { label: "Status", path: "/status" },
     { label: "Tools", path: "/tools" },
-    { label: "Export.csv", action: handleExport },
   ];
 
   return (
-    <div className="fixed top-0 left-0 w-full z-50">
-      <div className="bg-[#f8f9fa] border-b border-gray-300 flex items-center justify-between px-3 py-2 text-sm text-gray-700">
-        <div className="flex items-center space-x-2">
-          <div className="flex items-center space-x-2">
-            <div className="w-6 h-6 bg-[#0f9d58] rounded-sm flex items-center justify-center">
-              <span className="text-white text-[10px] font-bold">OF</span>
-            </div>
-            <span className="font-semibold">NZ ONLY FERNS</span>
+    <div className="fixed top-0 left-0 z-50 w-full bg-white/80 backdrop-blur">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-4 py-4">
+        <div className="flex items-center gap-3">
+          <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-[#1e60d4] to-[#0fb59c] text-white shadow-lg">
+            <span className="text-lg font-black">OF</span>
           </div>
+          <div className="flex flex-col leading-tight">
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0f4fa4]">NZ Only Ferns</span>
+            <span className="text-lg font-bold text-gray-900">Learning Hub</span>
+          </div>
+        </div>
 
-          <div className="flex items-center space-x-2">
-            {menuItems.map(({ label, path, action }) => (
-              <span
+        <div className="hidden items-center gap-2 rounded-full bg-gray-100 px-2 py-1 text-sm text-gray-700 shadow-inner sm:flex">
+          {menuItems.map(({ label, path }) => {
+            const isActive =
+              (path === "/ferns" && location.pathname.startsWith("/ferns")) ||
+              location.pathname === path;
+
+            return (
+              <button
                 key={label}
-                onClick={() => {
-                  if (path) {
-                    navigate(path);
-                  } else if (action) {
-                    action();
-                  }
-                }}
-                className={`px-2 py-1 cursor-pointer border-b-2 transition-colors duration-150
-                ${
-                  location.pathname === path ||
-                  (path === "/ferns" && location.pathname.startsWith("/ferns"))
-                    ? "border-[#1967d2] text-[#1967d2] font-semibold"
-                    : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
+                onClick={() => navigate(path)}
+                className={`rounded-full px-3 py-1 font-medium transition-colors ${
+                  isActive
+                    ? "bg-white text-[#1e60d4] shadow-sm"
+                    : "text-gray-600 hover:bg-white hover:text-gray-900"
                 }`}
               >
                 {label}
-              </span>
-            ))}
+              </button>
+            );
+          })}
+        </div>
+
+        <div className="flex flex-1 items-center justify-end gap-3">
+          <div className="relative w-full max-w-xs">
+            <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">🔍</span>
+            <input
+              type="search"
+              value={searchQuery}
+              onChange={(event) => onSearchChange?.(event.target.value)}
+              placeholder="Search ferns, families, or status"
+              className="w-full rounded-full border border-transparent bg-[#f3f6ff] px-9 py-2 text-sm text-gray-800 shadow-inner ring-1 ring-transparent transition focus:border-[#1e60d4] focus:ring-[#c6d9ff]"
+              aria-label="Filter fern rows"
+              disabled={!onSearchChange}
+            />
           </div>
-        </div>
 
-        <div className="flex items-center space-x-3">
-          <div className="w-5 h-5 rounded-full border border-gray-400" />
-          <div className="px-4 py-1 rounded-full bg-[#c2e7ff] text-[#1967d2] font-medium text-sm">
-            Share
-          </div>
-          <div className="w-6 h-6 rounded-full border border-gray-400 bg-black" />
-        </div>
-      </div>
-
-      <div className="bg-[#f8f9fa] border-b border-gray-300 flex items-center justify-start px-3 py-2 text-gray-600 text-sm space-x-3">
-        <div className="flex items-center space-x-1">
-          <div className="w-5 h-5 bg-gray-400/10 rounded-sm border border-gray-300"></div>
-          <div className="w-5 h-5 bg-gray-400/30 rounded-sm border border-gray-300"></div>
-          <div className="w-5 h-5 bg-gray-400/60 rounded-sm border border-gray-300"></div>
-        </div>
-        <div className="border-l border-gray-300 h-4 mx-2" />
-        <span>100%</span>
-        <div className="border-l border-gray-300 h-4 mx-2" />
-        <span>$</span>
-        <span>%</span>
-        <span>123</span>
-        <div className="border-l border-gray-300 h-4 mx-2" />
-        <span className="text-gray-500">Default</span>
-        <div className="border border-gray-300 px-1 rounded text-gray-600 text-xs">
-          10
-        </div>
-        <span className="font-bold">B</span>
-        <span className="italic">I</span>
-        <span className="underline">U</span>
-      </div>
-
-      <div className="bg-[#f8f9fa] border-b border-gray-300 flex items-center px-3 py-2 text-sm text-gray-600">
-        <div className="px-3 py-1 bg-white border border-gray-300 rounded-l-md font-mono text-gray-700">
-          A201
-        </div>
-        <div className="px-3 py-1 flex items-center border border-gray-300 border-l-0 bg-white w-full">
-          <span className="text-gray-500 mr-2 font-semibold">fx</span>
-          <input
-            type="search"
-            value={searchQuery}
-            onChange={(event) => onSearchChange?.(event.target.value)}
-            placeholder="Search ferns..."
-            className="w-full focus:outline-none"
-            aria-label="Filter fern rows"
-            disabled={!onSearchChange}
-          />
-        </div>
-      </div>
+          <button
+            onClick={handleExport}
+            className="flex items-center gap-2 rounded-full bg-gradient-to-r from-[#1e60d4] to-[#0fb59c] px-4 py-2 text-sm font-semibold text-white shadow-lg transition hover:shadow-xl"
+          >
+            <span>Export CSV</span>
+          </button>
+      </nav>
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-[#c9d8ff] to-transparent" aria-hidden />
     </div>
   );
 }
