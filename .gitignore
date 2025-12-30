@@ -42,4 +42,5 @@ ferns-client/dist/
 .env.local
 .env.*.local
 
-package-lock.jsonferns-client/public/nz-regions.geojson
+package-lock.json
+ferns-client/public/nz-regions.geojson
