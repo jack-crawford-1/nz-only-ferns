@@ -1,9 +1,9 @@
-export function convertToCSV<T extends Record<string, unknown>>(data: T[]) {
+export function convertToCSV<T extends object>(data: T[]) {
   if (!data || data.length === 0) {
     return "";
   }
 
-  const headers = Object.keys(data[0]);
+  const headers = Object.keys(data[0]) as Array<keyof T>;
   const csvRows = [headers.join(",")];
 
   for (const row of data) {
