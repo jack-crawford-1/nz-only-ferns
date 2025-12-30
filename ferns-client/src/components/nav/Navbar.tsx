@@ -2,7 +2,13 @@ import { useNavigate, useLocation } from "react-router";
 import { convertToCSV, downloadCSV } from "../../utils/csv";
 import type { FernRecord } from "../../types/Ferns";
 
-export default function Navbar({ ferns }: { ferns: FernRecord[] }) {
+type NavbarProps = {
+  ferns: FernRecord[];
+  searchQuery?: string;
+  onSearchChange?: (value: string) => void;
+};
+
+export default function Navbar({ ferns, searchQuery = "", onSearchChange }: NavbarProps) {
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -95,7 +101,15 @@ export default function Navbar({ ferns }: { ferns: FernRecord[] }) {
         </div>
         <div className="px-3 py-1 flex items-center border border-gray-300 border-l-0 bg-white w-full">
           <span className="text-gray-500 mr-2 font-semibold">fx</span>
-          <span>= yes</span>
+          <input
+            type="search"
+            value={searchQuery}
+            onChange={(event) => onSearchChange?.(event.target.value)}
+            placeholder="Search ferns..."
+            className="w-full focus:outline-none"
+            aria-label="Filter fern rows"
+            disabled={!onSearchChange}
+          />
         </div>
       </div>
     </div>
