@@ -78,14 +78,18 @@ export default function FernDetail() {
               </div>
 
               <div className="border border-gray-200 rounded-md p-4 bg-[#f8f9fa]">
-                <p className="text-xs uppercase text-gray-500">Conservation status</p>
+                <p className="text-xs uppercase text-gray-500">
+                  Conservation status
+                </p>
                 <p className="text-gray-800 font-semibold">
                   {fern.conservationStatus || "Unknown"}
                 </p>
               </div>
 
               <div className="border border-gray-200 rounded-md p-4 bg-[#f8f9fa]">
-                <p className="text-xs uppercase text-gray-500">Endemic to NZ?</p>
+                <p className="text-xs uppercase text-gray-500">
+                  Endemic to NZ?
+                </p>
                 <p className="text-gray-800 font-semibold">
                   {fern.isEndemic ? "Yes" : "No"}
                 </p>
@@ -100,15 +104,6 @@ export default function FernDetail() {
             </div>
 
             <div className="flex items-center justify-between pt-2 text-sm text-gray-600">
-              <span>
-                API link: {" "}
-                <a
-                  href={fern.links?.self || "#"}
-                  className="text-[#1967d2] hover:underline"
-                >
-                  {fern.links?.self || "Unavailable"}
-                </a>
-              </span>
               <Link
                 to={fern.links?.collection ? "/ferns" : "/ferns"}
                 className="text-[#1967d2] hover:underline"
