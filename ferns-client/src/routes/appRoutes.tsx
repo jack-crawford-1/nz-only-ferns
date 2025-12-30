@@ -8,9 +8,10 @@ import Status from "../app/Status";
 export function AppRoutes() {
   return (
     <Routes>
-      <Route index element={<FernList />} />
+      {/* <Route index element={<FernList />} /> */}
+      <Route index element={<Home />} />
       <Route path="/ferns/:name" element={<FernDetail />} />
-      <Route path="/Home" element={<Home />} />
+      <Route path="/ferns" element={<FernList />} />
       <Route path="/habitats" element={<Habitats />} />
       <Route path="/status" element={<Status />} />
     </Routes>

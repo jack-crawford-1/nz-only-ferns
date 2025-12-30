@@ -81,12 +81,12 @@ export default function Navbar({
           </div>
         </div>
 
-        <button
+        {/* <button
           onClick={handleExport}
-          className="flex items-center gap-2 rounded-full bg-[#96b5eb] px-4 py-2 text-sm font-semibold text-black shadow-lg transition hover:shadow-xl"
+          className="flex items-center gap-2 rounded-full bg-[#0a84088f] px-4 py-2 text-sm font-semibold text-black shadow-lg transition hover:shadow-xl"
         >
           <span>Export CSV</span>
-        </button>
+        </button> */}
       </nav>
       <div
         className="h-px w-full bg-gradient from-transparent via-[#c9d8ff] to-transparent"

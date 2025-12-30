@@ -2,13 +2,13 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import fs from "fs";
 import { FernModel } from "../models/Fern.js";
-import { fetchFernImage } from "./fetchFernImages.js";
+import { fetchFernImages } from "./fetchFernImages.js";
 
 dotenv.config();
 
 const uri = process.env.URI;
 const dbName = process.env.DB_NAME;
-const dataPath = `${process.cwd()}/nz_ferns.json`;
+const dataPath = `${process.cwd()}/nz_ferns_updated.json`;
 
 async function seedFerns() {
   try {
@@ -21,9 +21,12 @@ async function seedFerns() {
     const data = JSON.parse(fs.readFileSync(dataPath, "utf-8"));
 
     for (const fern of data) {
-      const image = await fetchFernImage(fern.scientificName);
-      fern.imageUrl = image || null;
-      console.log(` ${fern.scientificName}: ${image ? "found" : "none"}`);
+      const images = await fetchFernImages(fern.scientificName);
+      fern.imageUrls = images;
+      fern.imageUrl = images[0] || null;
+      console.log(
+        ` ${fern.scientificName}: ${images.length > 0 ? images.length : "none"}`
+      );
     }
 
     await FernModel.deleteMany({});

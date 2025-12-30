@@ -5,6 +5,13 @@ export interface FernRecord {
   scientificName: string;
   family: string;
   conservationStatus: string | null;
+  biostatus?: string | null;
+  altitudinalRange?: string | null;
+  distribution?: string | null;
+  habitat?: string | null;
+  recognition?: string | null;
+  notes?: string | null;
+  imageUrls?: string[];
   imageUrl?: string;
   links?: {
     self: string;

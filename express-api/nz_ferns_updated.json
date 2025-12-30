@@ -1,0 +1,2129 @@
+[
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [],
+    "scientificName": "Abrodictyum caudatum",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Threatened – Nationally Critical"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "bristle fern"
+    ],
+    "scientificName": "Abrodictyum elongatum",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "erect bristle fern"
+    ],
+    "scientificName": "Abrodictyum strictum",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "maidenhair",
+      "makaka",
+      "true maidenhair"
+    ],
+    "scientificName": "Adiantum aethiopicum",
+    "family": "Pteridaceae",
+    "conservationStatus": "Not Threatened",
+    "biostatus": "Indigenous (Non-endemic).",
+    "altitudinalRange": "0–240 m.",
+    "distribution": "North Island: Northland, Auckland, Taranaki,\nSouthern North Island.\nSouth Island: Western Nelson, Canterbury.\nAdiantum aethiopicumis common in coastal and lowland\nareas of the North Island from Te Paki to the Waikato, with\noutlying populations in Taranaki and southern Wairarapa. It\ngrows from near sea level, reaching 240 m near Unuwhao in\nTe Paki. In the South Island it has been recorded from the\nBuller Gorge (AK 135708, WELT P008229). There is also a\ncollection made by J.B. Armstrong from near Akaroa (CHR\n633289), an area from which it was also recorded by Raoul\n(1846, as A. trigonum). However, A. aethiopicum has not been\ncollected anywhere in the South Island since the 19th century.\nAlso southern Africa, Australia (Western Australia, Northern\nTerritory, South Australia, Queensland, New South Wales,\nAustralian Capital Territory, Victoria, Tasmania), Lord Howe\nIsland and New Caledonia.",
+    "habitat": "Adiantum aethiopicum grows on the ground in open\npodocarp and broadleaved forest, under mānuka and kānuka, in coastal and gumland scrub, and\nunder pines. It also grows amongst grass or under bracken. It favours coastal cliffs, roadside banks,\ncreek banks, clay slopes, rocky ground, and sometimes swamp margins.",
+    "recognition": "Adiantum aethiopicum is recognised by its 3–4-pinnate fronds, flabellate ultimate\nsegments with the stalks attached centrally, glabrous rachises and laminae, reniform and glabrous\n“indusia”, and green abaxial lamina surface. The species is easily confused with the naturalised\nA. raddianum, but distinguished by its ultimate lamina segments, which are broader than long, and\neither entire or shallowly incised, especially at the point of attachment of the “indusia”. The ultimate\nsegments in A. raddianum are generally longer than broad, and at least some are more deeply incised\nthan the indusial notches, forming two or more distinct lobes. There is a true creeping rhizome in\nA. raddianum, whereas A. aethiopicum has a more or less erect rhizome with long-creeping stolons.",
+    "notes": "In contrast to the count of n = 60 in New Zealand populations, 2n = 112 has been reported by\nTindale & Roy (2002) in Australian plants of Adiantum aethiopicum, and n = 57 in the related\nA. atroviride Bostock.\nAll New Zealand Flora writers since Hooker (1854–1855) have included Adiantum assimile Sw. in the\nsynonymy of A. aethiopicum. Swartz (1801) described the species from an unspecified locality in\nAustralia. Two related species, A. aethiopicum and A. atroviride, are now known to occur in Australia\n(Bostock 1998), their distributions overlapping in southern Queensland and New South Wales.\nBostock (1998) described A. atroviride, but continued to include A. assimile in the synonymy of\nA. aethiopicum, even though he indicated that he had not seen the type. Without locating the type it is\nimpossible to be certain of its affinities. Unfortunately Swartz’s herbarium in S is currently inaccessible,\nand the identity of A. assimile must wait until the type can be found and re-examined."
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "common maidenhair",
+      "Cunningham's maidenhair"
+    ],
+    "scientificName": "Adiantum cunninghamii",
+    "family": "Pteridaceae",
+    "conservationStatus": "Not Threatened",
+    "biostatus": "Indigenous (Endemic).",
+    "altitudinalRange": "0–1100 m.",
+    "distribution": "North Island: Northland, Auckland, Volcanic\nPlateau, Gisborne, Taranaki, Southern North Island.\nSouth Island: Western Nelson, Sounds-Nelson, Marlborough,\nWestland, Canterbury, Otago, Southland, Fiordland.\nKermadec Islands, Three Kings Islands, Chatham Islands,\nStewart Island.\nAdiantum cunninghamiioccurs on the Kermadec and Three\nKings Islands, and in lowland areas throughout the North\nIsland from Te Paki to Wellington, extending locally into\nmontane sites. It is absent only from parts of the central North\nIsland. It grows from near sea-level, reaching 1100 m in the\nKaimanawa Ranges. In the South Island it occurs in coastal\nand lowland sites from Nelson to Southland, extending locally\ninto montane areas, but is absent from much of the interior,\nand from the drier parts of Otago and South Canterbury. It\nextends to 900 m at Jordan Stream Reserve, Marlborough. It\nalso reaches Stewart Island and the Chatham Islands.",
+    "habitat": "Adiantum cunninghamii grows on the ground under\nkauri, podocarp, beech and broadleaved forest, under mānuka and kānuka, in coastal and\nregenerating scrub, and under pines. It is found on wet rock faces and bluffs, in small caves, under\nwaterfalls, on river banks, in gullies, among rocks or in crevices, on roadside banks, at bush margins,\nin clearings, along tracksides, on grassy slopes, and on coastal cliffs. It grows on greywacke,\nlimestone, sandstone, mudstone, clay, scoria, and pumice.",
+    "recognition": "Adiantum cunninghamii is a rather variable species with laminae ranging in size from\n40 mm to 370 mm long. It is most commonly 3-pinnate at the base, but small fronds may be only 2-\npinnate, and very rarely 4-pinnate fronds are found. It is distinguished from other species of Adiantum\nby its oblong ultimate lamina segments with the stalk attached in one corner, glabrous rachises,\nreniform and glabrous “indusia”, and often by the glaucous colour of the abaxial lamina surface. The\nabaxial lamina surfaces are also usually glabrous, but rarely (in <1% of collections) they bear stiff\nhairs. Such plants can be confused with hairy forms of A. diaphanum. Small, 2-pinnate fronds, lacking\nhairs on the abaxial lamina surfaces, can also be confused with glabrous forms of A. diaphanum, but\nA. cunninghamii always lacks the small tubers on the rootlets that are present in A. diaphanum. Large,\n3–4-pinnate specimens can be distinguished from A. formosum by their glabrous costae on the\nprimary pinnae, and by the often glaucous abaxial lamina surface.",
+    "notes": "Adiantum cunninghamii was initially misidentified by early Flora writers as A. formosum R.Br.\n(e.g. Richard 1832), and then as A. affine Willd. (e.g. Cheeseman 1906). The type of the latter name is\nactually A. capillus-veneris, supposedly from New Zealand, but almost certainly with an incorrect\nprovenance (see under Notes for A. capillus-veneris). Along with A. fulvum, it is closely related to\nA. silvaticum from Queensland and New South Wales. The latter differs from A. cunninghamii by the\nabsence of false veins between the true veins on the adaxial lamina surface (Bostock 1998).\nNo type material of Adiantum affine var. chathamicum has been located at AK, CHR, K or WELT, and\nits identity remains unresolved (Brownsey & Perrrie 2020). However, Field (1890) noted that A. affine\nwas called A. cunninghamii by Hooker, and A. affine var. chathamicum is included here as a likely\nsynonym of A. cunninghamii.\nA small number of collections occur with hairs on the abaxial lamina surfaces (Brownsey et al. 2019).\nThese are treated here alongside the more usual glabrous forms as dimorphic variation within\nA. cunninghamii.\n10\n---PAGE 15---"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "tuberous maidenhair",
+      "small maidenhair"
+    ],
+    "scientificName": "Adiantum diaphanum",
+    "family": "Pteridaceae",
+    "conservationStatus": "Not Threatened",
+    "biostatus": "Indigenous (Non-endemic).",
+    "altitudinalRange": "5–275 m.",
+    "distribution": "North Island: Northland, Auckland, Volcanic\nPlateau, Gisborne, Taranaki, Southern North Island.\nSouth Island: Western Nelson, Sounds-Nelson.\nKermadec Islands, Three Kings Islands, Chatham Islands.\nAdiantum diaphanumoccurs on the Kermadec and Three\nKings Islands, and in lowland areas of the North Island from\nTe Paki to Wellington. However, it is absent from large parts of\nTaranaki, the central North Island and Gisborne. It occurs from\nnear sea level, reaching 275 m in the Tutamoe Range,\nNorthland, and near Tikokino, Hawke’s Bay. In the South\nIsland it is confined to lowland areas on the north coast from\nthe Marlborough Sounds to north-west Nelson.\nAlso Japan, southern China, Taiwan, Vietnam, Malesia,\nAustralia (Queensland, New South Wales, Victoria), Norfolk\nIsland, Solomon Islands, Vanuatu, New Caledonia, Fiji, Samoa\nand Tonga.",
+    "habitat": "Adiantum diaphanum grows on the ground under\npodocarp and broadleaved forest, and under kānuka. It occurs\non streambanks, river terraces, clay banks, under overhangs, wet rocks, track sides, and swamp\nmargins in shaded sites.",
+    "recognition": "Adiantum diaphanum is the smallest of the maidenhair ferns in New Zealand. The\nfronds are either 1-pinnate throughout, or have one, or rarely two, pairs of proximal pinnae that are\ndivided into secondary pinnae. It is distinguished from other species of Adiantum by the presence of\ntubers on the roots, its oblong ultimate lamina segments with the stalk attached in one corner, its\nglabrous rachises, and by the green abaxial lamina surface. The species is dimorphic, the abaxial\nlamina surfaces and “indusia” being either hairy or glabrous. Sometimes the lamina surfaces and\n“indusia” are either both hairy or both glabrous, but forms are also found with hairy “indusia” and\nglabrous or very sparsely hairy laminae. When present, the hairy “indusia” distinguish it from all other\nspecies except A. hispidulum. That species is distinguished by its helicoid branching, more divided\nlaminae, and hairs that are often more than one cell long. In A. diaphanum the hairs are single-celled,\nvery dark, and with no clearly visible lumen. Plants of A. diaphanum with glabrous laminae and\n“indusia” can be confused with small plants of A. cunninghamii, but that species always lacks the small\ntubers on the rootlets that are present in A. diaphanum.",
+    "notes": "Adiantum diaphanum was misidentified by some early Flora writers as A. affine Willd. (e.g.,\nHooker 1864), a species now known to be A. capillus-veneris.\nBrownsey et al. (2019) found that, among collections held at WELT, 57% had hairs on the abaxial\nlamina surfaces and 43% were glabrous or nearly so. Glabrous and hairy plants were sometimes\nfound in the same population. In his original description of A. diaphanum, Blume (1828) noted that the\npinnae were glabrous. Price (1990) further noted that “all plants from Java, the source of Blume’s type\nof A. diaphanum, have glabrous indusia”, whereas plants from the Philippines had setulose indusia\n13\n---PAGE 18---\nand hairy pinnae. He suggested that the hairy plants corresponded to A. setulosum, described by\nSmith (1846) from Norfolk Island. However, Bostock (1992) rejected this conclusion. He noted that all\n16 separate plants on three type sheets of A. diaphanum at L had at least some hairs on the laminae\nand “indusia”. He noted that there was “no justification whatsoever for using the name A. diaphanum\nBlume solely for plants with glabrous soral flaps”. He included Adiantum setulosum J.Sm. in the\nsynonymy of A. diaphanum, a decision also followed here.\nThe hairy and glabrous plants are treated as dimorphic character states within A. diaphanum.\nCheeseman (1906) interpreted the typical state of A. diaphanum as having hairy pinnae, and\nrecognised var. polymorphum, based on Colenso’s A. polymorphum, for the glabrous state. In any\ncase, A. polymorphum Colenso is illegitimate, being a later homonym of A. polymorphum Poir. (1810).\nFurther investigation is required to determine whether there is any genetic variation that supports\ntaxonomic recognition of different forms of A. diaphanum throughout its extensive geographical range.\nBostock (1992, 1998) noted that plants of A. diaphanum in Australia are not only tuberous but also\nproliferous, a feature recorded by Birkenhead (1886), enabling them to form small colonies. Although\ntubers are common in New Zealand plants, proliferation is unknown in herbarium specimens of wild\nplants and has only been observed in cultivated\nplants (http://www.nzplants.auckland.ac.nz/en/about/ferns/native-ferns/pteridaceae-maidenhair-\nannual-rock-brake-ferns/adiantum-diaphanum.html)."
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "giant maidenhair",
+      "plumed maidenhair"
+    ],
+    "scientificName": "Adiantum formosum",
+    "family": "Pteridaceae",
+    "conservationStatus": "At Risk – Relict",
+    "biostatus": "Indigenous (Non-endemic).",
+    "altitudinalRange": "50–90 m.",
+    "distribution": "North Island: Northland, Auckland, Southern\nNorth Island\nAdiantum formosumis currently found only in lowland sites\naround the Manawatū Gorge. It was formerly collected from\nthe Wairoa River and Kaipara Harbour in Northland, but is now\nthought to be extinct in that region. Collections from\nWhangārei need confirmation, possibly having come from\ncultivated plants, or labelled with a broad and imprecise\nlocality, and they are not mapped here. There are no\ncollections in AK, CHR or WELT to substantiate records from\nReef Point and Herekino (Crookes 1963; Bartlett 1980), and\nthey must be regarded as suspect. The species is easily\ncultivated and it is unclear whether populations adjacent to the\nManawatū Gorge, at Linton, Lake Horowhenua and in native\nforest at Masterton, are natural or the result of plantings, and\nthey are not mapped here. Populations in Auckland city,\nTitirangi, Waitākere, Pukekohe and Pukekura Park are\ndefinitely cultivated.\nAlso Australia (Queensland, New South Wales, Victoria).\nNaturalised in Sri Lanka (Fraser-Jenkins et al. 2017).",
+    "habitat": "In the vicinity of the Manawatū Gorge, Adiantum formosum grows on river terraces and\nstreambanks under podocarp/broadleaved forest and scrub. It also occurs under pines and willows.",
+    "recognition": "Adiantum formosum is the largest and most divided of the indigenous species in New\nZealand. It is usually 4-pinnate at the base but small fronds may occasionally be 3-pinnate and large\nfronds rarely 5-pinnate. It has oblong ultimate segments with the stalk attached in one corner, rough\nbut glabrous stipes and rachises, hairy costae on the pinnae, lunulate and glabrous “indusia”, and a\ngreen abaxial lamina surface. Plants from Northland (now believed extinct) have pale hairs on the\nabaxial lamina surfaces, but those from the Manawatū are glabrous.",
+    "notes": "Adiantum formosum in Australia is dimorphic with respect to hairs on the abaxial lamina\nsurfaces – some populations are glabrous, others bear pale, flattened hairs. The fact that, in New\nZealand, plants from Northland are hairy but those from elsewhere are glabrous suggests these\npopulations have resulted from at least two different dispersal events. The two forms have not been\ngiven any taxonomic recognition in Australia (Bostock 1998) and are treated here as dimorphic\ncharacter states within A. formosum (Brownsey et al. 2019)."
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "maidenhair"
+    ],
+    "scientificName": "Adiantum fulvum",
+    "family": "Pteridaceae",
+    "conservationStatus": "Not Threatened",
+    "biostatus": "Indigenous (Endemic).",
+    "altitudinalRange": "0–450 m.",
+    "distribution": "North Island: Northland, Auckland, Volcanic\nPlateau, Gisborne, Taranaki, Southern North Island.\nSouth Island: Western Nelson, Sounds-Nelson, Canterbury.\nKermadec Islands, Chatham Islands.\nAdiantum fulvum occurs on the Kermadec Islands, and in\nlowland to montane areas of the North Island from Te Paki to\nWellington, but is common only from Northland to the Bay of\nPlenty, with more scattered populations south to Wellington. It\nis absent from much of the central North Island. In the South\nIsland it is confined to the Marlborough Sounds and north-west\nNelson, but was formerly known from Oxford, Canterbury\n(WELT P008398), and Banks Peninsula (Akaroa, Kirk, CHR\n291742; J.F. Armstrong, CHR 633293), where it has not been\ncollected since the 19th century, but from where the species\nwas first described (Raoul 1846). It grows from near sea level,\nreaching 450 m in the Tutamoe Range, Northland. A single\ncollection (AK 300996) has been made from the Chatham\nIslands.",
+    "habitat": "Adiantum fulvum grows on the ground under kauri, podocarp, broadleaved and coastal\nforest, and under mānuka, kānuka and coastal scrub, usually on drier ground. It is found on\nstreambanks, river terraces and clay banks, in gullies, among rocks, on rubbly slopes, on tracksides,\nroad banks and rock faces, on steep hillsides, and on coastal cliffs. It occurs on greywacke, limestone\nand mudstone rock.",
+    "recognition": "Adiantum fulvum is usually 3-pinnate at the base, but rarely large fronds may be 4-\npinnate and small fronds only 2-pinnate. The species has oblong, ultimate segments that curve\nacroscopically at their apices; their abaxial surfaces are green, and the stalks are attached in the\ncorners. The species is dimorphic, the abaxial lamina surfaces being either hairy or glabrous. The\nstipes, rachises and pinna costae bear antrorse red-brown hairs, and the “indusia” are reniform and\nglabrous. Large, 4-pinnate fronds can resemble small plants of A. formosum, but the stipes and\nrachises are hairy, whereas in A. formosum they are rough and glabrous; the “indusia” of A. formosum\n18\n---PAGE 23---\nare lunulate in shape rather than truly reniform as in A. fulvum; and the ultimate lamina segments of\nA. formosum are generally shorter than in A. fulvum (9–16 mm long, cf. 8–26 mm long).",
+    "notes": "Adiantum fulvum was described by Raoul (1846) from a collection he made on Banks\nPeninsula in 1843. There is also a collection made by J.F. Armstrong in 1864, and another by Thomas\nKirk from Akaroa, probably in 1876. However, it has not been collected on Banks Peninsula since that\ndate.\nThe hairy and glabrous forms of A. fulvum were previously recognised as A. fulvum and A. viridescens\n(Parris & Croxall 1974). However, Brownsey et al. (2019) found that the two forms could not be\ndistinguished by any character other than the presence or absence of hairs on the abaxial lamina\nsurface, and proposed that they be regarded as dimorphic character states within A. fulvum,\nconsistent with the treatment of other dimorphic Adiantum species in New Zealand.\nAdiantum fulvum is recorded here for the first time from the Kermadec Islands (AK 326202)."
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "rosy maidenhair"
+    ],
+    "scientificName": "Adiantum hispidulum",
+    "family": "Pteridaceae",
+    "conservationStatus": "Not Threatened",
+    "biostatus": "Indigenous (Non-endemic).",
+    "altitudinalRange": "0–400 m.",
+    "distribution": "North Island: Northland, Auckland, Volcanic\nPlateau, Gisborne, Taranaki, Southern North Island.\nSouth Island: Sounds-Nelson, Canterbury.\nKermadec Islands, Three Kings Islands, Chatham Islands.\nAdiantum hispidulumoccurs on the Kermadec and Three\nKings Islands, and in lowland areas of the North Island from Te\nPaki to Wellington. It is common from Te Paki to Auckland and\nthe Bay of Plenty, but there are only scattered records on the\nwest coast south to Wellington. It grows from near sea level,\nreaching 400 m on Mt Pirongia. In the South Island there are\ntwo collections in the Armstrong Herbarium from Governors\nBay, Lyttleton Harbour (CHR 633291), and from Akaroa\n(CHR 633292), both collected about 150 years ago. Allan\n(1961) recorded it from D’Urville Island, but the specimen\n(CHR 62007) has been re-determined as A. fulvum (Beever et\nal. 1989). Allan also recorded it from Bishopdale, near Nelson,\nand from Seaview, Dunedin, but no supporting herbarium\nspecimens have been located. Recently, it has been collected\nfrom near Richmond and reported from East Tākaka (Jones\n2019). The species also occurs on the Chatham Islands.\nAlso southern Africa, southern India, Asia, Malesia, Australia (Western Australia, Northern Territory,\nQueensland, New South Wales, Australian Capital Territory, Victoria), Norfolk Island (as A.\npubescens), Lord Howe Island, Vanuatu, New Caledonia, Fiji, Tonga, Cook Islands, French Polynesia\nand Pitcairn Island. It is naturalised in North America (Windham 1993), Europe (Fraser-Jenkins et al.\n2017), and Hawai‘i (Palmer 2003).",
+    "habitat": "Adiantum hispidulum grows on the ground under podocarp, broadleaved, beech and coastal\nforest, under mānuka and kānuka, in coastal scrub, and under pines. It is found on streambanks,\namongst rocks and in crevices, on cuttings, on rock overhangs and rocky banks, in clearings and on\nbush margins, on dry hillsides and grassy slopes, on sandy banks, and on coastal cliffs.",
+    "recognition": "Adiantum hispidulum can usually be distinguished from all other maidenhair ferns in\nNew Zealand by its characteristic helicoid branching. A few plants are regularly 2–3-pinnate, and\nthese may be confused with divided forms of A. diaphanum, but they can be distinguished by their\nmore divided laminae and lack of tubers on the rootlets. Young fronds are also often tinged red when\nyoung.\nAdiantum hispidulum is dimorphic with respect to the nature of the hairs on the abaxial surface of the\nlaminae. Most plants have short, stiff hairs 0.1–0.8 mm long, but a few have longer, lax hairs 0.3–1.0\nmm long. Parris (1980) recognised the former as A. hispidulum and the latter as A. pubescens\nSchkuhr. However, in a detailed investigation of the two taxa, Large & Braggins (1993) found that the\ntwo taxa could only be distinguished on the basis of their hair characters, and even then there was a\nhigh degree of variability. They treated A. pubescens as a variety of A. hispidulum, and the dimorphic\nnature of the species can be recognised at this rank if required.\nVar. pubescens has a slightly different distribution to that of var. hispidulum. It is the only form that has\nbeen collected on the Kermadec Islands. Otherwise it is confined to Northland, with isolated\npopulations at Pouto, Kaipara Harbour and Piha (Parris 1980). Its distribution in this area overlaps\nentirely with var. hispidulum, but it does not extend to the rest of the North Island or the South Island.",
+    "notes": "Further investigation is required to ascertain whether the differences in hair type on the\nabaxial lamina surfaces of A. hispidulum correlate with genetic differences in different parts of its\nextensive geographical range.\n21\n---PAGE 26---"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "maidenhair"
+    ],
+    "scientificName": "Adiantum viridescens",
+    "family": "Pteridaceae",
+    "conservationStatus": "Taxonomically Indistinct",
+    "notes": "Brownsey et al. (2019) treated Adiantum viridescens as a synonym of Adiantum fulvum."
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "rough tree fern",
+      "mountain tree fern"
+    ],
+    "scientificName": "Alsophila colensoi",
+    "family": "Cyatheaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "gully tree fern",
+      "slender tree fern",
+      "ponga"
+    ],
+    "scientificName": "Alsophila cunninghamii",
+    "family": "Cyatheaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "silver fern",
+      "ponga"
+    ],
+    "scientificName": "Alsophila dealbata",
+    "family": "Cyatheaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "Kermadec tree fern"
+    ],
+    "scientificName": "Alsophila kermadecensis",
+    "family": "Cyatheaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "Milne's tree fern"
+    ],
+    "scientificName": "Alsophila milnei",
+    "family": "Cyatheaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "kātote",
+      "Smith's tree fern",
+      "soft tree fern"
+    ],
+    "scientificName": "Alsophila smithii",
+    "family": "Cyatheaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "Jersey fern",
+      "annual fern"
+    ],
+    "scientificName": "Anogramma leptophylla",
+    "family": "Pteridaceae",
+    "conservationStatus": "At Risk – Declining",
+    "biostatus": "Indigenous (Non-endemic).",
+    "altitudinalRange": "15–600 m.",
+    "distribution": "North Island: Auckland, Volcanic Plateau,\nSouthern North Island.\nSouth Island: Sounds-Nelson, Canterbury, Otago.\nAnogramma leptophyllaoccurs in lowland sites of the North\nIsland from Auckland to Wellington, predominantly in the\neastern half of the island from Hawke’s Bay to Wairarapa. It\ngrows from around 15 m, reaching 400 m in eastern\nWairarapa. In the South Island it occurs along the east coast\nfrom the Marlborough Sounds to Banks Peninsula, with an\noutlying population near Wanaka. It is found mostly in lowland\nsites but reaches 600 m at Lyndon in Canterbury.\nAlso Central and South America, Europe, Africa, India, China,\nTaiwan, Vietnam and Australia (Western Australia, South\nAustralia, New South Wales, Victoria, Tasmania).",
+    "habitat": "Anogramma leptophylla is an annual fern, sprouting\nin May in northern districts, later in the south, reaching maturity in August and September. It dies away\nas the ground dries out and regenerates each year from spores or perennial tubers on the prothalli. It\nis found on steep banks and rock faces, in rock crevices, on scoria bluffs, on grassy streambanks and\ngrassy hillsides, and on shoreline rocks, often at scrub margins or under light scrub or kānuka. It\ngrows on volcanic and calcareous substrates. It is often associated with the liverwort Targionia\nhypophylla and frequently grows amongst grasses and weedy species.",
+    "recognition": "Anogramma leptophylla is recognised by its small size, delicate and pale green fronds,\nglabrous laminae, and exindusiate sori extending along the veins and often covering the whole pinna\nsegment at maturity.",
+    "notes": "The locality on the type sheet of Gymnogramma novae-zelandiae is given in Colenso’s writing\nas “Tamaki Creek, Thames”, but this is almost certainly an error for “Tamaki Creek, Auckland”. In the\nprotologue, Colenso (1845) stated that the original collection was made “in sheltered grassy spots\namongst scoria, on dry volcanic hills, between Manukau Bay and Tamaki Creek, about ten miles from\nAuckland”.\nAnogramma leptophylla is subcosmopolitan in distribution. However, molecular analysis of populations\nfrom different geographic regions by Nakazato & Gastony (2003) indicated that distinct New and Old\nWorld clades could be recognised. Lovis et al. (1993) noted that populations from Europe, South\nAfrica and New Zealand all had n = 26, whereas plants from Mexico had n = 27 or 29, suggesting a\ncytological difference between the two clades. If these cytological and molecular differences are\nsupported by morphological differences, there would be a strong case for recognising two separate\ntaxa. The type of A. leptophylla is from Spain and belongs to the Old World clade, which also includes\nNew Zealand material. Any new name would therefore be applied only to the New World clade.\n27\n---PAGE 32---"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [],
+    "scientificName": "Arachniodes aristata",
+    "family": "Dryopteridaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "jointed fern"
+    ],
+    "scientificName": "Arthropteris tenella",
+    "family": "Tectariaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "ground spleenwort"
+    ],
+    "scientificName": "Asplenium appendiculatum subsp. appendiculatum",
+    "family": "Aspleniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "coastal spleenwort"
+    ],
+    "scientificName": "Asplenium appendiculatum subsp. maritimum",
+    "family": "Aspleniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "hen and chicken fern",
+      "pikopiko",
+      "mother spleenwort"
+    ],
+    "scientificName": "Asplenium bulbiferum",
+    "family": "Aspleniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "Chatham Island spleenwort"
+    ],
+    "scientificName": "Asplenium chathamense",
+    "family": "Aspleniaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "cave spleenwort"
+    ],
+    "scientificName": "Asplenium cimmeriorum",
+    "family": "Aspleniaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "northern shore spleenwort"
+    ],
+    "scientificName": "Asplenium decurrens",
+    "family": "Aspleniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "butterfly fern",
+      "walking fern",
+      "necklace fern"
+    ],
+    "scientificName": "Asplenium flabellifolium",
+    "family": "Aspleniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "drooping spleenwort",
+      "hanging spleenwort"
+    ],
+    "scientificName": "Asplenium flaccidum",
+    "family": "Aspleniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "hen & chicken fern"
+    ],
+    "scientificName": "Asplenium gracillimum",
+    "family": "Aspleniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "Hauraki Gulf spleenwort"
+    ],
+    "scientificName": "Asplenium haurakiense",
+    "family": "Aspleniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "Colenso's spleenwort"
+    ],
+    "scientificName": "Asplenium hookerianum var. colensoi",
+    "family": "Aspleniaceae",
+    "conservationStatus": "Not Assessed"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "Hooker's spleenwort"
+    ],
+    "scientificName": "Asplenium hookerianum var. hookerianum",
+    "family": "Aspleniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [],
+    "scientificName": "Asplenium lamprophyllum",
+    "family": "Aspleniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [],
+    "scientificName": "Asplenium lepidotum",
+    "family": "Aspleniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "Lyall's spleenwort"
+    ],
+    "scientificName": "Asplenium lyallii",
+    "family": "Aspleniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "huruhuruwhenua",
+      "shining spleenwort"
+    ],
+    "scientificName": "Asplenium oblongifolium",
+    "family": "Aspleniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "shore spleenwort"
+    ],
+    "scientificName": "Asplenium obtusatum",
+    "family": "Aspleniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "Poor Knights spleenwort"
+    ],
+    "scientificName": "Asplenium pauperequitum",
+    "family": "Aspleniaceae",
+    "conservationStatus": "Threatened – Nationally Endangered"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "sickle spleenwort"
+    ],
+    "scientificName": "Asplenium polyodon",
+    "family": "Aspleniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "Richard's spleenwort"
+    ],
+    "scientificName": "Asplenium richardii",
+    "family": "Aspleniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "southern shore spleenwort"
+    ],
+    "scientificName": "Asplenium scleroprium",
+    "family": "Aspleniaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "Shuttleworth's spleenwort"
+    ],
+    "scientificName": "Asplenium shuttleworthianum",
+    "family": "Aspleniaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "blanket fern"
+    ],
+    "scientificName": "Asplenium subglandulosum",
+    "family": "Aspleniaceae",
+    "conservationStatus": "At Risk – Declining"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "spleenwort"
+    ],
+    "scientificName": "Asplenium trichomanes",
+    "family": "Aspleniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "spleenwort"
+    ],
+    "scientificName": "Asplenium trichomanes subsp. quadrivalens",
+    "family": "Aspleniaceae",
+    "conservationStatus": "Threatened – Nationally Critical"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "shore hard fern"
+    ],
+    "scientificName": "Austroblechnum banksii",
+    "family": "Blechnaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "Colenso's hard fern",
+      "peretao",
+      "petako"
+    ],
+    "scientificName": "Austroblechnum colensoi",
+    "family": "Blechnaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [],
+    "scientificName": "Austroblechnum durum",
+    "family": "Blechnaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "lance fern",
+      "nini",
+      "rereti"
+    ],
+    "scientificName": "Austroblechnum lanceolatum",
+    "family": "Blechnaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [],
+    "scientificName": "Austroblechnum membranaceum",
+    "family": "Blechnaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [],
+    "scientificName": "Austroblechnum norfolkianum",
+    "family": "Blechnaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "little hard fern",
+      "alpine hard fern"
+    ],
+    "scientificName": "Austroblechnum penna-marina subsp. alpina",
+    "family": "Blechnaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "Pacific azolla",
+      "azolla",
+      "red azolla"
+    ],
+    "scientificName": "Azolla rubra",
+    "family": "Salviniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "parsley fern",
+      "pātotara"
+    ],
+    "scientificName": "Botrychium australe",
+    "family": "Ophioglossaceae",
+    "conservationStatus": "At Risk – Declining"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "fine-leaved parsley fern"
+    ],
+    "scientificName": "Botrychium biforme",
+    "family": "Ophioglossaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "moonwort"
+    ],
+    "scientificName": "Botrychium lunaria",
+    "family": "Ophioglossaceae",
+    "conservationStatus": "Threatened – Nationally Critical"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "woolly cloak fern",
+      "woolly rock fern"
+    ],
+    "scientificName": "Cheilanthes distans",
+    "family": "Pteridaceae",
+    "conservationStatus": "Not Threatened",
+    "biostatus": "Indigenous (Non-endemic).",
+    "altitudinalRange": "0–600 m.",
+    "distribution": "North Island: Northland, Auckland, Volcanic\nPlateau, Gisborne, Southern North Island.\nSouth Island: Sounds-Nelson, Marlborough, Canterbury.\nKermadec Islands\nCheilanthes distanshas been collected once on Raoul Island\nin the Kermadec Islands. It occurs in lowland districts of the\nNorth Island from Te Paki to Wellington, largely confined to the\neastern half of the island but apparently absent from much of\nGisborne and northern Wairarapa. It grows from near sea\nlevel, mostly to c. 275 m, but has also been recorded from\n600 m on Mt Pirongia. In the South Island it is confined to\neastern areas from Tasman Bay to Banks Peninsula, growing\nfrom about 60 m, reaching 380 m on the Port Hills,\nChristchurch. It has also been observed near Separation Point\nin Abel Tasman National Park (see iNaturalist 5682101), but\nnot yet collected from there, and not recorded on the\ndistribution map.\nAlso Australia (Western Australia, South Australia,\nQueensland, New South Wales, Victoria, Tasmania), Norfolk\nIsland, Lord Howe Island and New Caledonia.",
+    "habitat": "Cheilanthes distans grows on dry cliffs, on rocky outcrops and scoria, on lava field, in rock\ncrevices, on roadside banks and cuttings, and on grassy hillsides, often in sunny situations. It is found\nunder kānuka, mānuka and scrub, often in coastal areas, and sometimes in full sun. It grows on\nvolcanic rock, greywacke, sandstone and limestone substrates.\n30\n---PAGE 35---\nTogether with Anogramma leptophylla, Asplenium flabellifolium, A. subglandulosum, Cheilanthes\nsieberi and Pellaea calidirupium, Cheilanthes distans forms a characteristic assemblage of ferns that\ninhabit dry rocky areas, especially in the eastern South Island.",
+    "recognition": "Cheilanthes distans is easily distinguished from other New Zealand species of this\ngenus by its abundant covering of hairs on the adaxial lamina surface and narrowly ovate, pale brown\nscales on the abaxial surface. The laminae are also generally shorter, narrower and less divided than\nin C. sieberi (12–220 mm long cf. 30–250 mm long; 6–33 mm wide cf. 6–80 mm wide). The two\nspecies frequently occur together, and both are rigidly upright ferns."
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "rock fern"
+    ],
+    "scientificName": "Cheilanthes sieberi subsp. sieberi",
+    "family": "Pteridaceae",
+    "conservationStatus": "Not Threatened",
+    "biostatus": "Indigenous (Non-endemic).",
+    "altitudinalRange": "0–825 m.",
+    "distribution": "North Island: Northland, Auckland, Volcanic\nPlateau, Gisborne, Southern North Island.\nSouth Island: Western Nelson, Sounds-Nelson, Marlborough,\nCanterbury, Otago.\nThree Kings Islands\nCheilanthes sieberisubsp. sieberi occurs on the Three Kings\nIslands and in lowland districts of the North Island from Te\nPaki to Wellington, but is largely confined to the eastern half of\nthe island. It grows from near sea level, reaching 825 m in the\nKaimanawa Ranges. In the South Island it is confined to\neastern areas from the Marlborough Sounds to Dunedin,\ngrowing from about 30 m and reaching 820 m near Tekapo.\nAlso Australia (Western Australia, Northern Territory, South\nAustralia, Queensland, New South Wales, Australian Capital\nTerritory, Victoria, Tasmania), Norfolk Island, Lord Howe Island\nand New Caledonia.",
+    "habitat": "Cheilanthes sieberi subsp. sieberi grows on dry cliffs,\nrocky outcrops, roadside banks, shingle, and heated ground\naround fumeroles, often in sunny situations. It is found under\nkānuka, mānuka and scrub, and in grassland, often in coastal areas, and sometimes in full sun. It\ngrows on greywacke, lava, pumice, basalt, mica schist, and limestone substrates.\nTogether with Anogramma leptophylla, Asplenium flabellifolium, A. subglandulosum, Cheilanthes\ndistans and Pellaea calidirupium, Cheilanthes sieberi subsp. sieberi forms a characteristic assemblage\nof ferns that inhabits dry rocky areas, especially in the eastern South Island.",
+    "recognition": "Cheilanthes sieberi subsp. sieberi is distinguished from C. distans by the lack of hairs\non the adaxial surface, and lack of narrowly ovate scales on the abaxial lamina surface. The fronds\noften appear glabrous to the naked eye, but there is usually a sparse covering of short, hair-like scales\non the rachis and abaxial surfaces. The laminae are also generally longer, broader and more divided\nthan in C. distans (30–250 mm long cf. 12–220 mm long; 6–80 mm wide cf. 6–33 mm wide). The two\nspecies frequently occur together, and both are rigidly upright ferns.",
+    "notes": "Only one subspecies of Cheilanthes sieberi occurs in New Zealand. Cheilanthes sieberi\nsubsp. pseudovellea is endemic to the arid region of central Australia. It is distinguished from subsp.\nsieberi by the presence of an indumentum of twisted hairs on both surfaces of the pinnules. By\ncontrast, the adaxial surface of subsp. sieberi is glabrous, and the abaxial surface almost glabrous.\nLarge forms of C. sieberi subsp. sieberi in New Zealand were persistently misidentified as C. tenuifolia\nby earlier Flora writers, and especially by Kirk (1874), who thought that both species were present in\nNew Zealand. However C. tenuifolia is found in coastal regions of Queensland and Northern Territory,\nNepal, India, Sri Lanka, South-East Asia and the Pacific islands (Chambers & Farrant 1991).\nFollowing Green (1988), the name C. humilis (G.Forst.) P.S.Green was used as an earlier name for C.\nsieberi by Brownsey & Smith-Dodsworth (1989), but Chambers & Farrant (1991, 1998) concluded that\nForster’s type was typical of C. tenuifolia rather than C. sieberi.\nQuirk et al. (1983) noted that examination of the type specimen of C. erecta “shows it to be somewhat\nintermediate between C. sieberi subsp. sieberi and C. distans, with a narrow, mostly glabrous\n33\n---PAGE 38---\nbipinnate frond which bears some scales. Spores are rounded, and of an echinate pattern most like\nthat of C. distans”."
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "christella"
+    ],
+    "scientificName": "Christella dentata",
+    "family": "Thelypteridaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "korokio",
+      "mountain hard fern"
+    ],
+    "scientificName": "Cranfillia deltoides",
+    "family": "Blechnaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "kiwikiwi",
+      "kiwakiwa",
+      "creek fern"
+    ],
+    "scientificName": "Cranfillia fluviatilis",
+    "family": "Blechnaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "black hard fern"
+    ],
+    "scientificName": "Cranfillia nigra",
+    "family": "Blechnaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [],
+    "scientificName": "Crepidomanes humile",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Threatened – Nationally Critical"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [],
+    "scientificName": "Cyclosorus interruptus",
+    "family": "Thelypteridaceae",
+    "conservationStatus": "At Risk – Declining"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "bladder fern"
+    ],
+    "scientificName": "Cystopteris tasmanica",
+    "family": "Cystopteridaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "Puketi hare'sfoot fern"
+    ],
+    "scientificName": "Davallia tasmanii subsp. cristata",
+    "family": "Davalliaceae",
+    "conservationStatus": "Threatened – Nationally Critical"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "davallia",
+      "Three Kings davallia"
+    ],
+    "scientificName": "Davallia tasmanii subsp. tasmanii",
+    "family": "Davalliaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "fragrant fern",
+      "mokimoki"
+    ],
+    "scientificName": "Dendroconche scandens",
+    "family": "Polypodiaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [],
+    "scientificName": "Deparia petersenii subsp. congrua",
+    "family": "Athyriaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "wheki-ponga",
+      "wheki-kohoonga",
+      "golden tree fern",
+      "kuripaka"
+    ],
+    "scientificName": "Dicksonia fibrosa",
+    "family": "Dicksoniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "stumpy tree fern"
+    ],
+    "scientificName": "Dicksonia lanata subsp. hispida",
+    "family": "Dicksoniaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [],
+    "scientificName": "Dicksonia lanata subsp. lanata",
+    "family": "Dicksoniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "wheki",
+      "rough tree fern",
+      "harsh tree fern"
+    ],
+    "scientificName": "Dicksonia squarrosa",
+    "family": "Dicksoniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [],
+    "scientificName": "Dicranopteris linearis",
+    "family": "Gleicheniaceae",
+    "conservationStatus": "Threatened – Nationally Endangered"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [],
+    "scientificName": "Diplazium australe",
+    "family": "Athyriaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [],
+    "scientificName": "Diploblechnum fraseri",
+    "family": "Blechnaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "prickly rasp fern"
+    ],
+    "scientificName": "Doodia aspera",
+    "family": "Blechnaceae",
+    "conservationStatus": "Non-resident Native – Vagrant"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "rasp fern"
+    ],
+    "scientificName": "Doodia australis",
+    "family": "Blechnaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [],
+    "scientificName": "Doodia milnei",
+    "family": "Blechnaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "mokimoki",
+      "mukimuki"
+    ],
+    "scientificName": "Doodia mollis",
+    "family": "Blechnaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [],
+    "scientificName": "Doodia squarrosa",
+    "family": "Blechnaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "alpine tangle fern"
+    ],
+    "scientificName": "Gleichenia alpina",
+    "family": "Gleicheniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "tangle fern",
+      "swamp umbrella fern"
+    ],
+    "scientificName": "Gleichenia dicarpa",
+    "family": "Gleicheniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "tangle fern"
+    ],
+    "scientificName": "Gleichenia inclusisora",
+    "family": "Gleicheniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "carrier tangle fern",
+      "parasol fern"
+    ],
+    "scientificName": "Gleichenia microphylla",
+    "family": "Gleicheniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "histiopteris",
+      "water fern",
+      "mātātā",
+      "bat's wing fern"
+    ],
+    "scientificName": "Histiopteris incisa",
+    "family": "Dennstaedtiaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [],
+    "scientificName": "Hiya distans",
+    "family": "Dennstaedtiaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "filmy fern"
+    ],
+    "scientificName": "Hymenophyllum armstrongii",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "filmy fern"
+    ],
+    "scientificName": "Hymenophyllum australe",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "filmy fern"
+    ],
+    "scientificName": "Hymenophyllum bivalve",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [],
+    "scientificName": "Hymenophyllum cupressiforme",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "drooping filmy fern",
+      "Irirangi",
+      "piripiri"
+    ],
+    "scientificName": "Hymenophyllum demissum",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "filmy fern",
+      "matua mauku"
+    ],
+    "scientificName": "Hymenophyllum dilatatum",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [],
+    "scientificName": "Hymenophyllum falklandicum",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Evaluated"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "filmy fern"
+    ],
+    "scientificName": "Hymenophyllum flabellatum",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "filmy fern"
+    ],
+    "scientificName": "Hymenophyllum flexuosum",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "rusty filmy fern"
+    ],
+    "scientificName": "Hymenophyllum frankliniae",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "filmy fern"
+    ],
+    "scientificName": "Hymenophyllum lyallii",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "filmy fern"
+    ],
+    "scientificName": "Hymenophyllum malingii",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "filmy fern"
+    ],
+    "scientificName": "Hymenophyllum minimum",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "much-divided filmy fern"
+    ],
+    "scientificName": "Hymenophyllum multifidum",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "kidney fern",
+      "konehu",
+      "kopakopa",
+      "raurenga"
+    ],
+    "scientificName": "Hymenophyllum nephrophyllum",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "one-sided filmy fern"
+    ],
+    "scientificName": "Hymenophyllum peltatum",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "filmy fern"
+    ],
+    "scientificName": "Hymenophyllum pluviatile",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "cloud filmy fern"
+    ],
+    "scientificName": "Hymenophyllum polyanthos",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Data Deficient"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "tufted filmy fern"
+    ],
+    "scientificName": "Hymenophyllum pulcherrimum",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "filmy fern"
+    ],
+    "scientificName": "Hymenophyllum rarum",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Evaluated"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "filmy fern"
+    ],
+    "scientificName": "Hymenophyllum revolutum",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "filmy fern"
+    ],
+    "scientificName": "Hymenophyllum rufescens",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "filmy fern",
+      "piripiri"
+    ],
+    "scientificName": "Hymenophyllum sanguinolentum",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "rough filmy fern"
+    ],
+    "scientificName": "Hymenophyllum scabrum",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "hairy filmy fern"
+    ],
+    "scientificName": "Hymenophyllum villosum",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [],
+    "scientificName": "Hypolepis amaurorachis",
+    "family": "Dennstaedtiaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [],
+    "scientificName": "Hypolepis ambigua",
+    "family": "Dennstaedtiaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "giant hypolepis",
+      "ground fern (Norfolk Island only)"
+    ],
+    "scientificName": "Hypolepis dicksonioides",
+    "family": "Dennstaedtiaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [],
+    "scientificName": "Hypolepis lactea",
+    "family": "Dennstaedtiaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "thousand leaved fern"
+    ],
+    "scientificName": "Hypolepis millefolium",
+    "family": "Dennstaedtiaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [],
+    "scientificName": "Hypolepis rufobarbata",
+    "family": "Dennstaedtiaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "thread fern",
+      "climbing hard fern"
+    ],
+    "scientificName": "Icarus filiformis",
+    "family": "Blechnaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "hairy fern"
+    ],
+    "scientificName": "Lastreopsis hispida",
+    "family": "Dryopteridaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "velvet fern"
+    ],
+    "scientificName": "Lastreopsis velutina",
+    "family": "Dryopteridaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "lace fern"
+    ],
+    "scientificName": "Leptolepia novae-zelandiae",
+    "family": "Dennstaedtiaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "crêpe fern",
+      "single crêpe fern",
+      "heruheru"
+    ],
+    "scientificName": "Leptopteris hymenophylloides",
+    "family": "Osmundaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "heruheru",
+      "crêpe fern",
+      "Prince of Wales feathers"
+    ],
+    "scientificName": "Leptopteris superba",
+    "family": "Osmundaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [],
+    "scientificName": "Lindsaea linearis",
+    "family": "Lindsaeaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [],
+    "scientificName": "Lindsaea trichomanoides",
+    "family": "Lindsaeaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [],
+    "scientificName": "Lindsaea viridis",
+    "family": "Lindsaeaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "crown fern",
+      "petipeti",
+      "piupiu"
+    ],
+    "scientificName": "Lomaria discolor",
+    "family": "Blechnaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "lance fern",
+      "whare ngārara"
+    ],
+    "scientificName": "Loxogramme dictyopteris",
+    "family": "Polypodiaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [],
+    "scientificName": "Loxsoma cunninghamii",
+    "family": "Loxsomataceae",
+    "conservationStatus": "At Risk – Declining"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "mangemange",
+      "bushman's mattress",
+      "makamaka"
+    ],
+    "scientificName": "Lygodium articulatum",
+    "family": "Lygodiaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [],
+    "scientificName": "Macrothelypteris torresiana",
+    "family": "Thelypteridaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "southern comb fern"
+    ],
+    "scientificName": "Microschizaea australis",
+    "family": "Schizaeaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "comb fern"
+    ],
+    "scientificName": "Microschizaea fistulosa",
+    "family": "Schizaeaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "rough sword fern"
+    ],
+    "scientificName": "Nephrolepis brownii",
+    "family": "Nephrolepidaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [],
+    "scientificName": "Nephrolepis flexuosa",
+    "family": "Nephrolepidaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [],
+    "scientificName": "Notogrammitis angustifolia subsp. angustifolia",
+    "family": "Polypodiaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "strapfern"
+    ],
+    "scientificName": "Notogrammitis angustifolia subsp. nothofageti",
+    "family": "Polypodiaceae",
+    "conservationStatus": "Taxonomically Indistinct"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "common strap fern"
+    ],
+    "scientificName": "Notogrammitis billardierei",
+    "family": "Polypodiaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "strapfern"
+    ],
+    "scientificName": "Notogrammitis ciliata",
+    "family": "Polypodiaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "dwarf strap fern"
+    ],
+    "scientificName": "Notogrammitis crassior",
+    "family": "Polypodiaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "strapfern"
+    ],
+    "scientificName": "Notogrammitis givenii",
+    "family": "Polypodiaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "strapfern"
+    ],
+    "scientificName": "Notogrammitis gunnii",
+    "family": "Polypodiaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "taupeka",
+      "comb fern"
+    ],
+    "scientificName": "Notogrammitis heterophylla",
+    "family": "Polypodiaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "strapfern"
+    ],
+    "scientificName": "Notogrammitis patagonica",
+    "family": "Polypodiaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "strapfern"
+    ],
+    "scientificName": "Notogrammitis pseudociliata",
+    "family": "Polypodiaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "Rawlings's strapfern"
+    ],
+    "scientificName": "Notogrammitis rawlingsii",
+    "family": "Polypodiaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "southern strapfern"
+    ],
+    "scientificName": "Notogrammitis rigida",
+    "family": "Polypodiaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "adder's tongue"
+    ],
+    "scientificName": "Ophioglossum coriaceum",
+    "family": "Ophioglossaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "stalked adder’s tongue fern"
+    ],
+    "scientificName": "Ophioglossum petiolatum",
+    "family": "Ophioglossaceae",
+    "conservationStatus": "Threatened – Nationally Vulnerable"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "lace fern",
+      "ring fern",
+      "scented fern",
+      "pig fern"
+    ],
+    "scientificName": "Paesia scaberula",
+    "family": "Dennstaedtiaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "gully fern",
+      "feather fern",
+      "piupiu"
+    ],
+    "scientificName": "Pakau pennigera",
+    "family": "Thelypteridaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "swamp kiokio"
+    ],
+    "scientificName": "Parablechnum minus",
+    "family": "Blechnaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "mountain kiokio",
+      "Dunedin-Cass blechnum"
+    ],
+    "scientificName": "Parablechnum montanum",
+    "family": "Blechnaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "kiokio",
+      "horokio",
+      "palm leaf fern"
+    ],
+    "scientificName": "Parablechnum novae-zelandiae",
+    "family": "Blechnaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "small kiokio"
+    ],
+    "scientificName": "Parablechnum procerum",
+    "family": "Blechnaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "kiokio",
+      "Green Bay kiokio"
+    ],
+    "scientificName": "Parablechnum triangularifolium",
+    "family": "Blechnaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "smooth shield fern"
+    ],
+    "scientificName": "Parapolystichum glabellum",
+    "family": "Dryopteridaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "Raoul Island shield fern"
+    ],
+    "scientificName": "Parapolystichum kermadecense",
+    "family": "Dryopteridaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [],
+    "scientificName": "Parapolystichum microsorum",
+    "family": "Dryopteridaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [],
+    "scientificName": "Pellaea calidirupium",
+    "family": "Pteridaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon",
+    "biostatus": "Indigenous (Non-endemic).",
+    "altitudinalRange": "5–1200 m.",
+    "distribution": "North Island: Northland, Auckland, Southern\nNorth Island.\nSouth Island: Sounds-Nelson, Marlborough, Canterbury,\nOtago.\nThree Kings Islands\nPellaea calidirupiumoccurs on the Three Kings Islands, and in\nwidely scattered lowland regions of the North Island, with\npopulations recorded from Te Paki, eastern Northland,\nAuckland city, Rangitoto, Mayor Island (Tuhua), southern\nWairarapa and the shores of Cook Strait. It grows from near\nsea level, reaching 190 m on Great Island, Three Kings\nIslands. In the South Island it occurs in lowland and montane\nareas east of the main divide, from the Marlborough Sounds to\nCentral Otago. It is found from about 20 m, reaching 1200 m\nnear Clyde.\nAlso Australia (Queensland, New South Wales, Victoria,\nTasmania).",
+    "habitat": "Pellaea calidirupium grows on coastal cliffs, lava\nfields, dry rocky outcrops, bluffs, scree and roadside banks, either in the open, in crevices, under rock\noverhangs, under low scrub, or in rough grassland. It is often associated with Discaria toumatou,\nRubus rubiginosa, Thymus vulgaris and species of Sophora and small-leaved Coprosma. It grows on\ngreywacke, basalt, rhyolite, scoria, lava, schist, and rarely on limestone.\nTogether with Anogramma leptophylla, Asplenium flabellifolium, A. subglandulosum, Cheilanthes\ndistans and C. sieberi, Pellaea calidirupium forms a characteristic assemblage of ferns that inhabit dry\nrocky areas, especially in the eastern South Island.",
+    "recognition": "Pellaea calidirupium is distinguished from most populations of P. rotundifolia by the\nappressed scales on the stipes and rachises, the more obviously dimorphic fronds, generally shorter\nlaminae (usually 30–240 mm long cf. 100–600 mm long), fewer pairs of pinnae on the fertile fronds\n(2–22 cf. 8–40), a sometimes enlarged terminal pinna, widely spaced proximal pinnae often borne on\ndistinct stalks, and sori that are continuous around the pinna margins and often confluent at the\napices. The fronds usually have an irregular and untidy appearance compared to the neat rows of\npinnae in P. rotundifolia. The fertile pinnae are characteristically triangular, or slightly falcate, with\ntapering apices, in contrast to the rounded or oblong pinnae with obtuse to acute apices abruptly\nnarrowed to a short, sharp point in P. rotundifolia.\nPellaea calidirupium is less easily distinguished morphologically from populations of P. rotundifolia on\nthe Kermadec Islands. The latter plants have more or less appressed scales on the stipes and\nrachises, so the distinction between the two species relies on the remaining characters outlined\nabove. Nevertheless, on the basis of molecular evidence, P. calidirupium is clearly distinct from\nP. rotundifolia on the Kermadecs and the North and South Islands (Brownsey et al. 2020).",
+    "notes": "There is a striking disjunction in the distribution of P. calidirupium in the North Island.\nPopulations extend from the Three Kings Islands through eastern Northland to Mayor Island, but are\nabsent along the whole Bay of Plenty and east coast, reoccurring again only in the very south of the\nNorth Island. Given the apparent suitability of habitat along the eastern coast, further investigation is\nneeded to determine if the absence is real. There are no obvious morphological differences between\nthe two groups, and spore measurements suggest that they are uniformly tetraploid (Brownsey et al.\n2020).\n40\n---PAGE 45---"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "sickle fern",
+      "Australian cliff brake"
+    ],
+    "scientificName": "Pellaea falcata",
+    "family": "Pteridaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "round-leaved fern",
+      "New Zealand cliff brake"
+    ],
+    "scientificName": "Pellaea rotundifolia",
+    "family": "Pteridaceae",
+    "conservationStatus": "Not Threatened",
+    "biostatus": "Indigenous (Non-endemic).",
+    "altitudinalRange": "0–900 m.",
+    "distribution": "North Island: Northland, Auckland, Volcanic\nPlateau, Gisborne, Taranaki, Southern North Island.\nSouth Island: Western Nelson, Sounds-Nelson, Marlborough,\nWestland, Canterbury, Otago, Southland, Fiordland.\nKermadec Islands, Three Kings Islands, Chatham Islands.\nPellaea rotundifolia occurs on the Kermadec and Three Kings\nIslands, and in lowland to montane areas throughout the North\nIsland from Te Paki to Wellington. It ranges from near sea\nlevel, reaching 600 m near Puketitiri, Hawke’s Bay. It occurs in\nlowland to montane regions throughout the South Island, but is\nmore abundant on the northern and eastern coastlines, with\nonly scattered populations in the far south. It grows from about\n20 m, reaching 900 m at Jordan Stream Reserve,\nMarlborough. It also extends to the Chatham Islands, but does\nnot reach Stewart Island.\nAlso recorded from Norfolk Island, based on a Cunningham\nspecimen (Kunze 1850; Hooker 1851–1858; Bentham 1878),\nbut subsequently thought to be erroneous (Green 1994a).\nNewly recorded, based on a single collection (AK 237733), by\nde Lange et al. (2005).",
+    "habitat": "Pellaea rotundifolia occurs in podocarp, broadleaved and beech forest, under pines and\nother introduced trees, under mānuka, kānuka and scrub, and amongst grasses. It is found on stony\nbanks, clay banks, rocky outcrops, coastal cliffs and scree, amongst boulders, on streambanks, river\nterraces, tracksides, roadsides, bush margins, swamp margins and at the base of tree trunks. It grows\non greywacke, scoria, lava, andesite, rhyolite, schist, sandstone and limestone substrates, peat and\nsand.",
+    "recognition": "Plants of Pellaea rotundifolia on the main islands of New Zealand are distinguished\nfrom P. calidirupium by the presence of spreading scales on the stipes and rachises, less obviously\ndimorphic fronds, generally longer laminae (100–600 mm long cf. 30–240 mm long), more pairs of\npinnae on the fertile fronds (8–40 cf. 2–22), absence of an enlarged terminal pinna, less widely spaced\nproximal pinnae usually lacking distinct stalks, and sori that extend around the pinna margins but are\nnot confluent at the apices. The fronds usually have neat rows of pinnae compared to the irregular and\nuntidy appearance of those in P. calidirupium. The fertile pinnae are rounded or oblong, with obtuse to\nacute apices abruptly narrowed to a short sharp point, unlike those in P. calidirupium, which are\ncharacteristically triangular, or slightly falcate, with tapering apices.\nPlants of P. rotundifolia on the Kermadec Islands are slightly different morphologically to those on the\nmain islands in having more appressed stipe and rachis scales, although not as consistently as those\nin P. calidirupium. Distinguishing the two species relies on the other characters outlined above.\nHowever, molecular evidence shows that P. rotundifolia on both the Kermadecs and the North and\nSouth Islands is distinct from P. calidirupium (Brownsey et al. 2020).",
+    "notes": "There are genetic and subtle morphological differences between populations of P. rotundifolia\non the Kermadecs and those in the rest of New Zealand, suggesting different origins for the two\ngroups. However, the exact nature of these evolutionary origins is unresolved at the present time, and\nthe morphological differences inadequately understood (Brownsey et al. 2020).\nThe Australian species Pellaea nana (Hook.) Bostock is morphologically very similar to P. rotundifolia.\nHowever, chloroplast DNA sequence data show that it is genetically distinct from both Australian\nP. falcata and New Zealand P. rotundifolia (Brownsey et al. 2020).\n43\n---PAGE 48---"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "pillwort"
+    ],
+    "scientificName": "Pilularia novae-hollandiae",
+    "family": "Marsileaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "bristle fern"
+    ],
+    "scientificName": "Polyphlebium colensoi",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [],
+    "scientificName": "Polyphlebium endlicherianum",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "veined bristle fern",
+      "veined filmy fern"
+    ],
+    "scientificName": "Polyphlebium venosum",
+    "family": "Hymenophyllaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "mountain shield fern"
+    ],
+    "scientificName": "Polystichum cystostegia",
+    "family": "Dryopteridaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [],
+    "scientificName": "Polystichum neozelandicum subsp. neozelandicum",
+    "family": "Dryopteridaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "shield fern"
+    ],
+    "scientificName": "Polystichum neozelandicum subsp. zerophyllum",
+    "family": "Dryopteridaceae",
+    "conservationStatus": "Taxonomically Indistinct"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [],
+    "scientificName": "Polystichum oculatum",
+    "family": "Dryopteridaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [],
+    "scientificName": "Polystichum sylvaticum",
+    "family": "Dryopteridaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "pūniu",
+      "prickly shield fern"
+    ],
+    "scientificName": "Polystichum vestitum",
+    "family": "Dryopteridaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [],
+    "scientificName": "Polystichum wawranum",
+    "family": "Dryopteridaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "whisk fern",
+      "skeleton fork fern"
+    ],
+    "scientificName": "Psilotum nudum",
+    "family": "Psilotaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "bracken",
+      "rarauhe",
+      "bracken fern"
+    ],
+    "scientificName": "Pteridium esculentum",
+    "family": "Dennstaedtiaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "coastal brake",
+      "netted brake"
+    ],
+    "scientificName": "Pteris carsei",
+    "family": "Pteridaceae",
+    "conservationStatus": "Not Threatened",
+    "biostatus": "Indigenous (Endemic).",
+    "altitudinalRange": "0–275 m.",
+    "distribution": "North Island: Northland, Auckland, Volcanic\nPlateau\nKermadec Islands, Three Kings Islands.\nPteris carseigrows on the Kermadec and Three Kings Islands,\nand on the Hauraki Gulf and Coromandel islands as far south\nas Mayor Island (Tuhua). On the mainland it is found in coastal\ndistricts along the east coast from Te Paki to Auckland. On the\nwest coast it occurs at Spirits Bay, around Kaitāia, the northern\nKaipara Harbour, and either side of the Manukau Harbour.\nThere are outlying populations near Ōpōtiki in the eastern Bay\nof Plenty, and at Ngarupupu Point north of Mōkau. It grows\nfrom sea level, reaching c. 275 m near Unuwhao.",
+    "habitat": "Pteris carsei is a terrestrial fern found in open\ncoastal sites, in coastal forest under Metrosideros excelsa,\nKunzeaspp., and other coastal broadleaved species. It\nfavours rocky streambeds and streamsides, rocky forest, cliffs,\nhillsides and beach fronts near the sea.",
+    "recognition": "Pteris carsei is distinguished by its erect\nrhizome, laminae that are shiny green adaxially, and 1-pinnate-pinnatifid distally to 2-pinnate-pinnatifid\nor rarely 3-pinnate proximally, anastomosing veins, overlapping pinnae, broad coriaceous ultimate\nsegments, and secondary pinnae that are mostly adnate or sessile on the lowermost primary pinnae.\nThe species is believed to hybridise with both P. macilenta and P. saxatilis, making identification\ndifficult in coastal areas of northern New Zealand. However, the greatly extended basal basiscopic\nsecondary pinnae, and the mostly adnate secondary pinnae on the lower primary pinnae, distinguish\nP. carsei from P. macilenta and P. saxatilis. It differs from P. epaleata by its dark shiny green, rather\nthan dull yellow-green, adaxial lamina surface, less divided lamina, and presence of ovate, rather than\nhair-like, scales on the rachis and pinna costae. P. carsei occurs in the northern half of the North\nIsland, whereas P. epaleata is confined to southern Fiordland.",
+    "notes": "Brownsey et al. (2020) showed that P. carsei is an endemic species distinct from\nP. comans and other species in the tropical Pacific. Pteris comans sens. str. occurs in the Solomon\nIslands, Vanuatu and Fiji and may also occur on New Caledonia, Samoa and elsewhere in the Pacific.\nPteris zahlbruckneriana (syn. P. endlicheriana J.Ag.) from Norfolk Island, and P. microptera from Lord\nHowe Island, both belong in the P. comans complex, but are distinct from P. carsei (Braggins 1975;\nGreen 1994b; Brownsey et al. 2020). The status of plants referred to the poorly known P. laevis Mett.\nfrom New Caledonia and P. litoralis Rech.f. from Samoa and Vanuatu require further investigation.\n49\n---PAGE 54---"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [],
+    "scientificName": "Pteris epaleata",
+    "family": "Pteridaceae",
+    "conservationStatus": "Data Deficient",
+    "biostatus": "Indigenous (Non-endemic).",
+    "altitudinalRange": "c. 20 m.",
+    "distribution": "South Island: Fiordland\nPteris epaleatais currently known from a few collections in\nsouthern Fiordland, on Resolution Island, at the Coal River\nnear Breaksea Sound, on Secretary Island, and at Looking\nGlass Bay near George Sound. It grows near the coast at\nabout 20 m.\nAlso Australia (Queensland, New South Wales, Victoria,\nTasmania).",
+    "habitat": "Pteris epaleata is a coastal fern found near streams\nin forest, and at forest margins.",
+    "recognition": "Pteris epaleata is superficially most similar to\nP. tremulain its frond dissection, absence of scales on the\nlamina, and its dull green adaxial lamina surface. However, it\nis clearly distinct from that species in having anastomosing\nrather than free veins. It differs from P. carsei in having less\ncoriaceous and more divided laminae, narrower ultimate\nsegments, dull green rather than shiny adaxial lamina\nsurfaces, hair-like rather than ovate scales on the rachises\nand costae, and lacking the greatly extended basiscopic secondary pinnae on the basal primary\npinnae. From P. macilenta and P. saxatilis it differs in having secondary pinnae that are less obviously\nstalked, ultimate segments that are longer and narrower, and hair-like rather than ovate scales on the\nrachises and costae.",
+    "notes": "The description of P. epaleata in New Zealand given here is incomplete because it is based on\nonly three collections. A full description of the species throughout its range has been provided by\nOhlsen et al. (2020), and, if more collections are made in New Zealand, it is likely that the known\ndimensions will more closely approximate those in Australia.\nPteris epaleata is morphologically, genetically and geographically distinct from P. comans sens. str. in\nthe tropical Pacific. It is also morphologically distinct from P. zahlbruckneriana Endl. on Norfolk Island\nand P. microptera on Lord Howe Island (Ohlsen et al. 2020).\nObservations by field botanists in southern Fiordland, albeit unsupported by voucher specimens,\nsuggest that Pteris epaleata may be more widespread (B. Rance, pers. comm. 17.3.2020). Its\noccurrence in Fiordland and south-eastern Australia is similar to that of Sticherus tener (Brownsey et\nal. 2013).\n55\n---PAGE 60---"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "sweet fern"
+    ],
+    "scientificName": "Pteris macilenta",
+    "family": "Pteridaceae",
+    "conservationStatus": "Not Threatened",
+    "biostatus": "Indigenous (Endemic).",
+    "altitudinalRange": "0–800 m.",
+    "distribution": "North Island: Northland, Auckland, Volcanic\nPlateau, Gisborne, Taranaki, Southern North Island.\nSouth Island: Western Nelson, Sounds-Nelson, Westland,\nCanterbury, Fiordland.\nChatham Islands.\nPteris macilenta occurs in coastal and lowland areas\nthroughout the North Island from Te Paki to Wellington,\nextending locally into montane districts. It is rare in the central\nNorth Island. It grows from near sea level, reaching 800 m in\nthe Coromandel Ranges and on Mt Pirongia. In the South\nIsland, the species is common only in coastal and lowland\nregions from the Marlborough Sounds to Greymouth, reaching\n520 m near Nelson. There are outlying populations in\nCanterbury and along the West Coast as far south as Martins\nBay. The species also extends to the Chatham Islands.",
+    "habitat": "Pteris macilenta is a terrestrial fern found under\ncoastal forest, drier and more open kauri, podocarp, beech,\nand broadleaved forest, and mānuka and kānuka scrub. It is\nalso found under Carex secta. It grows on scoria, greywacke and limestone rock, favouring\nstreambanks, river terraces, wet gullies, clay banks, clearings, forest margins, roadside banks, coastal\ncliffs, and the bases of rocky bluffs.",
+    "recognition": "Pteris macilenta is distinguished by its erect rhizome, deeply 2-pinnate-pinnatifid to\n4‑ pinnate‑ pinnatifid laminae, anastomosing veins, non-overlapping pinnae, usually herbaceous lamina\nsegments, and secondary pinnae that are mostly stalked on the lowermost primary pinnae. It is very\nsimilar to P. saxatilis, but is generally a larger plant with slightly more coriaceous laminae and less\nwidely spaced pinnae. The secondary pinnae on the lower primary pinnae are more obviously\nalternate rather than sub-opposite. It also has larger spores than those in P. saxatilis (exospores\n41–46 μm, cf. 32–37 μm in diameter). Plants of P. macilenta are believed to hybridise with both\nP. saxatilis and P. carsei, making identification difficult in areas where the species overlap. It differs\nfrom P. epaleata in having secondary pinnae that are more obviously stalked, ultimate segments that\nare shorter and broader, and scales on the rachises and costae that are ovate rather than hair-like.",
+    "notes": "Braggins (1975), in his unpublished thesis, interpreted Richard’s P. macilenta to be the correct\nname for the plant subsequently known as P. saxatilis, and proposed that P. pendula, described by\nColenso (1888), be used for the plant that had been called P. macilenta. Although his thesis was never\npublished, the names P. pendula and P. macilenta were adopted by some collectors, whereas others\ncontinued to use P. macilenta and P. saxatilis. As a consequence, the names have been used in\ndifferent senses, and a significant amount of herbarium material was confusingly identified. Brownsey\n& Perrrie (2020) selected the only element that is definitely original material of Richard's name as the\nlectotype (P 00610503), and since this is a specimen of what is currently called P. macilenta, the name\nis retained in its traditional sense.\nPlants growing in limestone areas from the Heaphy Track south to Greymouth, especially around\nPunakaiki, have rather fleshy fronds, and primary pinnae that are more winged than in populations\nelsewhere. They also have a mean exospore size (36–41 μm diameter) intermediate between those of\nthe tetraploid P. macilenta (41–46 μm diameter) and the diploid P. saxatilis (32–37 μm diameter) and\nP. carsei (33–36 μm diameter). These plants may be an environmental form, or they may represent\n57\n---PAGE 62---\nallotetraploid plants that have had a separate origin from populations elsewhere. They are not given\nany taxonomic status here, but require further investigation."
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [],
+    "scientificName": "Pteris saxatilis",
+    "family": "Pteridaceae",
+    "conservationStatus": "Not Threatened",
+    "biostatus": "Indigenous (Endemic).",
+    "altitudinalRange": "0–360 m.",
+    "distribution": "North Island: Northland, Auckland, Gisborne,\nTaranaki, Southern North Island.\nSouth Island: Western Nelson, Sounds-Nelson.\nPteris saxatilis occurs in coastal and lowland sites from Te\nPaki south to East Cape and the north Taranaki coast, with\noutlying populations in Hawke’s Bay, Wellington and the north\ncoast of the South Island. It is absent from the central North\nIsland and all the main mountain ranges. It grows from near\nsea level, reaching over 360 m on Mt Manaia, Whangārei\nHeads.",
+    "habitat": "Pteris saxatilis is a terrestrial fern that grows under\ncoastal forest and scrub, and in drier kauri, broadleaved forest,\nand mānuka and kānuka scrub. It is found on coastal cliffs, on\ncreek banks, in damp gullies, on clay and grassy banks, and\namongst rocks and scree, occurring on both greywacke and\nlimestone rock.",
+    "recognition": "Pteris saxatilis is distinguished by its erect\nrhizome, 2-pinnate to 3-pinnate-pinnatifid laminae,\nanastomosing veins, widely spaced pinnae, herbaceous ultimate segments, and secondary pinnae\nthat are mostly stalked on the lowermost primary pinnae. It is very similar to P. macilenta but is\ngenerally a smaller plant with a more delicate lamina and more widely spaced pinnae. The secondary\npinnae on the lower primary pinnae are more obviously sub-opposite rather than alternate. It also has\nsmaller spores than those in P. macilenta (exospores 32–37 μm, cf. 41–46 μm in diameter).\nPlants of P. saxatilis are believed to hybridise with both P. macilenta and P. carsei, making\nidentification difficult in areas where the species overlap."
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "shaking brake",
+      "tender brake",
+      "Australian bracken"
+    ],
+    "scientificName": "Pteris tremula",
+    "family": "Pteridaceae",
+    "conservationStatus": "Not Threatened",
+    "biostatus": "Indigenous (Non-endemic).",
+    "altitudinalRange": "0–550 m.",
+    "distribution": "North Island: Northland, Auckland, Volcanic\nPlateau, Gisborne, Taranaki, Southern North Island.\nSouth Island: Western Nelson, Sounds-Nelson, Marlborough,\nWestland, Canterbury.\nKermadec Islands, Three Kings Islands, Chatham Islands.\nPteris tremulaoccurs on the Kermadec Islands, Three Kings\nIslands, and in coastal and lowland areas of the North Island\nfrom Te Paki to Wellington, extending locally into montane\ndistricts. It is absent only from parts of the central North Island\nand Gisborne high country. It grows from near sea level,\nreaching 550 m in the Kāweka Ranges. In the South Island it\noccurs from north-west Nelson to the Marlborough Sounds,\nsouth to Banks Peninsula on the east coast, and to Punakaiki\non the west coast, with an outlying population at the Paringa\nRiver mouth in south Westland. It reaches almost 250 m on Mt\nBurnett. It also occurs on the Chatham Islands.\nAlso Australia (Northern Territory, South Australia,\nQueensland, New South Wales, Australian Capital Territory,\nVictoria, Tasmania), Norfolk Island, Lord Howe Island, Vanuatu\nand Fiji. Widely cultivated internationally; naturalised in\nsouthern Africa and California (Crouch et al. 2011), parts of the Northern Hemisphere (Zhang et al.\n2015), and in Tamil Nadu State, India (Fraser-Jenkins et al. 2017).",
+    "habitat": "Pteris tremula is found under coastal forest and scrub, open broadleaved and beech forest,\nkānuka and mānuka scrub, and in open pine plantations. It also occurs on forest margins, under\nregenerating scrub, in reverting pasture, on wooded sand-dunes, at the base of cliffs, and as a weed\nin gardens. It favours streambanks, the base of waterfalls, river terraces, bush clearings, open forest\nfloor, roadside banks, rocky hillsides, and swamp margins. It occurs on greywacke, limestone and\nscoria. It is sometimes common in heavily grazed areas because the fronds are unpalatable to stock.\n65\n---PAGE 70---",
+    "recognition": "Pteris tremula is distinguished by its erect rhizome, 2-pinnate-pinnatifid to almost 4-\npinnate laminae, free veins, herbaceous texture, long narrow ultimate segments, and laminae lacking\nscales but sometimes with minute hairs along the costae. It is more divided, with more pairs of primary\npinnae, than most other species in New Zealand. It could be confused with P. epaleata in overall\nmorphology but differs significantly in having free veins rather than anastomosing venation.",
+    "notes": "Pteris novae-zelandiae was described by Field (1906) from material received in a “parcel of\nferns from Waikanae”. He compared it with P. tremula but noted that it differed most obviously in its\ngrowth form – spreading horizontally by the production of lateral fronds, rather than being erect. No\noriginal material has been located and it is impossible to determine the identity of the plant from the\ndescription alone. The name was not documented by either Cheeseman (1925) or Allan (1961) and, in\nany case, was not validly published because Field stated only that “it may be provisionally named\nPteris novae-zelandiae”. Provisional names are not considered to be validly published (see Art. 36.1,\nEx. 5)."
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "ladder brake",
+      "Chinese brake"
+    ],
+    "scientificName": "Pteris vittata",
+    "family": "Pteridaceae",
+    "conservationStatus": "Not Evaluated",
+    "biostatus": "Exotic; fully naturalised.",
+    "altitudinalRange": "0–340 m.",
+    "distribution": "North Island: Auckland, Volcanic Plateau,\nSouthern North Island.\nPteris vittatahas been recorded from Auckland city, the banks\nof Lake Rotomohana, and Napier.\nOccurs naturally in tropical and warm temperate areas of\nsouthern Europe, Africa, Madagascar, Asia, Australia (Western\nAustralia, Northern Territory, Queensland, New South Wales,\nVictoria), Solomon Islands, Vanuatu, New Caledonia, Fiji, and\nTonga. It is naturalised in Hawai‘i (Palmer 2003), and in the\ntropics and subtropics of North and South America (Mickel &\nSmith 2004).",
+    "habitat": "In urban areas in New Zealand Pteris vittata has\nbeen recorded from brick and scoria walls, but at Lake\nRotomahana it was recorded growing in a thermally active area in soil with a pH of 6.1.\nFirst record: Cameron & Parris (1998). Voucher AK 223419–223421, 1995.",
+    "recognition": "Pteris vittata is the only species of the genus in New Zealand with 1-pinnate laminae\nand undivided primary pinnae. Other species have basal primary pinnae that are themselves pinnatifid\n(P. cretica and P. multifida) or are much more divided. It is further distinguished by its obovate laminae,\nfree veins and dense covering of pale brown scales on the rhizomes and stipes.",
+    "firstRecord": "Cameron & Parris (1998). Voucher AK 223419–223421, 1995."
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "king fern",
+      "para",
+      "tawhiti para",
+      "horseshoe fern"
+    ],
+    "scientificName": "Ptisana salicina",
+    "family": "Marattiaceae",
+    "conservationStatus": "At Risk – Declining"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "leather-leaf fern",
+      "pyrrosia"
+    ],
+    "scientificName": "Pyrrosia eleagnifolia",
+    "family": "Polypodiaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [],
+    "scientificName": "Pyrrosia serpens",
+    "family": "Polypodiaceae",
+    "conservationStatus": "Threatened – Nationally Critical"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "leathery shield fern",
+      "florists fern"
+    ],
+    "scientificName": "Rumohra adiantiformis",
+    "family": "Dryopteridaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "forked comb fern"
+    ],
+    "scientificName": "Schizaea bifida",
+    "family": "Schizaeaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "fan fern"
+    ],
+    "scientificName": "Schizaea dichotoma",
+    "family": "Schizaeaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "mamaku",
+      "black tree fern"
+    ],
+    "scientificName": "Sphaeropteris medullaris",
+    "family": "Cyatheaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "umbrella fern",
+      "waekura",
+      "tapuwae kotuku"
+    ],
+    "scientificName": "Sticherus cunninghamii",
+    "family": "Gleicheniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "umbrella fern"
+    ],
+    "scientificName": "Sticherus flabellatus var. flabellatus",
+    "family": "Gleicheniaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "silky fan fern"
+    ],
+    "scientificName": "Sticherus tener",
+    "family": "Gleicheniaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "umbrella fern"
+    ],
+    "scientificName": "Sticherus urceolatus",
+    "family": "Gleicheniaceae",
+    "conservationStatus": "At Risk – Naturally Uncommon"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "marsh fern",
+      "swamp fern"
+    ],
+    "scientificName": "Thelypteris confluens",
+    "family": "Thelypteridaceae",
+    "conservationStatus": "At Risk – Declining"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "fork fern"
+    ],
+    "scientificName": "Tmesipteris elongata",
+    "family": "Psilotaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "Banks Peninsula fork fern"
+    ],
+    "scientificName": "Tmesipteris horomaka",
+    "family": "Psilotaceae",
+    "conservationStatus": "Threatened – Nationally Endangered"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "fork fern"
+    ],
+    "scientificName": "Tmesipteris lanceolata",
+    "family": "Psilotaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "fossil fern",
+      "fork fern"
+    ],
+    "scientificName": "Tmesipteris sigmatifolia",
+    "family": "Psilotaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "fork fern"
+    ],
+    "scientificName": "Tmesipteris tannensis",
+    "family": "Psilotaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "royal fern",
+      "hard todea",
+      "king fern"
+    ],
+    "scientificName": "Todea barbara",
+    "family": "Osmundaceae",
+    "conservationStatus": "Threatened – Nationally Vulnerable"
+  },
+  {
+    "isNative": true,
+    "isEndemic": true,
+    "commonNames": [
+      "mountain hound's tongue fern"
+    ],
+    "scientificName": "Zealandia novae-zealandiae",
+    "family": "Polypodiaceae",
+    "conservationStatus": "Not Threatened"
+  },
+  {
+    "isNative": true,
+    "isEndemic": false,
+    "commonNames": [
+      "hound's tongue",
+      "kōwaowao",
+      "pāraharaha"
+    ],
+    "scientificName": "Zealandia pustulata subsp. pustulata",
+    "family": "Polypodiaceae",
+    "conservationStatus": "Not Threatened"
+  }
+]

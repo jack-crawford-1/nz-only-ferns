@@ -5,55 +5,55 @@ const HABITATS = [
     title: "Lowland forest understory",
     description:
       "Sheltered forest floors stay humid year-round, giving ground ferns steady moisture and filtered light. Look for dense fronds forming soft carpets under podocarp and broadleaf canopies.",
-    image:
-      "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=80",
+    image: "/habitats/understory.png",
     alt: "Sunlight filtering through a dense forest canopy",
     cues: ["High humidity", "Deep leaf litter", "Filtered light"],
+    examples: ["Asplenium bulbiferum", "Blechnum novae-zelandiae"],
   },
   {
     title: "Tree fern gullies",
     description:
       "Cool gullies and ravines hold mist and steady shade. Tree fern trunks create vertical habitat for smaller ferns and mosses, while the ground stays damp even in summer.",
-    image:
-      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=900&q=80",
+    image: "/habitats/gully.jpg",
     alt: "Mist in a shaded forest gully",
     cues: ["Cool air pockets", "Water seepage", "Layered canopy"],
+    examples: ["Cyathea dealbata", "Dicksonia squarrosa"],
   },
   {
     title: "Stream and river margins",
     description:
       "Riparian zones provide constant moisture and nutrient-rich soils. Many fern species tolerate occasional flooding and stabilize banks with dense root mats.",
-    image:
-      "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=900&q=80",
+    image: "/habitats/margins.png",
     alt: "A clear stream running through green vegetation",
     cues: ["Flowing water", "Gravelly soils", "Seasonal flooding"],
+    examples: ["Adiantum aethiopicum", "Histiopteris incisa"],
   },
   {
     title: "Coastal cliffs and dunes",
     description:
       "Salt spray, wind, and strong light make coastal habitats challenging. Ferns here are often tougher, with thicker fronds that resist drying and salty air.",
-    image:
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80",
+    image: "/habitats/dunes.png",
     alt: "Waves crashing near a rocky coastline",
     cues: ["Salt spray", "Wind exposure", "Sandy or rocky soils"],
+    examples: ["Pteris tremula", "Asplenium obtusatum"],
   },
   {
     title: "Alpine and subalpine slopes",
     description:
       "High-elevation ferns face frost, snow, and short growing seasons. Many grow in rock crevices or tussock edges where moisture collects and wind is reduced.",
-    image:
-      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=900&q=80",
+    image: "/habitats/slopes.png",
     alt: "Snow-dusted mountains under a bright sky",
     cues: ["Cool temperatures", "Short summers", "Sheltered rock pockets"],
+    examples: ["Blechnum penna-marina", "Polystichum vestitum"],
   },
   {
     title: "Rock outcrops and epiphytes",
     description:
       "Some ferns cling to mossy boulders or live high on tree trunks. These species rely on rain, mist, and organic debris rather than deep soil.",
-    image:
-      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80",
+    image: "/habitats/epiphytes.png",
     alt: "Lush green forest with mossy trunks",
     cues: ["Mossy bark", "Frequent mist", "Minimal soil"],
+    examples: ["Asplenium flaccidum", "Hymenophyllum demissum"],
   },
 ];
 
@@ -107,6 +107,21 @@ export default function Habitats() {
                       {cue}
                     </span>
                   ))}
+                </div>
+                <div>
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-gray-500">
+                    Example ferns
+                  </p>
+                  <div className="mt-2 flex flex-wrap gap-2 text-sm text-gray-700">
+                    {habitat.examples.map((example) => (
+                      <span
+                        key={example}
+                        className="rounded-full bg-white px-3 py-1 text-[11px] font-semibold text-[#1e60d4] shadow-sm ring-1 ring-[#e3eaf7]"
+                      >
+                        {example}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </article>

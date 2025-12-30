@@ -1,9 +1,10 @@
 import { useEffect, useMemo, useState, type ReactNode } from "react";
-import { Link } from "react-router";
+import { Link, useSearchParams } from "react-router";
 import { fetchFerns } from "../api/fetchFerns";
 import type { FernRecord } from "../types/Ferns";
 import Navbar from "../components/nav/Navbar";
 import LoadingScreen from "../components/LoadingScreen";
+import { convertToCSV, downloadCSV } from "../utils/csv";
 
 type ColumnId =
   | "image"
@@ -83,9 +84,14 @@ const COLUMN_DEFINITIONS: ColumnDefinition[] = [
 const ROW_NUMBER_WIDTH = "52px";
 
 export default function FernList() {
+  const [searchParams] = useSearchParams();
+  const statusParam = searchParams.get("status") || "";
   const [ferns, setFerns] = useState<FernRecord[]>([]);
   const [filteredFerns, setFilteredFerns] = useState<FernRecord[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const [showEndemicOnly, setShowEndemicOnly] = useState(false);
+  const [selectedFamily, setSelectedFamily] = useState("");
+  const [selectedStatus, setSelectedStatus] = useState(statusParam);
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [columnOrder, setColumnOrder] = useState<ColumnId[]>(
@@ -103,6 +109,33 @@ export default function FernList() {
   );
 
   const orderedColumns = columnOrder.map((id) => columnsById[id]);
+  const uniqueFamilies = useMemo(
+    () => new Set(ferns.map((fern) => fern.family)).size,
+    [ferns]
+  );
+  const endemicCount = useMemo(
+    () => ferns.filter((fern) => fern.isEndemic).length,
+    [ferns]
+  );
+  const threatenedCount = useMemo(
+    () =>
+      ferns.filter((fern) =>
+        (fern.conservationStatus || "").toLowerCase().includes("threat")
+      ).length,
+    [ferns]
+  );
+  const familyOptions = useMemo(
+    () => Array.from(new Set(ferns.map((fern) => fern.family))).sort(),
+    [ferns]
+  );
+  const statusOptions = useMemo(() => {
+    const statuses = ferns.map((fern) => fern.conservationStatus || "Unknown");
+    return Array.from(new Set(statuses)).sort();
+  }, [ferns]);
+
+  useEffect(() => {
+    setSelectedStatus(statusParam);
+  }, [statusParam]);
 
   useEffect(() => {
     fetchFerns()
@@ -117,13 +150,17 @@ export default function FernList() {
   useEffect(() => {
     const query = searchQuery.trim().toLowerCase();
 
-    if (!query) {
-      setFilteredFerns(ferns);
-      return;
-    }
-
     setFilteredFerns(
       ferns.filter((fern) => {
+        if (showEndemicOnly && !fern.isEndemic) return false;
+
+        if (selectedFamily && fern.family !== selectedFamily) return false;
+
+        const statusLabel = fern.conservationStatus || "Unknown";
+        if (selectedStatus && statusLabel !== selectedStatus) return false;
+
+        if (!query) return true;
+
         const searchableValues = [
           fern.scientificName,
           fern.commonNames.join(" "),
@@ -137,7 +174,7 @@ export default function FernList() {
         return searchableValues.includes(query);
       })
     );
-  }, [ferns, searchQuery]);
+  }, [ferns, searchQuery, showEndemicOnly, selectedFamily, selectedStatus]);
 
   const handleDragStart = (
     event: React.DragEvent<HTMLElement>,
@@ -191,6 +228,12 @@ export default function FernList() {
       <LoadingScreen title="Loading fern library" description="..........." />
     );
 
+  const handleExport = () => {
+    const csv = convertToCSV(ferns);
+    const today = new Date().toLocaleDateString().split("T")[0];
+    downloadCSV(csv, `ferns-${today}.csv`);
+  };
+
   return (
     <div className="min-h-screen bg-linear from-[#e9f3ff] via-white to-[#f6f8fb]">
       <Navbar
@@ -199,6 +242,40 @@ export default function FernList() {
         onSearchChange={setSearchQuery}
       />
       <main className="mx-auto max-w-6xl px-4 pb-12 pt-32">
+        <div className="mb-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="rounded-xl bg-[#f3f6ff] px-4 py-3 shadow-sm">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1e60d4]">
+              Total ferns
+            </p>
+            <p className="mt-2 text-2xl font-semibold text-gray-900">
+              {ferns.length}
+            </p>
+          </div>
+          <div className="rounded-xl bg-[#f3f6ff] px-4 py-3 shadow-sm">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1e60d4]">
+              Endemic species
+            </p>
+            <p className="mt-2 text-2xl font-semibold text-gray-900">
+              {endemicCount}
+            </p>
+          </div>
+          <div className="rounded-xl bg-[#f3f6ff] px-4 py-3 shadow-sm">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1e60d4]">
+              Families
+            </p>
+            <p className="mt-2 text-2xl font-semibold text-gray-900">
+              {uniqueFamilies}
+            </p>
+          </div>
+          <div className="rounded-xl bg-[#f3f6ff] px-4 py-3 shadow-sm">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1e60d4]">
+              Threatened
+            </p>
+            <p className="mt-2 text-2xl font-semibold text-gray-900">
+              {threatenedCount}
+            </p>
+          </div>
+        </div>
         <div className="mb-6 flex flex-col gap-3 rounded-2xl bg-white/80 p-6 shadow-lg ring-1 ring-gray-100 backdrop-blur">
           <div className="flex items-start justify-between gap-4 flex-wrap">
             <div className="space-y-2">
@@ -206,6 +283,12 @@ export default function FernList() {
                 Explore Aotearoa’s native ferns
               </h1>
             </div>
+            <button
+              onClick={handleExport}
+              className="flex items-center gap-2 rounded-full bg-[#1e60d4] px-4 py-2 text-sm font-semibold text-white shadow-lg transition hover:bg-[#0f4fa4] hover:shadow-xl"
+            >
+              <span>Export to CSV</span>
+            </button>
           </div>
 
           <div className="flex flex-wrap items-center gap-3 text-xs text-gray-600">
@@ -219,13 +302,58 @@ export default function FernList() {
               className="hidden h-4 w-px bg-gray-200 sm:inline-block"
               aria-hidden
             />
+            <button
+              type="button"
+              onClick={() => setShowEndemicOnly((prev) => !prev)}
+              className={`rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] transition ${
+                showEndemicOnly
+                  ? "bg-[#1e60d4] text-white shadow-sm"
+                  : "bg-white text-[#1e60d4] shadow-sm ring-1 ring-[#c6d9ff]"
+              }`}
+            >
+              Endemic only
+            </button>
+            <div className="flex flex-wrap items-center gap-2">
+              <label className="text-[11px] font-semibold uppercase tracking-[0.14em] text-gray-500">
+                Status
+              </label>
+              <select
+                className="rounded-full bg-white px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#1e60d4] shadow-sm ring-1 ring-[#c6d9ff]"
+                value={selectedStatus}
+                onChange={(event) => setSelectedStatus(event.target.value)}
+              >
+                <option value="">All</option>
+                {statusOptions.map((status) => (
+                  <option key={status} value={status}>
+                    {status}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className="flex flex-wrap items-center gap-2">
+              <label className="text-[11px] font-semibold uppercase tracking-[0.14em] text-gray-500">
+                Family
+              </label>
+              <select
+                className="rounded-full bg-white px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#1e60d4] shadow-sm ring-1 ring-[#c6d9ff]"
+                value={selectedFamily}
+                onChange={(event) => setSelectedFamily(event.target.value)}
+              >
+                <option value="">All</option>
+                {familyOptions.map((family) => (
+                  <option key={family} value={family}>
+                    {family}
+                  </option>
+                ))}
+              </select>
+            </div>
           </div>
         </div>
 
         <div className="overflow-hidden rounded-2xl bg-white shadow-xl ring-1 ring-gray-100">
           <div className="overflow-x-auto">
             <table
-              className="min-w-full text-sm"
+              className="min-w-full text-sm text-gray-800"
               style={{ tableLayout: "fixed" }}
             >
               <colgroup>
@@ -235,7 +363,7 @@ export default function FernList() {
                 ))}
               </colgroup>
 
-              <thead className="bg-[#f3f6ff]">
+              <thead className="border-b border-[#e7ecf5] bg-[#f8faff]">
                 <tr>
                   <th className="px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-[0.14em] text-gray-500">
                     #
@@ -253,7 +381,7 @@ export default function FernList() {
                         onDrop={(event) => handleDrop(event, column.id)}
                         onDragOver={(event) => handleDragOver(event, column.id)}
                         onDragEnd={handleDragEnd}
-                        className={`group relative px-4 py-3 text-left text-xs font-semibold text-gray-800 transition-colors hover:bg-[#e6edff] ${
+                        className={`group relative cursor-grab px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-[0.12em] text-gray-600 transition-colors hover:bg-[#e6edff] active:cursor-grabbing ${
                           isDropTarget ? "bg-[#e6edff]" : ""
                         } ${column.align === "center" ? "text-center" : ""}`}
                         title="Drag to reorder"
@@ -265,11 +393,20 @@ export default function FernList() {
                           />
                         )}
                         <div className="relative z-10 flex items-center justify-between gap-2">
-                          <span>{column.header}</span>
-                          <span className="hidden h-6 w-6 items-center justify-center rounded-full bg-white text-[10px] font-bold text-[#1e60d4] shadow-sm group-hover:inline-flex group-hover:cursor-grab">
-                            {String.fromCharCode(
-                              65 + columnOrder.indexOf(column.id)
-                            )}
+                          <span className="flex items-center gap-2">
+                            <span className="inline-flex h-4 w-4 items-center justify-center text-[#94a3b8]">
+                              <svg
+                                viewBox="0 0 16 16"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="1.6"
+                                strokeLinecap="round"
+                                aria-hidden
+                              >
+                                <path d="M3.5 4.5h9M3.5 8h9M3.5 11.5h9" />
+                              </svg>
+                            </span>
+                            <span>{column.header}</span>
                           </span>
                         </div>
                       </th>
@@ -277,32 +414,39 @@ export default function FernList() {
                   })}
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100">
+              <tbody className="divide-y divide-[#eef2f8]">
                 {filteredFerns.length === 0 && (
                   <tr>
                     <td
                       colSpan={orderedColumns.length + 1}
-                      className="px-4 py-8 text-center text-sm text-gray-500"
+                      className="px-4 py-10"
                     >
-                      No ferns match your search yet. Try another name or
-                      status.
+                      <div className="rounded-xl bg-[#f3f6ff] px-4 py-6 text-center text-sm text-gray-600 shadow-sm">
+                        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#1e60d4]">
+                          No results
+                        </p>
+                        <p className="mt-2">
+                          No ferns match your search yet. Try another name or
+                          status.
+                        </p>
+                      </div>
                     </td>
                   </tr>
                 )}
                 {filteredFerns.map((fern, index) => (
                   <tr
                     key={fern.scientificName}
-                    className="bg-white transition-colors hover:bg-[#f7faff]"
+                    className="odd:bg-white even:bg-[#fbfcff] transition-colors hover:bg-[#f1f6ff]"
                   >
                     <td className="px-3 py-3 text-left text-xs font-semibold text-gray-500">
-                      <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 text-gray-700 shadow-inner">
+                      <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#f3f6ff] text-gray-700 shadow-inner">
                         {index + 1}
                       </span>
                     </td>
                     {orderedColumns.map((column) => (
                       <td
                         key={column.id}
-                        className={`px-4 py-3 align-middle text-gray-800 ${
+                        className={`px-4 py-3 align-middle text-sm text-gray-800 ${
                           column.align === "center" ? "text-center" : ""
                         }`}
                       >

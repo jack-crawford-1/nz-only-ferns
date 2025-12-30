@@ -1,67 +1,172 @@
+import { useEffect, useState } from "react";
+import { Link } from "react-router";
+import { fetchFerns } from "../api/fetchFerns";
+import type { FernRecord } from "../types/Ferns";
 import Navbar from "../components/nav/Navbar";
 
-const STATUS_LEVELS = [
+type StatusDetail = {
+  name: string;
+  summary: string;
+  focus: string;
+  badgeClass: string;
+  dotClass: string;
+};
+
+const STATUS_DETAILS: StatusDetail[] = [
   {
-    name: "Nationally Critical",
+    name: "Threatened – Nationally Critical",
     summary:
       "Extremely high risk of extinction. Populations are tiny, fragmented, or declining fast.",
-    focus: "Urgent protection, strict monitoring, and habitat safeguarding.",
-    tone: "bg-[#ffe7e7] text-[#9b1c1c]",
+    focus:
+      "Immediate protection, intensive monitoring, and habitat safeguards.",
+    badgeClass: "bg-[#ffe7e7] text-[#9b1c1c]",
+    dotClass: "bg-[#dc2626]",
   },
   {
-    name: "Nationally Endangered",
+    name: "Threatened – Nationally Endangered",
     summary:
       "Very high risk of extinction in the near future without active management.",
-    focus: "Targeted recovery plans and careful tracking of known sites.",
-    tone: "bg-[#fff0e5] text-[#9a3412]",
+    focus: "Targeted recovery plans and strong habitat protection.",
+    badgeClass: "bg-[#fff0e5] text-[#9a3412]",
+    dotClass: "bg-[#f97316]",
   },
   {
-    name: "Nationally Vulnerable",
+    name: "Threatened – Nationally Vulnerable",
     summary: "High risk of extinction if current pressures continue.",
-    focus: "Reduce threats and protect key habitats.",
-    tone: "bg-[#fff7d6] text-[#92400e]",
+    focus: "Reduce threats and protect core populations.",
+    badgeClass: "bg-[#fff7d6] text-[#92400e]",
+    dotClass: "bg-[#f59e0b]",
   },
   {
-    name: "Declining",
+    name: "At Risk – Declining",
     summary:
       "Populations are shrinking, but not at the highest threat levels yet.",
     focus: "Track trends and address local pressures early.",
-    tone: "bg-[#fef3c7] text-[#92400e]",
+    badgeClass: "bg-[#fef3c7] text-[#92400e]",
+    dotClass: "bg-[#f59e0b]",
   },
   {
-    name: "Recovering",
-    summary: "Populations are improving due to recent conservation actions.",
-    focus: "Maintain momentum and protect gains.",
-    tone: "bg-[#e0f2fe] text-[#1e3a8a]",
-  },
-  {
-    name: "Relict",
-    summary:
-      "Stable but naturally scarce remnants of formerly wider distributions.",
+    name: "At Risk – Relict",
+    summary: "Naturally scarce remnants of formerly wider distributions.",
     focus: "Protect remaining refuges and avoid new disturbances.",
-    tone: "bg-[#ede9fe] text-[#4c1d95]",
+    badgeClass: "bg-[#ede9fe] text-[#4c1d95]",
+    dotClass: "bg-[#7c3aed]",
   },
   {
-    name: "Naturally Uncommon",
+    name: "At Risk – Naturally Uncommon",
     summary: "Always rare due to specialized habitat or limited range.",
     focus: "Protect unique habitats and reduce accidental damage.",
-    tone: "bg-[#ecfdf3] text-[#065f46]",
+    badgeClass: "bg-[#ecfdf3] text-[#065f46]",
+    dotClass: "bg-[#10b981]",
   },
   {
     name: "Not Threatened",
     summary: "Stable populations with no immediate conservation concerns.",
-    focus: "Monitor overall ecosystem health and maintain habitat quality.",
-    tone: "bg-[#e6f7ed] text-[#166534]",
+    focus: "Maintain habitat quality and monitor ecosystem health.",
+    badgeClass: "bg-[#e6f7ed] text-[#166534]",
+    dotClass: "bg-[#16a34a]",
   },
   {
     name: "Data Deficient",
     summary: "Not enough reliable data yet to assign a clear status.",
     focus: "Prioritize surveys, herbarium records, and field research.",
-    tone: "bg-[#f1f5f9] text-[#334155]",
+    badgeClass: "bg-[#f1f5f9] text-[#334155]",
+    dotClass: "bg-[#94a3b8]",
+  },
+  {
+    name: "Not Evaluated",
+    summary: "Not yet assessed under the threat classification system.",
+    focus: "Schedule assessment once baseline data are compiled.",
+    badgeClass: "bg-[#eef2ff] text-[#3730a3]",
+    dotClass: "bg-[#6366f1]",
+  },
+  {
+    name: "Not Assessed",
+    summary: "No current assessment available for this taxon.",
+    focus: "Gather records and align evidence for review.",
+    badgeClass: "bg-[#eef2ff] text-[#3730a3]",
+    dotClass: "bg-[#6366f1]",
+  },
+  {
+    name: "Taxonomically Indistinct",
+    summary: "Unclear taxonomy or boundaries require clarification.",
+    focus: "Resolve taxonomy before assigning a definitive status.",
+    badgeClass: "bg-[#f1f5f9] text-[#475569]",
+    dotClass: "bg-[#64748b]",
+  },
+  {
+    name: "Non-resident Native – Vagrant",
+    summary: "Occasional visitors that do not form stable populations.",
+    focus: "Record sightings but no ongoing management is required.",
+    badgeClass: "bg-[#f8fafc] text-[#475569]",
+    dotClass: "bg-[#94a3b8]",
   },
 ];
 
+const STATUS_GROUPS = [
+  {
+    title: "Threatened",
+    description: "Highest concern categories that require urgent action.",
+    statuses: [
+      "Threatened – Nationally Critical",
+      "Threatened – Nationally Endangered",
+      "Threatened – Nationally Vulnerable",
+    ],
+  },
+  {
+    title: "At Risk",
+    description: "Species under pressure but not yet in the threatened tier.",
+    statuses: [
+      "At Risk – Declining",
+      "At Risk – Relict",
+      "At Risk – Naturally Uncommon",
+    ],
+  },
+  {
+    title: "Other classifications",
+    description: "Stable or unassessed categories used for completeness.",
+    statuses: [
+      "Not Threatened",
+      "Data Deficient",
+      "Not Evaluated",
+      "Not Assessed",
+      "Taxonomically Indistinct",
+      "Non-resident Native – Vagrant",
+    ],
+  },
+];
+
+const STATUS_LOOKUP = new Map(
+  STATUS_DETAILS.map((status) => [status.name, status])
+);
+
 export default function Status() {
+  const [examplesByStatus, setExamplesByStatus] = useState<
+    Record<string, string[]>
+  >({});
+
+  useEffect(() => {
+    fetchFerns()
+      .then((data: FernRecord[]) => {
+        const nextExamples: Record<string, string[]> = {};
+
+        data.forEach((fern) => {
+          const status = fern.conservationStatus || "Unknown";
+          if (!nextExamples[status]) {
+            nextExamples[status] = [];
+          }
+          if (nextExamples[status].length < 2) {
+            nextExamples[status].push(fern.scientificName);
+          }
+        });
+
+        setExamplesByStatus(nextExamples);
+      })
+      .catch(() => {
+        setExamplesByStatus({});
+      });
+  }, []);
+
   return (
     <div className="min-h-screen bg-linear-to-b from-[#e9f3ff] via-white to-[#f6f8fb]">
       <Navbar ferns={[]} />
@@ -80,7 +185,7 @@ export default function Status() {
 
           <div className="flex flex-wrap items-center gap-3 text-xs text-gray-600">
             <span className="inline-flex items-center gap-2 rounded-full bg-[#e0edff] px-3 py-1 font-semibold text-[#1e60d4]">
-              9 status levels
+              {STATUS_DETAILS.length} status labels
             </span>
             <span
               className="hidden h-4 w-px bg-gray-200 sm:inline-block"
@@ -90,71 +195,183 @@ export default function Status() {
               Based on New Zealand threat classifications
             </span>
           </div>
-        </section>
 
-        <section className="grid gap-5 md:grid-cols-2">
-          {STATUS_LEVELS.map((status) => (
-            <article
-              key={status.name}
-              className="rounded-2xl bg-white p-5 shadow-lg ring-1 ring-gray-100"
+          <div className="flex flex-wrap gap-3">
+            <Link to="/">
+              <button className="rounded-full bg-[#1e60d4] px-5 py-2 text-sm font-semibold text-white shadow-lg transition hover:bg-[#0f4fa4] hover:shadow-xl">
+                View fern list
+              </button>
+            </Link>
+            <Link
+              to={`/?status=${encodeURIComponent(
+                "Threatened – Nationally Critical"
+              )}`}
             >
-              <div className="flex flex-wrap items-start justify-between gap-3">
-                <h2 className="text-lg font-semibold text-gray-900">
-                  {status.name}
-                </h2>
-                <span
-                  className={`rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] ${status.tone}`}
-                >
-                  Status
-                </span>
-              </div>
-              <p className="mt-3 text-sm text-gray-600">{status.summary}</p>
-              <div className="mt-4 rounded-xl bg-[#f3f6ff] px-4 py-3">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1e60d4]">
-                  Focus
-                </p>
-                <p className="mt-1 text-sm text-gray-700">{status.focus}</p>
-              </div>
-            </article>
-          ))}
+              <button className="rounded-full border border-[#c6d9ff] bg-white px-5 py-2 text-sm font-semibold text-[#1e60d4] shadow-sm transition hover:border-[#1e60d4]">
+                See most threatened
+              </button>
+            </Link>
+          </div>
         </section>
 
-        <section className="mt-10 rounded-2xl bg-white p-6 shadow-lg ring-1 ring-gray-100">
-          <h2 className="text-lg font-semibold text-gray-900">
-            How statuses are assigned
-          </h2>
-          <p className="mt-2 text-sm text-gray-600">
-            Conservation status combines population size, rate of decline, and
-            distribution data. Botanists review herbarium records, field
-            surveys, and monitoring reports to determine the most accurate
-            classification.
-          </p>
-          <div className="mt-4 grid gap-4 sm:grid-cols-3">
-            <div className="rounded-xl bg-[#f3f6ff] p-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1e60d4]">
-                Population
-              </p>
-              <p className="mt-2 text-sm text-gray-700">
-                Number of mature individuals and how they are distributed.
-              </p>
-            </div>
-            <div className="rounded-xl bg-[#f3f6ff] p-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1e60d4]">
-                Trend
-              </p>
-              <p className="mt-2 text-sm text-gray-700">
-                Whether a species is increasing, stable, or declining over time.
-              </p>
-            </div>
-            <div className="rounded-xl bg-[#f3f6ff] p-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1e60d4]">
-                Threats
-              </p>
-              <p className="mt-2 text-sm text-gray-700">
-                Habitat loss, invasive species, climate stress, or human impact.
-              </p>
+        <section className="mb-10 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+          <div className="rounded-2xl bg-white p-6 shadow-lg ring-1 ring-gray-100">
+            <h2 className="text-lg font-semibold text-gray-900">
+              Status ladder
+            </h2>
+            <p className="mt-2 text-sm text-gray-600">
+              Ordered from highest urgency to lower concern categories.
+            </p>
+            <div className="mt-4 space-y-4">
+              {STATUS_GROUPS.map((group) => (
+                <div key={group.title}>
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-gray-500">
+                    {group.title}
+                  </p>
+                  <div className="mt-2 space-y-2">
+                    {group.statuses.map((statusName) => {
+                      const status = STATUS_LOOKUP.get(statusName);
+                      if (!status) return null;
+                      return (
+                        <div
+                          key={status.name}
+                          className="flex items-center gap-3 rounded-xl bg-[#f8fafc] px-3 py-2"
+                        >
+                          <span
+                            className={`h-2.5 w-2.5 rounded-full ${status.dotClass}`}
+                            aria-hidden
+                          />
+                          <span className="text-sm font-semibold text-gray-800">
+                            {status.name}
+                          </span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
+
+          <div className="rounded-2xl bg-white p-6 shadow-lg ring-1 ring-gray-100">
+            <h2 className="text-lg font-semibold text-gray-900">
+              How to read a status
+            </h2>
+            <p className="mt-2 text-sm text-gray-600">
+              Status labels combine multiple signals to describe risk.
+            </p>
+            <ul className="mt-4 space-y-3 text-sm text-gray-600">
+              <li className="rounded-xl bg-[#f3f6ff] px-4 py-3">
+                <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1e60d4]">
+                  Population
+                </span>
+                <p className="mt-1 text-sm text-gray-700">
+                  Size of the population and how widely it is distributed.
+                </p>
+              </li>
+              <li className="rounded-xl bg-[#f3f6ff] px-4 py-3">
+                <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1e60d4]">
+                  Trend
+                </span>
+                <p className="mt-1 text-sm text-gray-700">
+                  Whether numbers are increasing, stable, or declining.
+                </p>
+              </li>
+              <li className="rounded-xl bg-[#f3f6ff] px-4 py-3">
+                <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1e60d4]">
+                  Threats
+                </span>
+                <p className="mt-1 text-sm text-gray-700">
+                  Habitat loss, invasive species, climate stress, or human
+                  impact.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section className="space-y-10">
+          {STATUS_GROUPS.map((group) => (
+            <div key={group.title} className="space-y-5">
+              <div className="flex flex-wrap items-end justify-between gap-3">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#1967d2]">
+                    {group.title}
+                  </p>
+                  <h2 className="text-2xl font-bold text-gray-900">
+                    {group.title} statuses
+                  </h2>
+                </div>
+                <p className="max-w-2xl text-sm text-gray-600">
+                  {group.description}
+                </p>
+              </div>
+
+              <div className="grid gap-5 md:grid-cols-2">
+                {group.statuses.map((statusName) => {
+                  const status = STATUS_LOOKUP.get(statusName);
+                  if (!status) return null;
+                  const examples = examplesByStatus[status.name] || [];
+
+                  return (
+                    <article
+                      key={status.name}
+                      className="rounded-2xl bg-white p-6 shadow-lg ring-1 ring-gray-100"
+                    >
+                      <div className="flex flex-wrap items-start justify-between gap-3">
+                        <h3 className="text-lg font-semibold text-gray-900">
+                          {status.name}
+                        </h3>
+                        <span
+                          className={`rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] ${status.badgeClass}`}
+                        >
+                          Status
+                        </span>
+                      </div>
+                      <p className="mt-3 text-sm text-gray-600">
+                        {status.summary}
+                      </p>
+                      <div className="mt-4 rounded-xl bg-[#f3f6ff] px-4 py-3">
+                        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1e60d4]">
+                          Focus
+                        </p>
+                        <p className="mt-1 text-sm text-gray-700">
+                          {status.focus}
+                        </p>
+                      </div>
+
+                      <div className="mt-4 flex flex-wrap items-center gap-2 text-xs text-gray-600">
+                        <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-gray-500">
+                          Examples
+                        </span>
+                        {examples.length > 0 ? (
+                          examples.map((example) => (
+                            <span
+                              key={example}
+                              className="rounded-full bg-[#eef4ff] px-3 py-1 text-[11px] font-semibold text-[#1e60d4]"
+                            >
+                              {example}
+                            </span>
+                          ))
+                        ) : (
+                          <span className="text-[11px] text-gray-400">
+                            Examples coming soon
+                          </span>
+                        )}
+                      </div>
+
+                      <Link
+                        to={`/?status=${encodeURIComponent(status.name)}`}
+                        className="mt-4 inline-flex text-sm font-semibold text-[#1e60d4] underline"
+                      >
+                        View in fern list
+                      </Link>
+                    </article>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
         </section>
       </main>
     </div>

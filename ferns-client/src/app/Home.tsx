@@ -31,8 +31,8 @@ export default function Home() {
           </div>
 
           <div className="flex flex-wrap gap-3">
-            <Link to="/">
-              <button className="rounded-full bg-linear-to-r from-[#1e60d4] to-[#0fb59c] px-5 py-2 text-sm font-semibold text-white shadow-lg transition hover:shadow-xl">
+            <Link to="/ferns">
+              <button className="rounded-full bg-[#1e60d4] px-5 py-2 text-sm font-semibold text-white shadow-lg transition hover:bg-[#0f4fa4] hover:shadow-xl">
                 Explore the fern list
               </button>
             </Link>
@@ -143,13 +143,13 @@ export default function Home() {
               </a>
             </article>
 
-            <article className="rounded-2xl bg-white p-5 shadow-lg ring-1 ring-gray-100 md:col-span-2">
+            <article className="rounded-2xl bg-white p-5 shadow-lg ring-1 ring-gray-100">
               <div className="flex items-start justify-between gap-3">
                 <h3 className="text-base font-semibold text-gray-900">
-                  Supporting literature
+                  Brownsey, P. J. &amp; Perrie, L. R.
                 </h3>
                 <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#1e60d4]">
-                  Guides
+                  PDF
                 </span>
               </div>
               <p className="mt-3 text-sm text-gray-600">
@@ -158,6 +158,23 @@ export default function Home() {
                 Te Papa Press. Includes data from Allan Herbarium (CHR) and
                 NZFlora archives.
               </p>
+              <a
+                href="https://datastore.landcareresearch.co.nz/dataset/nzflora-brownsey-perrie-2021-pteridaceae/resource/97215842-8ecc-4067-a7a6-fc18250f6fc9"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-flex items-center text-sm font-semibold text-[#1e60d4] hover:text-[#0f4fa4]"
+              >
+                landcareresearch.co.nz/dataset/nzflora-brownsey-perrie-2021-pteridaceae
+              </a>
+            </article>
+
+            <article className="rounded-2xl bg-white p-5 shadow-lg ring-1 ring-gray-100 md:col-span-2">
+              <div className="flex items-start justify-between gap-3">
+                <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#1e60d4]">
+                  Guides
+                </span>
+              </div>
+
               <p className="mt-3 text-sm font-semibold text-gray-800">
                 A fern was treated as endemic if:
               </p>
