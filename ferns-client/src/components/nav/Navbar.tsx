@@ -1,26 +1,16 @@
 import { useNavigate, useLocation } from "react-router";
-import { convertToCSV, downloadCSV } from "../../utils/csv";
-import type { FernRecord } from "../../types/Ferns";
 
 type NavbarProps = {
-  ferns: FernRecord[];
   searchQuery?: string;
   onSearchChange?: (value: string) => void;
 };
 
 export default function Navbar({
-  ferns,
   searchQuery = "",
   onSearchChange,
 }: NavbarProps) {
   const navigate = useNavigate();
   const location = useLocation();
-
-  const handleExport = () => {
-    const csv = convertToCSV(ferns);
-    const today = new Date().toLocaleDateString().split("T")[0];
-    downloadCSV(csv, `ferns-${today}.csv`);
-  };
 
   const menuItems = [
     { label: "Ferns", path: "/" },

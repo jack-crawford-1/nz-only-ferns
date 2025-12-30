@@ -237,7 +237,6 @@ export default function FernList() {
   return (
     <div className="min-h-screen bg-linear from-[#e9f3ff] via-white to-[#f6f8fb]">
       <Navbar
-        ferns={ferns}
         searchQuery={searchQuery}
         onSearchChange={setSearchQuery}
       />

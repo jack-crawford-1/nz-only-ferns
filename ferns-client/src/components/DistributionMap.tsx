@@ -1,15 +1,27 @@
 import { useEffect, useMemo, useState } from "react";
 import { fetchRegions } from "../api/fetchRegions";
 
+type Position = [number, number];
+type LinearRing = Position[];
+type PolygonCoordinates = LinearRing[];
+type MultiPolygonCoordinates = PolygonCoordinates[];
+
+type PolygonGeometry = {
+  type: "Polygon";
+  coordinates: PolygonCoordinates;
+};
+
+type MultiPolygonGeometry = {
+  type: "MultiPolygon";
+  coordinates: MultiPolygonCoordinates;
+};
+
 type GeoFeature = {
   type: "Feature";
   properties: {
     REGC2013_N: string;
   };
-  geometry: {
-    type: "Polygon" | "MultiPolygon";
-    coordinates: number[][][] | number[][][][];
-  };
+  geometry: PolygonGeometry | MultiPolygonGeometry;
 };
 
 type GeoCollection = {
@@ -118,7 +130,7 @@ const buildPath = (
   geometry: GeoFeature["geometry"],
   project: (lon: number, lat: number) => [number, number]
 ) => {
-  const renderRing = (ring: number[][]) =>
+  const renderRing = (ring: LinearRing) =>
     ring
       .map(([lon, lat], index) => {
         const [x, y] = project(lon, lat);
