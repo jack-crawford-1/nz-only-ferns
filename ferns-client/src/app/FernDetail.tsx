@@ -166,7 +166,7 @@ export default function FernDetail() {
           </div>
 
           <div className="flex flex-wrap gap-3">
-            <Link to="/">
+            <Link to="/ferns">
               <button className="rounded-full bg-[#1e60d4] px-5 py-2 text-sm font-semibold text-white shadow-lg transition hover:bg-[#0f4fa4] hover:shadow-xl">
                 Back to fern list
               </button>

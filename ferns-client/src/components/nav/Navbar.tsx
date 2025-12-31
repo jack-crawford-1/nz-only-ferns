@@ -13,7 +13,7 @@ export default function Navbar({
   const location = useLocation();
 
   const menuItems = [
-    { label: "Ferns", path: "/" },
+    { label: "Ferns", path: "/ferns" },
     { label: "Habitats", path: "/habitats" },
     { label: "Status", path: "/status" },
   ];
@@ -24,10 +24,10 @@ export default function Navbar({
         <div className="flex items-center gap-3">
           <div className="flex flex-col leading-tight">
             <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0f4fa4]">
-              NZ Only Ferns
+              <a href="/">NZ Only Ferns</a>
             </span>
             <span className="text-lg font-bold text-gray-900">
-              Fern Library
+              <a href="/">Fern Library</a>
             </span>
           </div>
         </div>
@@ -70,13 +70,6 @@ export default function Navbar({
             />
           </div>
         </div>
-
-        {/* <button
-          onClick={handleExport}
-          className="flex items-center gap-2 rounded-full bg-[#0a84088f] px-4 py-2 text-sm font-semibold text-black shadow-lg transition hover:shadow-xl"
-        >
-          <span>Export CSV</span>
-        </button> */}
       </nav>
       <div
         className="h-px w-full bg-gradient from-transparent via-[#c9d8ff] to-transparent"
