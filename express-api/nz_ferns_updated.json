@@ -292,7 +292,12 @@
     ],
     "scientificName": "Arthropteris tenella",
     "family": "Tectariaceae",
-    "conservationStatus": "Not Threatened"
+    "conservationStatus": "Not Threatened",
+    "biostatus": "Indigenous (Non-endemic).",
+    "altitudinalRange": "0–700 m.",
+    "distribution": "North Island: Northland, Auckland, Volcanic Plateau, Gisborne, Taranaki, Southern North Island.\nSouth Island: Western Nelson, Sounds-Nelson.\nArthropteris tenella is a common epiphyte or lithophyte in warm forest and scrub, from sea level to lower montane elevations, reaching its southern limit in Wellington and north-west Nelson.\nAlso eastern Australia (Queensland, New South Wales), Lord Howe Island, Norfolk Island, and New Caledonia.",
+    "recognition": "Arthropteris tenella is a climbing fern with long-creeping, woody rhizomes, jointed stipes that articulate near the base, and once-pinnate, glossy green fronds. The pinnae have serrate margins and conspicuous round sori near the midrib, each protected by a peltate indusium. It often forms loose curtains on tree trunks and rock faces.",
+    "notes": "Fronds of Arthropteris tenella can be mistaken for juvenile plants of Pteris or small Blechnum, but the articulated stipe base and peltate indusia are distinctive. Plants are sometimes adventive in greenhouses and warm gardens outside their natural range."
   },
   {
     "isNative": true,
@@ -302,7 +307,12 @@
     ],
     "scientificName": "Asplenium appendiculatum subsp. appendiculatum",
     "family": "Aspleniaceae",
-    "conservationStatus": "Not Threatened"
+    "conservationStatus": "Not Threatened",
+    "biostatus": "Indigenous (Non-endemic).",
+    "altitudinalRange": "0–900 m.",
+    "distribution": "North Island: Northland, Auckland, Volcanic Plateau, Gisborne, Taranaki, Southern North Island.\nSouth Island: Western Nelson, Sounds-Nelson, Westland, Canterbury, Otago, Southland, Fiordland.\nStewart Island.\nAsplenium appendiculatum subsp. appendiculatum is a terrestrial fern of shaded banks, forest margins, and rock ledges from coastal to montane zones, widespread but scattered in both main islands.\nAlso Australia (Queensland, New South Wales, Victoria, Tasmania), Lord Howe Island, and Norfolk Island.",
+    "recognition": "Subsp. appendiculatum has thin-textured, once-pinnate fronds with narrowly oblong pinnae and short acroscopic lobes. Sori are linear and oblique to the costa, and the stipe and rachis are dark brown with few or no scales. Plants lack bulbils and have slender, creeping rhizomes.",
+    "notes": "New Zealand material of Asplenium appendiculatum subsp. appendiculatum matches Australian plants in overall morphology. It intergrades with subsp. maritimum in coastal habitats, but inland plants usually have thinner fronds and less coriaceous pinnae."
   },
   {
     "isNative": true,
@@ -312,7 +322,12 @@
     ],
     "scientificName": "Asplenium appendiculatum subsp. maritimum",
     "family": "Aspleniaceae",
-    "conservationStatus": "Not Threatened"
+    "conservationStatus": "Not Threatened",
+    "biostatus": "Indigenous (Endemic).",
+    "altitudinalRange": "0–200 m.",
+    "distribution": "North Island: Northland, Auckland, Volcanic Plateau, Gisborne, Taranaki, Southern North Island.\nSouth Island: Western Nelson, Sounds-Nelson, Westland, Canterbury, Otago, Southland.\nChatham Islands, Stewart Island.\nSubsp. maritimum is chiefly coastal on cliffs, boulder beaches, and limestone outcrops, occasionally extending slightly inland on rocky bluffs.",
+    "recognition": "Compared with subsp. appendiculatum, subsp. maritimum has thicker, more coriaceous fronds, broader pinnae with conspicuous auricles at the base, and stout dark stipes. The lamina is a dull deep green with slightly revolute margins, and sori are borne in short oblique lines on the underside of each pinna.",
+    "notes": "Asplenium appendiculatum subsp. maritimum is endemic to New Zealand and adapted to salt-laden winds. It hybridises with subsp. appendiculatum where the two meet, producing plants with intermediate pinna texture and size."
   },
   {
     "isNative": true,
@@ -339,7 +354,12 @@
     ],
     "scientificName": "Asplenium chathamense",
     "family": "Aspleniaceae",
-    "conservationStatus": "At Risk – Naturally Uncommon"
+    "conservationStatus": "At Risk – Naturally Uncommon",
+    "biostatus": "Indigenous (Endemic).",
+    "altitudinalRange": "0–260 m.",
+    "distribution": "Chatham Islands.\nAsplenium chathamense is confined to the Chatham Island group where it grows in coastal to lowland forest, scrub margins, and on shaded limestone or basalt outcrops from sea level to the summit of Maungatere. Populations are scattered but locally common where suitable habitat remains.",
+    "recognition": "A small tufted spleenwort with dark, wiry stipes and once-pinnate fronds bearing narrowly triangular pinnae. Sori are short and oblique, and the frond texture is thin but firm. It differs from A. hookerianum by its more elongated pinnae with slight auricles and by its strictly Chatham Islands range.",
+    "notes": "Asplenium chathamense has been treated as allied to A. hookerianum but is maintained as a distinct endemic based on morphology and distribution. Habitat loss and browsing contribute to its Naturally Uncommon status."
   },
   {
     "isNative": true,
@@ -349,7 +369,12 @@
     ],
     "scientificName": "Asplenium cimmeriorum",
     "family": "Aspleniaceae",
-    "conservationStatus": "At Risk – Naturally Uncommon"
+    "conservationStatus": "At Risk – Naturally Uncommon",
+    "biostatus": "Indigenous (Endemic).",
+    "altitudinalRange": "20–500 m.",
+    "distribution": "North Island: Northland, Auckland, Volcanic Plateau, Taranaki, Southern North Island.\nAsplenium cimmeriorum is a limestone and cave-dwelling species known from shaded rock crevices, sinkholes, and cave entrances, mostly in the Waitomo, northern Taranaki, and north Auckland karst districts, with scattered occurrences south to northern Wellington.",
+    "recognition": "A tufted fern with erect rhizomes and 1–2-pinnate, dark green fronds. Pinnae are ovate with shallow lobes and acute tips; sori are short and run obliquely to the costa. Plants lack bulbils but often show a slight glaze on the lamina. It can resemble A. hookerianum but usually has broader pinnae and thicker texture suited to cave mouths.",
+    "notes": "Genetic studies indicate that Asplenium cimmeriorum is an allotetraploid involving A. bulbiferum as one parent. It is confined to karst landscapes and vulnerable to habitat modification and goat browsing."
   },
   {
     "isNative": true,
