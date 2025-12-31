@@ -236,51 +236,32 @@ export default function FernList() {
 
   return (
     <div className="min-h-screen bg-linear from-[#e9f3ff] via-white to-[#f6f8fb]">
-      <Navbar
-        searchQuery={searchQuery}
-        onSearchChange={setSearchQuery}
-      />
-      <main className="mx-auto max-w-6xl px-4 pb-12 pt-32">
-        <div className="mb-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <div className="rounded-xl bg-[#f3f6ff] px-4 py-3 shadow-sm">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1e60d4]">
-              Total ferns
-            </p>
-            <p className="mt-2 text-2xl font-semibold text-gray-900">
-              {ferns.length}
-            </p>
-          </div>
-          <div className="rounded-xl bg-[#f3f6ff] px-4 py-3 shadow-sm">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1e60d4]">
-              Endemic species
-            </p>
-            <p className="mt-2 text-2xl font-semibold text-gray-900">
-              {endemicCount}
-            </p>
-          </div>
-          <div className="rounded-xl bg-[#f3f6ff] px-4 py-3 shadow-sm">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1e60d4]">
-              Families
-            </p>
-            <p className="mt-2 text-2xl font-semibold text-gray-900">
-              {uniqueFamilies}
-            </p>
-          </div>
-          <div className="rounded-xl bg-[#f3f6ff] px-4 py-3 shadow-sm">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1e60d4]">
-              Threatened
-            </p>
-            <p className="mt-2 text-2xl font-semibold text-gray-900">
-              {threatenedCount}
-            </p>
-          </div>
-        </div>
+      <Navbar searchQuery={searchQuery} onSearchChange={setSearchQuery} />
+      <main className="mx-auto max-w-6xl px-4 pb-12 pt-32 exo-2-500">
         <div className="mb-6 flex flex-col gap-3 rounded-2xl bg-white/80 p-6 shadow-lg ring-1 ring-gray-100 backdrop-blur">
           <div className="flex items-start justify-between gap-4 flex-wrap">
             <div className="space-y-2">
-              <h1 className="text-3xl font-bold text-gray-900">
+              <h1 className="text-2xl font-bold text-gray-900 pb-10">
                 Explore Aotearoa’s native ferns
               </h1>
+              <div className="mb-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                <div className="rounded-xl bg-[#f3f6ff] px-4 py-3 shadow-sm">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1e60d4]">
+                    Total ferns
+                  </p>
+                  <p className="mt-2 text-2xl font-semibold text-gray-900">
+                    {ferns.length}
+                  </p>
+                </div>
+                <div className="rounded-xl bg-[#f3f6ff] px-4 py-3 shadow-sm">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1e60d4]">
+                    Endemic species
+                  </p>
+                  <p className="mt-2 text-2xl font-semibold text-gray-900">
+                    {endemicCount}
+                  </p>
+                </div>
+              </div>
             </div>
             <button
               onClick={handleExport}

@@ -2,8 +2,8 @@ import { Link } from "react-router";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-linear-to-b from-[#e9f3ff] via-white to-[#f6f8fb]">
-      <main className="mx-auto max-w-6xl px-4 pb-16 pt-20">
+    <div className="min-h-screen bg-linear-to-b from-[#e9f3ff] via-white to-[#f6f8fb] ">
+      <main className="mx-auto max-w-6xl px-4 pb-16 pt-20 ">
         <section className="mb-8 flex flex-col gap-6 rounded-2xl bg-white/80 p-6 shadow-lg ring-1 ring-gray-100 backdrop-blur">
           <div className="flex flex-wrap items-start justify-between gap-6">
             <div className="space-y-3">
@@ -20,7 +20,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex flex-wrap items-center gap-3 text-xs text-gray-600">
+          <div className="flex flex-wrap items-center gap-3 text-xs text-gray-600 ">
             <span className="inline-flex items-center gap-2 rounded-full bg-[#e0edff] px-3 py-1 font-semibold text-[#1e60d4]">
               5 sources
             </span>
@@ -30,7 +30,7 @@ export default function Home() {
             />
           </div>
 
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-3 ">
             <Link to="/ferns">
               <button className="rounded-full bg-[#1e60d4] px-5 py-2 text-sm font-semibold text-white shadow-lg transition hover:bg-[#0f4fa4] hover:shadow-xl">
                 Explore the fern list
@@ -48,7 +48,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className="grid gap-4 md:grid-cols-2 ">
             <article className="rounded-2xl bg-white p-5 shadow-lg ring-1 ring-gray-100">
               <div className="flex items-start justify-between gap-3">
                 <h3 className="text-base font-semibold text-gray-900">

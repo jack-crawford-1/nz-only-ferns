@@ -5,7 +5,12 @@
     "commonNames": [],
     "scientificName": "Abrodictyum caudatum",
     "family": "Hymenophyllaceae",
-    "conservationStatus": "Threatened – Nationally Critical"
+    "conservationStatus": "Threatened – Nationally Critical",
+    "biostatus": "Indigenous (Non-endemic).",
+    "altitudinalRange": "10–20 m (Northland), c. 450 m (Raoul Island).",
+    "distribution": "North Island: Northland.\nKermadec Islands.\nAbrodictyum caudatum is a rare fern in New Zealand, known only from Raoul Island, Kermadec Islands, and from near Kerikeri in Northland.\nAlso Australia (Queensland, New South Wales, Victoria), New Caledonia, Fiji, Samoa, Cook Islands, Society Islands.",
+    "recognition": "Abrodictyum caudatum is distinguished from T. elongatum and T. strictum by its epiphytic habit, creeping rhizome, lamina segments with a clearly defined border, and campanulate indusia which are widened at the mouth. It is superficially similar to, and occupies the same habitat as, T. venosum, but can be distinguished by its bordered lamina segments, obtuse apices which are never emarginate, and ultimate lamina segments with a single unbranched vein. It is also superficially similar to T. humile but can be distinguished by the unistratose border of short cells with transverse end-walls.",
+    "notes": "Trichomanes caudatum (as Abrodictyum) from the Kermadec Islands was given a conservation status of Naturally Uncommon by de Lange et al. (2013), but they treated the Kerikeri population as a separate indeterminate taxon, \"Abrodictyum aff. caudatum\", which was listed as Nationally Critical.\nIn the classification of Ebihara et al. (2006), Trichomanes caudatum is treated as Abrodictyum caudatum.\n\nThere are differences between the Kerikeri and Raoul plants. The fronds of the Kerikeri plants grow downwards against the substrate, whereas Raoul plants appear slightly more upright. The indusia are more obviously flared in the Kerikeri plants, whereas the very few present in the Raoul material appear to be more truncate. Also the plants on Raoul grow at a much higher altitude than those at Kerikeri. Whether the two populations belong to the same species is uncertain.\n\nFronds of Trichomanes caudatum in New Zealand are much smaller and less divided than those in Australia or the Pacific. Nevertheless the cell structure of the lamina and the shape of the indusia suggest that they are correctly referred to this species. In Northland, the species is on the very southern edge of its distribution and the plants are probably poorly developed compared to those in tropical regions. DNA sequencing (Perrie et al. 2016) indicates that the Kerikeri plants group with those in Fiji, French Polynesia, and Australia. However, it also indicates that New Caledonian material of T. caudatum is different to that in Fiji, French Polynesia, and Australia, suggesting that more than one species may be present in the Pacific region."
   },
   {
     "isNative": true,
@@ -15,7 +20,12 @@
     ],
     "scientificName": "Abrodictyum elongatum",
     "family": "Hymenophyllaceae",
-    "conservationStatus": "Not Threatened"
+    "conservationStatus": "Not Threatened",
+    "biostatus": "Indigenous (Endemic).",
+    "altitudinalRange": "10–700 m.",
+    "distribution": "North Island: Northland, Auckland, Volcanic Plateau, Gisborne, Taranaki, Southern North Island.\nSouth Island: Western Nelson, Sounds Nelson, Westland.\nChatham Islands.\nIn the North Island Abrodictyum elongatum occurs throughout Northland and Auckland, extending eastwards through the Bay of Plenty to East Cape, and down the west coast as far as Wellington. It is found in coastal and lowland forest, reaching 560 m in Kaihu Forest, Northland and 700 m on the summit of Little Barrier Island. In the South Island it is confined to coastal and lowland areas of the Marlborough Sounds and north-west Nelson below 90 m, with an outlying population at Lake Matheson, Westland. It is known from a single collection on the Chatham Islands (AK 300691).",
+    "recognition": "Abrodictyum elongatum is recognised by its erect rhizome, ovate or triangular dark olive-green laminae, lack of a wing on most of the rachis, broad and overlapping lamina segments with the veins forking several times in each, and conspicuous brown receptacles far-exserted beyond the indusial flaps. The laminae are often covered in epiphyllous mosses and liverworts.",
+    "notes": "In the classification of Ebihara et al. (2006), Trichomanes elongatum is treated as Abrodictyum elongatum.\n\nTrichomanes elongatum was described by Cunningham (1837) citing a specimen from \"Dark ravines in the forests of Wangaroa, etc. – 1834, R. Cunningham\". Allan (1961) stated \"Type: R. Cunningham, 1834, BM\". However, the only specimens in BM from Cunningham’s herbarium are labelled \"Bay of Islands, New Zealand, May 1838\" and \"New Zealand, A. Cunningham\". Both of these are in conflict with the protologue, and hence Allan’s statement cannot be regarded as a lectotypification. Nevertheless, there is a specimen at K from Cunningham’s herbarium which is labelled \"In damp woods of Wangaroa & Hokianga, R. Cunningham, 1834\". This specimen is the holotype (Brownsey & Perrie 2016).\n\nCroxall (1975) considered that Trichomanes elongatum (as Selenodesmium elongatum) occurred in Queensland and New South Wales, although he conceded that the distinctions between it and S. dentatum (widespread in the Pacific) and S. obscurum (from Asia, Australia and the western Pacific) were far from clear. Bostock & Spokes (1998) recognised only the latter species in Australia (as Cephalomanes obscurum), leaving Trichomanes elongatum as endemic to New Zealand. Nevertheless, the relationships between these three species are close and worthy of further investigation."
   },
   {
     "isNative": true,
@@ -25,7 +35,12 @@
     ],
     "scientificName": "Abrodictyum strictum",
     "family": "Hymenophyllaceae",
-    "conservationStatus": "Not Threatened"
+    "conservationStatus": "Not Threatened",
+    "biostatus": "Indigenous (Endemic).",
+    "altitudinalRange": "10–900 m.",
+    "distribution": "North Island: Northland, Auckland, Volcanic Plateau, Gisborne, Taranaki, Southern North Island.\nSouth Island: Western Nelson, Sounds Nelson, Westland, Fiordland.\nChatham Islands, Stewart Island.\nIn the North Island Abrodictyum strictum occurs in montane areas from Northland through Coromandel to the Bay of Plenty and East Cape, and south to western Waikato. Elsewhere in the North Island it is confined to Mt Taranaki and the Tararua Ranges. It grows from about 300 m in the foothills of the Tararua Ranges to 870 m on Mt Taranaki and the Pukeamaru Range, East Cape, and to 900 m on Mt Te Aroha. In the South Island it occurs in the Marlborough Sounds, and from Whanganui Inlet to Fiordland and Stewart Island. It extends from near sea level on Stewart Island to 700 m on the Stockton Plateau.",
+    "recognition": "Abrodictyum strictum is recognised by its erect rhizomes, fronds which are held upright, narrowly ovate laminae, winged rachises, linear ultimate segments with unbranched veins, and fine brown receptacles far-exserted beyond the indusial flaps.",
+    "notes": "In the classification of Ebihara et al. (2006), Trichomanes strictum is treated as Abrodictyum strictum."
   },
   {
     "isNative": true,
@@ -137,6 +152,10 @@
     "scientificName": "Adiantum viridescens",
     "family": "Pteridaceae",
     "conservationStatus": "Taxonomically Indistinct",
+    "biostatus": "Indigenous (Endemic).",
+    "altitudinalRange": "0–450 m.",
+    "distribution": "North Island: Northland, Auckland, Volcanic Plateau, Gisborne, Taranaki, Southern North Island.\nSouth Island: Western Nelson, Sounds-Nelson, Canterbury.\nKermadec Islands, Chatham Islands.\nAdiantum fulvum occurs on the Kermadec Islands, and in lowland to montane areas of the North Island from Te Paki to Wellington, but is common only from Northland to the Bay of Plenty, with more scattered populations south to Wellington. It is absent from much of the central North Island. In the South Island it is confined to the Marlborough Sounds and north-west Nelson, but was formerly known from Oxford, Canterbury (WELT P008398), and Banks Peninsula (Akaroa, Kirk, CHR 291742; J.F. Armstrong, CHR 633293), where it has not been collected since the 19th century, but from where the species was first described (Raoul 1846). It grows from near sea level, reaching 450 m in the Tutamoe Range, Northland. A single collection (AK 300996) has been made from the Chatham Islands.",
+    "recognition": "Adiantum fulvum is usually 3-pinnate at the base, but rarely large fronds may be 4-pinnate and small fronds only 2-pinnate. The species has oblong, ultimate segments that curve acroscopically at their apices; their abaxial surfaces are green, and the stalks are attached in the corners. The species is dimorphic, the abaxial lamina surfaces being either hairy or glabrous. The stipes, rachises and pinna costae bear antrorse red-brown hairs, and the “indusia” are reniform and glabrous. Large, 4-pinnate fronds can resemble small plants of A. formosum, but the stipes and rachises are hairy, whereas in A. formosum they are rough and glabrous; the “indusia” of A. formosum are lunulate in shape rather than truly reniform as in A. fulvum; and the ultimate lamina segments of A. formosum are generally shorter than in A. fulvum (9–16 mm long, cf. 8–26 mm long).",
     "notes": "Brownsey et al. (2019) treated Adiantum viridescens as a synonym of Adiantum fulvum."
   },
   {
@@ -148,7 +167,12 @@
     ],
     "scientificName": "Alsophila colensoi",
     "family": "Cyatheaceae",
-    "conservationStatus": "Not Threatened"
+    "conservationStatus": "Not Threatened",
+    "biostatus": "Indigenous (Endemic).",
+    "altitudinalRange": "300–1200 m.",
+    "distribution": "North Island: Volcanic Plateau, Gisborne, Taranaki, Southern North Island.\nSouth Island: Western Nelson, Sounds-Nelson, Marlborough, Westland, Canterbury, Otago, Southland, Fiordland. Stewart Island.\nA montane to subalpine tree fern of cool, wet forests and gullies throughout much of the country, most frequent on the axial ranges and western districts.",
+    "recognition": "A stout, slow-growing tree fern with a short trunk, thick soft skirt of old stipes, dark-brown, shaggy scales on the stipe bases, and relatively short, stiff fronds that often arch upward rather than droop. Frond undersides are green (never glaucous) and the rachis/costae are densely scaled, separating it from A. dealbata and A. smithii.",
+    "notes": "Often referred to in older literature as Cyathea colensoi. Occupies colder, higher-rainfall niches than most other New Zealand tree ferns."
   },
   {
     "isNative": true,
@@ -160,7 +184,12 @@
     ],
     "scientificName": "Alsophila cunninghamii",
     "family": "Cyatheaceae",
-    "conservationStatus": "Not Threatened"
+    "conservationStatus": "Not Threatened",
+    "biostatus": "Indigenous (Non-endemic).",
+    "altitudinalRange": "0–600 m.",
+    "distribution": "North Island: Northland, Auckland, Gisborne, Taranaki, Southern North Island.\nSouth Island: Western Nelson, Westland, Fiordland. Also occurs in coastal south-eastern Australia (Victoria, Tasmania).\nIn New Zealand it is a locally common species of damp gullies and stream margins in warm, very humid forest on the northern and western sides of the main ranges.",
+    "recognition": "Slender, black to dark-brown trunk without a persistent skirt of old stipes; fronds to 4–6 m long, gracefully drooping. Stipes bear glossy dark scales with pale margins. Distinguished from A. dealbata and A. smithii by the lack of a pale frond underside and by the narrow, pendulous crown with few stipes retained on the trunk.",
+    "notes": "Known as the gully or slender tree fern. Cyathea cunninghamii is the common synonym in older references."
   },
   {
     "isNative": true,
@@ -171,7 +200,12 @@
     ],
     "scientificName": "Alsophila dealbata",
     "family": "Cyatheaceae",
-    "conservationStatus": "Not Threatened"
+    "conservationStatus": "Not Threatened",
+    "biostatus": "Indigenous (Endemic).",
+    "altitudinalRange": "0–900 m.",
+    "distribution": "North Island: widespread from Te Paki to Wellington.\nSouth Island: common in lowland to montane forests from Nelson to Southland, sparse in the driest eastern districts. Also present on Stewart Island.\nTypically abundant in shaded coastal to lower-montane forests, especially on well-drained slopes and banks.",
+    "recognition": "Iconic silver fern with a slender trunk, persistent skirt of old stipes, and arching fronds whose undersides are conspicuously glaucous-white from dense scales. Stipe scales are dark with pale edges. Lack of spine-tipped stipe scales and the silvery lower lamina distinguish it from other New Zealand tree ferns.",
+    "notes": "National emblem of New Zealand sports teams. Often still cited under Cyathea dealbata; sometimes confused with A. australis in cultivation, but that species lacks the intense silver underside."
   },
   {
     "isNative": true,
@@ -181,7 +215,12 @@
     ],
     "scientificName": "Alsophila kermadecensis",
     "family": "Cyatheaceae",
-    "conservationStatus": "At Risk – Naturally Uncommon"
+    "conservationStatus": "At Risk – Naturally Uncommon",
+    "biostatus": "Indigenous (Endemic).",
+    "altitudinalRange": "0–400 m.",
+    "distribution": "Kermadec Islands (Raoul Island chiefly, occasional records from Macauley Island).\nConfined to humid gullies and ridges in Kermadec broadleaf forest and scrub.",
+    "recognition": "Medium-sized tree fern with a slender trunk and crown of bright-green fronds to c. 4 m. Stipe scales are dark chestnut with narrow pale margins. Lacks the silver frond underside of A. dealbata and the very long drooping fronds of A. cunninghamii; endemic range also assists identification.",
+    "notes": "Small, isolated population vulnerable to storm damage and volcanic disturbance. Often treated as Cyathea kermadecensis in older works."
   },
   {
     "isNative": true,
@@ -191,7 +230,12 @@
     ],
     "scientificName": "Alsophila milnei",
     "family": "Cyatheaceae",
-    "conservationStatus": "At Risk – Naturally Uncommon"
+    "conservationStatus": "At Risk – Naturally Uncommon",
+    "biostatus": "Indigenous (Endemic).",
+    "altitudinalRange": "50–500 m.",
+    "distribution": "Kermadec Islands (mainly Raoul Island’s upland and cloud-forest zones).\nOccupies sheltered, high-humidity sites on ridges and slopes.",
+    "recognition": "Robust Kermadec tree fern with stout trunk and a dense crown of large, arching fronds. Stipe scales are dark with conspicuous pale fringes. Compared with A. kermadecensis it is taller with thicker stipes and a more massive crown, and frond undersides are uniformly green.",
+    "notes": "Endemic to the higher parts of the Kermadec Islands and regarded as naturally uncommon because of its tiny range."
   },
   {
     "isNative": true,
@@ -203,7 +247,12 @@
     ],
     "scientificName": "Alsophila smithii",
     "family": "Cyatheaceae",
-    "conservationStatus": "Not Threatened"
+    "conservationStatus": "Not Threatened",
+    "biostatus": "Indigenous (Endemic).",
+    "altitudinalRange": "0–950 m.",
+    "distribution": "North Island: Northland to Wellington.\nSouth Island: throughout, most common in high-rainfall western districts but extending east into sheltered gullies; also on Stewart Island.\nOccurs from coastal forest to lower montane belts in moist gullies and shaded slopes.",
+    "recognition": "Soft tree fern with a slender, often leaning trunk, dense skirt of old stipes, and long, softly textured fronds with pale- to mid-brown, thin scales. Frond undersides are green (not silver). Compared with A. dealbata it has softer texture and lacks the white lower surface; compared with A. colensoi the fronds are longer and more drooping with lighter scales.",
+    "notes": "Frequently retains numerous old stipes creating a thick skirt. Literature may list it as Cyathea smithii."
   },
   {
     "isNative": true,
@@ -228,7 +277,12 @@
     "commonNames": [],
     "scientificName": "Arachniodes aristata",
     "family": "Dryopteridaceae",
-    "conservationStatus": "At Risk – Naturally Uncommon"
+    "conservationStatus": "At Risk – Naturally Uncommon",
+    "biostatus": "Indigenous (Non-endemic).",
+    "altitudinalRange": "60–440 m.",
+    "distribution": "Kermadec Islands.\nIn New Zealand Arachniodes aristata is known only from Raoul Island, where it is common in dry forest areas under Rhopalostylis baueri and Metrosideros kermadecensis.\nThree sheets of material, said to be from the Chatham Islands, are held at WELT. Two were collected by Travers (WELT P003394, P003683), and the other is from the Kirk Herbarium. The species was not listed by Mueller (1864) from the specimens collected by Travers in 1863, nor by Cheeseman (1906, 1925), Allan (1961), or de Lange et al. (2011). The species is not known on the Chatham Islands today, and the status of the three collections in WELT is unclear.\nAlso Australia (Queensland, New South Wales), Lord Howe Island, Norfolk Island, and most South Pacific islands from Solomon Islands to Pitcairn Island.",
+    "recognition": "Arachniodes aristata is recognised by its terrestrial habit, long-creeping rhizomes, 3–4-pinnate laminae with sharply toothed margins, scaly fronds, and round sori protected by reniform indusia.",
+    "notes": "Arachniodes aristata was given a conservation status of Naturally Uncommon by de Lange et al. (2018).\nFraser-Jenkins et al. (2018) noted that “Although the name has long been applied to various Indian and Asian species … the true A. aristata from Tahiti etc. is a different species with smaller, stiffer segments and a less markedly longer lowest basiscopic pinnule of the lowest pinna. The reports from India, Bhutan and mainland Asia, and also from South Africa, refer to other species …”. This observation has been confirmed by Lu et al. (2019), who found the two groups to be resolved in different clades."
   },
   {
     "isNative": true,
@@ -270,7 +324,12 @@
     ],
     "scientificName": "Asplenium bulbiferum",
     "family": "Aspleniaceae",
-    "conservationStatus": "Not Threatened"
+    "conservationStatus": "Not Threatened",
+    "biostatus": "Indigenous (Endemic).",
+    "altitudinalRange": "0–1100 m.",
+    "distribution": "North Island: Northland, Auckland, Volcanic Plateau, Gisborne, Taranaki, Southern North Island.\nSouth Island: Western Nelson, Sounds-Nelson, Westland, Canterbury, Otago, Southland, Fiordland.\nChatham Islands, Stewart Island.\nAsplenium bulbiferum occurs throughout the North Island from Te Paki southwards in coastal and lowland to montane areas. It ranges from near sea level up to 1100 m on Mt Honokawa and Mt Taranaki, but is more common below c. 300 m. In the South Island it is largely confined to the Marlborough Sounds, north-west Nelson, and the west coast south to Fiordland, with outlying populations around the Southland coast to Dunedin and Banks Peninsula (although plants have not been collected from the latter two localities for over 100 years). It ranges from near sea level up to 660 m on Tākaka Hill. It also extends to Stewart Island and the Chatham Islands, but records of the species from the Auckland Islands (Allan 1961; Brownsey & Smith-Dodsworth 2000) are referable to A. gracillimum.",
+    "recognition": "Asplenium bulbiferum is usually readily recognised by the presence of bulbils on the upper surface of the lamina. However, similar bulbils also occur in A. gracillimum, albeit less frequently. Characters for distinguishing the two species are discussed in detail under A. gracillimum.\nBulbils sometimes also occur in hybrids that involve A. bulbiferum as one parent, but such plants can always be recognised by their aborted spores.",
+    "notes": "Analysis of low-copy nuclear DNA sequences strongly suggests that A. bulbiferum is one tetraploid parent of two allopolyploid species, A. cimmeriorum and A. gracillimum (Shepherd et al. 2008; Perrie et al. 2010)."
   },
   {
     "isNative": true,
@@ -786,7 +845,12 @@
     ],
     "scientificName": "Dicksonia squarrosa",
     "family": "Dicksoniaceae",
-    "conservationStatus": "Not Threatened"
+    "conservationStatus": "Not Threatened",
+    "biostatus": "Indigenous (Endemic).",
+    "altitudinalRange": "0–900 m.",
+    "distribution": "North Island: Northland, Auckland, Volcanic Plateau, Gisborne, Taranaki, Southern North Island.\nSouth Island: Western Nelson, Sounds-Nelson, Marlborough, Westland, Canterbury, Otago, Fiordland, Southland.\nThree Kings Islands, Chatham Islands, Stewart Island.\nDicksonia squarrosa occurs throughout the North Island in coastal to montane forest. It grows from near sea-level to 860 m in the Kaweka and Ruahine ranges. In the South Island it is largely confined to coastal and lowland sites, but reaches 500 m near Haast, and 900 m at Jordan Stream, Marlborough.",
+    "recognition": "Dicksonia squarrosa is readily recognised by the black stipe bases on the trunk, the presence of aerial buds, the very harsh fronds, and the characteristically orange-brown dead fronds. There are red-brown, rigid, multicellular, uniformly distributed hairs on the abaxial surface of the costae. If the crown or upper part of the trunk is damaged, the aerial buds may grow out to form a multi-headed tree fern. The stoloniferous habit means that the species often grows in groves, with a mixture of young and old trunks.",
+    "notes": "There are two syntype specimens of D. gracilis in WELT but Allan (1961) effectively identified the lectotype by describing uniquely the material on the sheet (\"… a small part of a rachis with 6 pinnae …\")."
   },
   {
     "isNative": true,
@@ -1817,7 +1881,12 @@
     ],
     "scientificName": "Pteridium esculentum",
     "family": "Dennstaedtiaceae",
-    "conservationStatus": "Not Threatened"
+    "conservationStatus": "Not Threatened",
+    "biostatus": "Indigenous (Non-endemic).",
+    "altitudinalRange": "0–1000 m.",
+    "distribution": "North Island: Northland, Auckland, Volcanic Plateau, Gisborne, Taranaki, Southern North Island.\nSouth Island: Western Nelson, Sounds-Nelson, Marlborough, Westland, Canterbury, Otago, Southland, Fiordland.\nKermadec Islands, Three Kings Islands, Chatham Islands, Stewart Island, Antipodes Island.\nPteridium esculentum occurs on Raoul Island (Sykes & West 1996), the Three Kings Islands, and in coastal, lowland, and montane sites throughout the North Island and much of the South Island. It has been little documented from the driest parts of south Canterbury and Otago. In the North Island it grows from near sea level to over 1000 m in the northern Ruahine Ranges, and in the South Island up to 1000 m on Mt Benmore, Marlborough. It also occurs on Stewart Island, the Chatham Islands, and Antipodes Island.\nAlso Australia (Western Australia, South Australia, Queensland, New South Wales, Victoria, Tasmania), Lord Howe Island, Norfolk Island, Solomon Islands, New Caledonia, Vanuatu, Fiji, Tonga, Central America from Mexico south, Caribbean islands, South America except Chile (see Brownsey 1989; Thomson 2012).",
+    "recognition": "Pteridium esculentum is distinguished from the northern hemisphere diploid species, P. aquilinum, by the presence of petiolar roots at the base of the stipe above the junction with the rhizome, winged axes that appear as free lobes or as long-decurrent bases to the lamina segments (Thomson 2016), and gnarled trichomes on the abaxial lamina surface that cause a farinaceous or mealy appearance (Thomson 2012). These features are all absent in P. aquilinum.",
+    "notes": "Thomson (2012) recognised two species of diploid bracken: the predominantly northern hemisphere Pteridium aquilinum (L.) Kuhn and the mainly southern hemisphere Pteridium esculentum. He further recognised 11 subspecies within P. aquilinum and two subspecies within P. esculentum – subsp. esculentum confined to Australia, New Zealand, New Caledonia, Solomon Islands, New Guinea, Vanuatu, Fiji and Tonga, and subsp. arachnoideum (Kaulf.) J.A.Thomson confined to Central and South America. However, Schwartsburd et al. (2014) continued to treat the South American plants as a distinct species, P. arachnoideum (Kaulf.) Maxon."
   },
   {
     "isNative": true,
@@ -1936,7 +2005,12 @@
     ],
     "scientificName": "Pyrrosia eleagnifolia",
     "family": "Polypodiaceae",
-    "conservationStatus": "Not Threatened"
+    "conservationStatus": "Not Threatened",
+    "biostatus": "Indigenous (Endemic).",
+    "altitudinalRange": "0–860 m.",
+    "distribution": "North Island: Northland, Auckland, Volcanic Plateau, Gisborne, Taranaki, Southern North Island.\nSouth Island: Western Nelson, Sounds-Nelson, Marlborough, Westland, Canterbury, Otago, Southland, Fiordland.\nKermadec Islands, Three Kings Islands, Chatham Islands, Stewart Island.\nPyrrosia elaeagnifolia occurs on the Kermadec and Three Kings Islands, and is common in lowland to montane areas throughout the North Island, from Te Paki to Wellington. It grows from sea level, reaching 860 m at Huka Falls, near Taupō. It is found in lowland and montane areas throughout the South Island, but is uncommon in inland parts of Otago and south Canterbury. It grows up to 825 m on Mt Furneaux in the Marlborough Sounds and near Mt Cook. It extends to Stewart Island and the Chatham Islands.\nHovenkamp cited one specimen in U from Norfolk Island (A. Cunningham 33), but Green (1994) asserted that only one species, P. confluens, was present on the island. P. elaeagnifolia is treated here as endemic to New Zealand.",
+    "recognition": "Pyrrosia elaeagnifolia is the only species of the genus present on the main islands of New Zealand, and is easily distinguished by its long-creeping rhizome; thick, fleshy, undivided fronds; dense covering of stellate hairs; and exindusiate sori arranged in several rows either side of the midrib.\nPyrrosia elaeagnifolia and P. serpens have both been recorded from the Kermadec Islands and characters for distinguishing the two are listed under the latter species.\nVery occasional aberrant fronds are found with lobed or bifid fronds, and sometimes the rhizome apices are fastigiately divided into multiple growing tips. The latter has been attributed to a gall-forming mite, Aceria sp. (Hovenkamp 1986, p. 178).",
+    "notes": "New Zealand plants were previously referred to P. serpens (G.Forst.) Ching, but that species has ciliate rhizome scales, whereas those in P. elaeagnifolia are more or less entire (Hovenkamp 1986; Brownsey et al. 2021). The confusion arose because Forster identified New Zealand as the type locality for P. serpens, but his specimen is not conspecific with the species on the main islands of New Zealand. It was probably collected on one of the Pacific islands, and the specimen mislabelled (Hovenkamp 1986). P. serpens occurs across the Pacific from the Kermadec Islands and Fiji to Pitcairn Island.\nPyrrosia elaeagnifolia has been widely misidentified in earlier New Zealand literature under the names Polypodium stellatum Vahl, Polypodium serpens G.Forst., Niphobolus bicolor Kaulf., and Polypodium rupestre R.Br., and combinations based on them.\nCameron (2017) argued that, based on the original spelling of Elaeagnus latifolia L., the name \"eleagnifolia\" is an orthographic error that should be corrected to \"elaeagnifolia\". That spelling is adopted here."
   },
   {
     "isNative": true,
@@ -1986,7 +2060,12 @@
     ],
     "scientificName": "Sphaeropteris medullaris",
     "family": "Cyatheaceae",
-    "conservationStatus": "Not Threatened"
+    "conservationStatus": "Not Threatened",
+    "biostatus": "Indigenous (Non-endemic).",
+    "altitudinalRange": "0–650 m.",
+    "distribution": "North Island: Northland, Auckland, Volcanic Plateau, Gisborne, Taranaki, Southern North Island.\nSouth Island: Western Nelson, Sounds-Nelson, Marlborough, Westland, Canterbury, Southland, Fiordland.\nThree Kings Islands, Chatham Islands, Stewart Island.\nSphaeropteris medullaris occurs primarily in coastal and lowland forest throughout much of the North Island, extending locally into montane forest. It ranges from sea level to 550 m near Taihape, and to 650 m in the Raukūmara and Kaweka Ranges. In the South Island it occurs in coastal and lowland districts of north-west Nelson and the Marlborough Sounds, extending sporadically on the west coast to Fiordland and Southland, and on the east coast to Banks Peninsula. It is absent from Otago and inland areas of Canterbury and Marlborough. It reaches 400 m on Banks Peninsula and 450 m at Blue Duck Reserve in the Seaward Kaikoura Range. It occurs also on the Three Kings Islands and Chatham Islands. There is a 19th century collection from Stewart Island (WELT P005625), but Wilson (1982) states it is \"rare and local, as far south as Port Adventure\".\nAlso occurs in Fiji, Samoa, Tahiti, Marquesas Islands, Austral Islands and Pitcairn Island (Holttum 1964). Whether the Pacific Islands’ populations are genuinely conspecific with those in New Zealand requires investigation.\nThe species is reported to be naturalised in the Azores (Lehnert, pers. comm. 2011).",
+    "recognition": "In the field Sphaeropteris medullaris is readily distinguished by its tall trunk with black hexagonal stipe scars, and large arching fronds with thick black stipes. The lamina and stipe scales have dark red setae along both margins, which distinguishes this species from all other native species. Even very young plants of Sphaeropteris medullaris can be positively identified by this character. The naturalised Cyathea cooperi has similar scales but is distinguished by its pale brown stipes and exindusiate sori. Plants of Cyathea cunninghamii are superficially similar to Sphaeropteris medullaris but have more slender trunks covered in appressed stipe bases, shorter and more lacy fronds, and thinner stipes. Cyathea cunninghamii also has scales that lack the marginal setae, and indusia that open to form a hood-shape, rather than splitting open irregularly.",
+    "notes": "Cyathea polyneuron was described by Colenso (1879) from a plant he originally collected on Scinde Island, Napier. There are specimens in the Colenso Herbarium at WELT (P003306), in the Cheeseman Herbarium (AK 143439), and on two sheets at K. However, Allan (1961, p. 41) lectotypified the specimen at WELT, stating \"the type in WELT consists of three portions of a rachis bearing in all 20 secondary pinnae…\", a description which accurately relates to WELT P003306 (now on two sheets).\nCyathea medullaris var. integra was described by Hooker (1844–1846) from specimens collected by Colenso in New Zealand, but no material has been located at AK, K or WELT, which hold most of Colenso’s collections, and the type has been left undesignated (Brownsey & Perrie 2015)."
   },
   {
     "isNative": true,
