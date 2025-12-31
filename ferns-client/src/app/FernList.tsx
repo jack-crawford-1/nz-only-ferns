@@ -239,14 +239,6 @@ export default function FernList() {
                     {ferns.length}
                   </p>
                 </div>
-                <div className="rounded-xl bg-[#f3f6ff] px-4 py-3 shadow-sm">
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1e60d4]">
-                    Endemic species
-                  </p>
-                  <p className="mt-2 text-2xl font-semibold text-gray-900">
-                    {endemicCount}
-                  </p>
-                </div>
               </div>
             </div>
             <button
