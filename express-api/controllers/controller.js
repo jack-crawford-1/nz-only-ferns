@@ -65,8 +65,46 @@ export async function getRegions(req, res) {
       return res.status(404).json({ error: "No regions available" });
     }
 
-    res.setHeader("Content-Type", "application/geo+json");
-    res.setHeader("Cache-Control", "public, max-age=3600");
+    const [file] = files;
+    const etagValue = file?.md5 || file?._id?.toString();
+    const etag = etagValue ? `"${etagValue}"` : null;
+    const lastModified =
+      file?.uploadDate instanceof Date
+        ? file.uploadDate.toUTCString()
+        : null;
+
+    res.setHeader(
+      "Content-Type",
+      file?.contentType || "application/geo+json"
+    );
+    res.setHeader(
+      "Cache-Control",
+      "public, max-age=86400, stale-while-revalidate=604800"
+    );
+    if (etag) res.setHeader("ETag", etag);
+    if (lastModified) res.setHeader("Last-Modified", lastModified);
+
+    const ifNoneMatch = req.headers["if-none-match"];
+    if (etag && typeof ifNoneMatch === "string") {
+      const matches = ifNoneMatch
+        .split(",")
+        .map((value) => value.trim())
+        .includes(etag);
+      if (matches) {
+        return res.status(304).end();
+      }
+    }
+
+    const ifModifiedSince = req.headers["if-modified-since"];
+    if (!ifNoneMatch && lastModified && typeof ifModifiedSince === "string") {
+      const since = new Date(ifModifiedSince);
+      if (!Number.isNaN(since.getTime())) {
+        const updatedAt = new Date(lastModified);
+        if (since >= updatedAt) {
+          return res.status(304).end();
+        }
+      }
+    }
 
     const stream = bucket.openDownloadStreamByName("nz-regions.geojson");
 
