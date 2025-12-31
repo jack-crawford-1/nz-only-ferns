@@ -109,21 +109,7 @@ export default function FernList() {
   );
 
   const orderedColumns = columnOrder.map((id) => columnsById[id]);
-  const uniqueFamilies = useMemo(
-    () => new Set(ferns.map((fern) => fern.family)).size,
-    [ferns]
-  );
-  const endemicCount = useMemo(
-    () => ferns.filter((fern) => fern.isEndemic).length,
-    [ferns]
-  );
-  const threatenedCount = useMemo(
-    () =>
-      ferns.filter((fern) =>
-        (fern.conservationStatus || "").toLowerCase().includes("threat")
-      ).length,
-    [ferns]
-  );
+
   const familyOptions = useMemo(
     () => Array.from(new Set(ferns.map((fern) => fern.family))).sort(),
     [ferns]
