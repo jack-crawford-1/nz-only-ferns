@@ -217,17 +217,17 @@ export default function DistributionMap({
 
   if (!geoData) {
     return (
-      <div className="rounded-2xl bg-[#f3f6ff] p-4 text-xs text-gray-500 shadow-inner">
+      <div className="rounded-2xl bg-[#f3f7f4] p-4 text-xs text-gray-500 shadow-inner">
         Loading map...
       </div>
     );
   }
 
   return (
-    <div className="rounded-2xl bg-[#f3f6ff] p-4 shadow-inner">
+    <div className="rounded-2xl bg-[#f3f7f4] p-4 shadow-inner">
       <div className="flex items-center justify-between text-[11px] font-semibold uppercase tracking-[0.18em] text-gray-500">
         <span>Regional map</span>
-        <span className="rounded-full bg-white px-2 py-1 text-[10px] text-[#1e60d4] shadow-sm">
+        <span className="rounded-full bg-white px-2 py-1 text-[10px] text-[#1f4d3a] shadow-sm">
           Approximate
         </span>
       </div>
@@ -244,16 +244,13 @@ export default function DistributionMap({
             <path
               key={feature.name}
               d={feature.path}
-              fill={isHighlighted ? "#1e60d4" : "#e7edf8"}
-              stroke={isHighlighted ? "#0f4fa4" : "#c6d4ef"}
+              fill={isHighlighted ? "#1f4d3a" : "#e6efe9"}
+              stroke={isHighlighted ? "#143324" : "#c6d3ca"}
               strokeWidth={1}
             />
           );
         })}
       </svg>
-      <p className="mt-2 text-[11px] text-gray-500">
-        Highlighted regions match named areas in the distribution notes.
-      </p>
     </div>
   );
 }

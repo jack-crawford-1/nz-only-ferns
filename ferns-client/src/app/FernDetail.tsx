@@ -6,6 +6,7 @@ import type { FernRecord } from "../types/Ferns";
 import Navbar from "../components/nav/Navbar";
 import LoadingScreen from "../components/LoadingScreen";
 import DistributionMap from "../components/DistributionMap";
+import Footer from "../components/Footer";
 
 export default function FernDetail() {
   const { name } = useParams();
@@ -73,6 +74,7 @@ export default function FernDetail() {
       : fern.imageUrl
       ? [fern.imageUrl]
       : [];
+  const distributionText = fern.distribution ?? "";
   const sourceUrl =
     "http://datastore.landcareresearch.co.nz/dataset/nzflora-brownsey-perrie-2021-pteridaceae/resource/97215842-8ecc-4067-a7a6-fc18250f6fc9";
 
@@ -89,13 +91,13 @@ export default function FernDetail() {
       : null;
 
   return (
-    <div className="min-h-screen bg-radial-to-b from-[#e9f3ff] via-white to-[#f6f8fb]">
+    <div className=" h-screen bg-[#22342606]">
       <Navbar />
-      <main className="mx-auto max-w-6xl px-4 pb-16 pt-32">
-        <section className="mb-8 flex flex-col gap-6 rounded-2xl bg-white/80 p-6 shadow-lg ring-1 ring-gray-100 backdrop-blur">
-          <div className="flex flex-wrap items-start justify-between gap-6">
+      <main className="mx-auto max-w-4xl px-4 pb-16 pt-32 ">
+        <section className="mb-8 flex flex-col gap-15 rounded-2xl bg-white/80 p-6 shadow-lg ring-1 ring-gray-100 backdrop-blur">
+          <div className="grid gap-0 lg:grid-cols-[minmax(0,1fr)_24rem] lg:items-start">
             <div className="space-y-3">
-              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#1967d2]">
+              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#20624a]">
                 Fern profile
               </p>
               <h1 className="text-3xl font-bold text-gray-900">
@@ -113,7 +115,7 @@ export default function FernDetail() {
                 <span
                   className={`rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] ${
                     fern.isEndemic
-                      ? "bg-[#e0edff] text-[#1e60d4]"
+                      ? "bg-[#e2f0e8] text-[#1f4d3a]"
                       : "bg-[#eef2f7] text-[#64748b]"
                   }`}
                 >
@@ -121,41 +123,50 @@ export default function FernDetail() {
                 </span>
               </div>
             </div>
-            <div className="w-full max-w-sm rounded-2xl bg-white p-4 shadow-lg ring-1 ring-gray-100">
-              {galleryImages.length > 0 ? (
-                <div
-                  className={`grid gap-2 ${
-                    galleryImages.length > 1 ? "grid-cols-2" : "grid-cols-1"
-                  }`}
-                >
-                  {galleryImages.map((url, index) => (
-                    <img
-                      key={`${url}-${index}`}
-                      src={url}
-                      alt={`${fern.scientificName} photo ${index + 1}`}
-                      className={`w-full rounded-xl object-cover ${
-                        galleryImages.length > 1 ? "h-28 sm:h-32" : "h-64"
-                      }`}
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  ))}
-                </div>
-              ) : (
-                <div className="flex h-64 w-full items-center justify-center rounded-xl bg-[#f3f6ff] text-sm text-gray-500">
-                  No image available
-                </div>
-              )}
+
+            <div className="lg:row-span-2 lg:flex md:items-end md:justify-center pt-10">
+              <div className="w-full max-w-sm rounded-2xl bg-white p-4 shadow-lg ring-1 ring-gray-100 ">
+                {galleryImages.length > 0 ? (
+                  <div
+                    className={`grid gap-2 ${
+                      galleryImages.length > 1 ? "grid-cols-1" : "grid-cols-1"
+                    }`}
+                  >
+                    {galleryImages.map((url, index) => (
+                      <img
+                        key={`${url}-${index}`}
+                        src={url}
+                        alt={`${fern.scientificName} photo ${index + 1}`}
+                        className={`w-full rounded-xl object-cover ${
+                          galleryImages.length > 1 ? "h-28 sm:h-25" : "h-64"
+                        }`}
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    ))}
+                  </div>
+                ) : (
+                  <div className="flex h-64 w-full items-center justify-center rounded-xl bg-[#f3f7f4] text-sm text-gray-500">
+                    No image available
+                  </div>
+                )}
+              </div>
             </div>
+
+            {distributionText ? (
+              <div className="w-full max-w-xs rounded-2xl bg-white p-4 shadow-lg ring-1 ring-gray-100">
+                <DistributionMap distributionText={distributionText} />
+              </div>
+            ) : null}
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {quickFacts.map((fact) => (
               <div
                 key={fact.label}
-                className="rounded-xl bg-[#f3f6ff] px-4 py-3"
+                className="rounded-xl bg-[#f3f7f4] px-4 py-3"
               >
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1e60d4]">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1f4d3a]">
                   {fact.label}
                 </p>
                 <p className="mt-2 text-sm font-semibold text-gray-800">
@@ -167,7 +178,7 @@ export default function FernDetail() {
 
           <div className="flex flex-wrap gap-3">
             <Link to="/ferns">
-              <button className="rounded-full bg-[#1e60d4] px-5 py-2 text-sm font-semibold text-white shadow-lg transition hover:bg-[#0f4fa4] hover:shadow-xl">
+              <button className="rounded-full bg-[#1f4d3a] px-5 py-2 text-sm font-semibold text-white shadow-lg transition hover:bg-[#143324] hover:shadow-xl">
                 Back to fern list
               </button>
             </Link>
@@ -178,7 +189,7 @@ export default function FernDetail() {
                     previousFern.scientificName
                   )}`}
                 >
-                  <button className="rounded-full border border-[#c6d9ff] bg-white px-4 py-2 text-sm font-semibold text-[#1e60d4] shadow-sm transition hover:border-[#1e60d4]">
+                  <button className="rounded-full border border-[#c7d9cf] bg-white px-4 py-2 text-sm font-semibold text-[#1f4d3a] shadow-sm transition hover:border-[#1f4d3a]">
                     Previous
                   </button>
                 </Link>
@@ -194,7 +205,7 @@ export default function FernDetail() {
                 <Link
                   to={`/ferns/${encodeURIComponent(nextFern.scientificName)}`}
                 >
-                  <button className="rounded-full border border-[#c6d9ff] bg-white px-4 py-2 text-sm font-semibold text-[#1e60d4] shadow-sm transition hover:border-[#1e60d4]">
+                  <button className="rounded-full border border-[#c7d9cf] bg-white px-4 py-2 text-sm font-semibold text-[#1f4d3a] shadow-sm transition hover:border-[#1f4d3a]">
                     Next
                   </button>
                 </Link>
@@ -218,45 +229,29 @@ export default function FernDetail() {
               </p>
             </div>
           )}
-          {detailSections.map((section, index) => (
+          {detailSections.map((section) => (
             <article
               key={section.title}
               className="rounded-2xl bg-white p-6 shadow-lg ring-1 ring-gray-100 "
             >
               <div className="flex flex-wrap items-center justify-between gap-3">
-                {index === 0 && (
-                  <a
-                    className="inline-flex items-center gap-2 rounded-full border border-[#c6d9ff] bg-[#eef4ff] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#1e60d4] transition hover:border-[#1e60d4]"
-                    href={sourceUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Extended Notes Source
-                  </a>
-                )}
                 <h2 className="text-lg font-semibold text-gray-900">
                   {section.title}
                 </h2>
               </div>
-              {section.title === "Distribution" ? (
-                <div className="mt-4 flex flex-col gap-4 lg:flex-row">
-                  <div className="lg:w-3/5">
-                    <p className="whitespace-pre-line text-sm text-gray-600">
-                      {section.value}
-                    </p>
-                  </div>
-                  <div className="lg:w-2/5">
-                    <DistributionMap distributionText={section.value} />
-                  </div>
+
+              <div className="mt-4 flex flex-col gap-4 lg:flex-row">
+                <div className="lg:w-3/5">
+                  <p className="whitespace-pre-line text-sm text-gray-600">
+                    {section.value}
+                  </p>
                 </div>
-              ) : (
-                <p className="mt-3 whitespace-pre-line text-sm text-gray-600">
-                  {section.value}
-                </p>
-              )}
+              </div>
             </article>
           ))}
         </section>
+
+        <Footer />
       </main>
     </div>
   );

@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import { fetchFerns } from "../api/fetchFerns";
 import type { FernRecord } from "../types/Ferns";
 import Navbar from "../components/nav/Navbar";
+import Footer from "../components/Footer";
 
 type StatusDetail = {
   name: string;
@@ -168,13 +169,13 @@ export default function Status() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-linear-to-b from-[#e9f3ff] via-white to-[#f6f8fb] ">
+    <div className="min-h-screen bg-[#22342606]">
       <Navbar />
-      <main className="mx-auto max-w-6xl px-4 pb-16 pt-32">
+      <main className="mx-auto max-w-4xl px-4 pb-16 pt-32">
         <section className="mb-8 flex flex-col gap-6 rounded-2xl bg-white/80 p-6 shadow-lg ring-1 ring-gray-100 backdrop-blur">
           <div className="flex flex-wrap items-start justify-between gap-6">
             <div className="space-y-3">
-              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#1967d2]">
+              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#20624a]">
                 Status
               </p>
               <h1 className="text-3xl font-bold text-gray-900">
@@ -184,7 +185,7 @@ export default function Status() {
           </div>
 
           <div className="flex flex-wrap items-center gap-3 text-xs text-gray-600">
-            <span className="inline-flex items-center gap-2 rounded-full bg-[#e0edff] px-3 py-1 font-semibold text-[#1e60d4]">
+            <span className="inline-flex items-center gap-2 rounded-full bg-[#e2f0e8] px-3 py-1 font-semibold text-[#1f4d3a]">
               {STATUS_DETAILS.length} status labels
             </span>
             <span
@@ -197,17 +198,17 @@ export default function Status() {
           </div>
 
           <div className="flex flex-wrap gap-3">
-            <Link to="/">
-              <button className="rounded-full bg-[#1e60d4] px-5 py-2 text-sm font-semibold text-white shadow-lg transition hover:bg-[#0f4fa4] hover:shadow-xl">
+            <Link to="/ferns">
+              <button className="rounded-full bg-[#1f4d3a] px-5 py-2 text-sm font-semibold text-white shadow-lg transition hover:bg-[#143324] hover:shadow-xl">
                 View fern list
               </button>
             </Link>
             <Link
-              to={`/?status=${encodeURIComponent(
+              to={`/ferns?status=${encodeURIComponent(
                 "Threatened – Nationally Critical"
               )}`}
             >
-              <button className="rounded-full border border-[#c6d9ff] bg-white px-5 py-2 text-sm font-semibold text-[#1e60d4] shadow-sm transition hover:border-[#1e60d4]">
+              <button className="rounded-full border border-[#c7d9cf] bg-white px-5 py-2 text-sm font-semibold text-[#1f4d3a] shadow-sm transition hover:border-[#1f4d3a]">
                 See most threatened
               </button>
             </Link>
@@ -261,24 +262,24 @@ export default function Status() {
               Status labels combine multiple signals to describe risk.
             </p>
             <ul className="mt-4 space-y-3 text-sm text-gray-600">
-              <li className="rounded-xl bg-[#f3f6ff] px-4 py-3">
-                <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1e60d4]">
+              <li className="rounded-xl bg-[#f3f7f4] px-4 py-3">
+                <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1f4d3a]">
                   Population
                 </span>
                 <p className="mt-1 text-sm text-gray-700">
                   Size of the population and how widely it is distributed.
                 </p>
               </li>
-              <li className="rounded-xl bg-[#f3f6ff] px-4 py-3">
-                <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1e60d4]">
+              <li className="rounded-xl bg-[#f3f7f4] px-4 py-3">
+                <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1f4d3a]">
                   Trend
                 </span>
                 <p className="mt-1 text-sm text-gray-700">
                   Whether numbers are increasing, stable, or declining.
                 </p>
               </li>
-              <li className="rounded-xl bg-[#f3f6ff] px-4 py-3">
-                <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1e60d4]">
+              <li className="rounded-xl bg-[#f3f7f4] px-4 py-3">
+                <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1f4d3a]">
                   Threats
                 </span>
                 <p className="mt-1 text-sm text-gray-700">
@@ -295,7 +296,7 @@ export default function Status() {
             <div key={group.title} className="space-y-5">
               <div className="flex flex-wrap items-end justify-between gap-3">
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#1967d2]">
+                  <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#20624a]">
                     {group.title}
                   </p>
                   <h2 className="text-2xl font-bold text-gray-900">
@@ -331,8 +332,8 @@ export default function Status() {
                       <p className="mt-3 text-sm text-gray-600">
                         {status.summary}
                       </p>
-                      <div className="mt-4 rounded-xl bg-[#f3f6ff] px-4 py-3">
-                        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1e60d4]">
+                      <div className="mt-4 rounded-xl bg-[#f3f7f4] px-4 py-3">
+                        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1f4d3a]">
                           Focus
                         </p>
                         <p className="mt-1 text-sm text-gray-700">
@@ -348,7 +349,7 @@ export default function Status() {
                           examples.map((example) => (
                             <span
                               key={example}
-                              className="rounded-full bg-[#eef4ff] px-3 py-1 text-[11px] font-semibold text-[#1e60d4]"
+                              className="rounded-full bg-[#edf4f0] px-3 py-1 text-[11px] font-semibold text-[#1f4d3a]"
                             >
                               {example}
                             </span>
@@ -359,13 +360,6 @@ export default function Status() {
                           </span>
                         )}
                       </div>
-
-                      <Link
-                        to={`/?status=${encodeURIComponent(status.name)}`}
-                        className="mt-4 inline-flex text-sm font-semibold text-[#1e60d4] underline"
-                      >
-                        View in fern list
-                      </Link>
                     </article>
                   );
                 })}
@@ -373,6 +367,8 @@ export default function Status() {
             </div>
           ))}
         </section>
+
+        <Footer />
       </main>
     </div>
   );

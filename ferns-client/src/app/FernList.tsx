@@ -4,6 +4,7 @@ import { fetchFerns } from "../api/fetchFerns";
 import type { FernRecord } from "../types/Ferns";
 import Navbar from "../components/nav/Navbar";
 import LoadingScreen from "../components/LoadingScreen";
+import Footer from "../components/Footer";
 import { convertToCSV, downloadCSV } from "../utils/csv";
 
 type ColumnId =
@@ -47,7 +48,7 @@ const COLUMN_DEFINITIONS: ColumnDefinition[] = [
     renderCell: (fern) => (
       <Link
         to={`/ferns/${encodeURIComponent(fern.scientificName)}`}
-        className="text-[#1967d2] hover:underline"
+        className="text-[#20624a] hover:underline"
       >
         {fern.scientificName}
       </Link>
@@ -221,29 +222,32 @@ export default function FernList() {
   };
 
   return (
-    <div className="min-h-screen bg-linear from-[#e9f3ff] via-white to-[#f6f8fb]">
-      <Navbar searchQuery={searchQuery} onSearchChange={setSearchQuery} />
-      <main className="mx-auto max-w-6xl px-4 pb-12 pt-32 exo-2-500">
+    <div className="min-h-screen bg-[#22342606]">
+      <Navbar />
+      <main className="mx-auto max-w-5xl px-4 pb-12 pt-32">
         <div className="mb-6 flex flex-col gap-3 rounded-2xl bg-white/80 p-6 shadow-lg ring-1 ring-gray-100 backdrop-blur">
-          <div className="flex items-start justify-between gap-4 flex-wrap">
-            <div className="space-y-2">
-              <h1 className="text-2xl font-bold text-gray-900 pb-10">
+          <div className="flex flex-wrap items-start justify-between gap-4">
+            <div className="space-y-3">
+              <h1 className="text-2xl font-bold text-gray-900">
                 Explore Aotearoa’s native ferns
               </h1>
-              <div className="mb-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                <div className="rounded-xl bg-[#f3f6ff] px-4 py-3 shadow-sm">
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1e60d4]">
-                    Total ferns
-                  </p>
-                  <p className="mt-2 text-2xl font-semibold text-gray-900">
-                    {ferns.length}
-                  </p>
-                </div>
+              <div className="relative w-full max-w-md">
+                <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
+                  🔍
+                </span>
+                <input
+                  type="search"
+                  value={searchQuery}
+                  onChange={(event) => setSearchQuery(event.target.value)}
+                  placeholder="Search ferns, families, or status"
+                  className="w-full rounded-full border border-transparent bg-[#f3f7f4] px-9 py-2 text-sm text-gray-800 shadow-inner ring-1 ring-transparent transition focus:border-[#1f4d3a] focus:ring-[#c7d9cf]"
+                  aria-label="Filter fern rows"
+                />
               </div>
             </div>
             <button
               onClick={handleExport}
-              className="flex items-center gap-2 rounded-full bg-[#1e60d4] px-4 py-2 text-sm font-semibold text-white shadow-lg transition hover:bg-[#0f4fa4] hover:shadow-xl"
+              className="flex items-center gap-2 rounded-full bg-[#1f4d3a] px-4 py-2 text-sm font-semibold text-white shadow-lg transition hover:bg-[#143324] hover:shadow-xl"
             >
               <span>Export to CSV</span>
             </button>
@@ -251,7 +255,7 @@ export default function FernList() {
 
           <div className="flex flex-wrap items-center gap-3 text-xs text-gray-600">
             <div className="flex items-center gap-2">
-              <span className="inline-flex h-7 w-10 items-center justify-center rounded-full bg-[#e0edff] font-semibold text-[#1e60d4] ">
+              <span className="inline-flex h-7 w-10 items-center justify-center rounded-full bg-[#e2f0e8] font-semibold text-[#1f4d3a] ">
                 {filteredFerns.length}
               </span>
               <span className="font-medium">Ferns visible</span>
@@ -265,8 +269,8 @@ export default function FernList() {
               onClick={() => setShowEndemicOnly((prev) => !prev)}
               className={`rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] transition ${
                 showEndemicOnly
-                  ? "bg-[#1e60d4] text-white shadow-sm"
-                  : "bg-white text-[#1e60d4] shadow-sm ring-1 ring-[#c6d9ff]"
+                  ? "bg-[#1f4d3a] text-white shadow-sm"
+                  : "bg-white text-[#1f4d3a] shadow-sm ring-1 ring-[#c7d9cf]"
               }`}
             >
               Endemic only
@@ -276,7 +280,7 @@ export default function FernList() {
                 Status
               </label>
               <select
-                className="rounded-full bg-white px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#1e60d4] shadow-sm ring-1 ring-[#c6d9ff]"
+                className="rounded-full bg-white px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#1f4d3a] shadow-sm ring-1 ring-[#c7d9cf]"
                 value={selectedStatus}
                 onChange={(event) => setSelectedStatus(event.target.value)}
               >
@@ -293,7 +297,7 @@ export default function FernList() {
                 Family
               </label>
               <select
-                className="rounded-full bg-white px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#1e60d4] shadow-sm ring-1 ring-[#c6d9ff]"
+                className="rounded-full bg-white px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#1f4d3a] shadow-sm ring-1 ring-[#c7d9cf]"
                 value={selectedFamily}
                 onChange={(event) => setSelectedFamily(event.target.value)}
               >
@@ -311,7 +315,7 @@ export default function FernList() {
         <div className="overflow-hidden rounded-2xl bg-white shadow-xl ring-1 ring-gray-100">
           <div className="overflow-x-auto">
             <table
-              className="min-w-full text-sm text-gray-800"
+              className="min-w-full text-sm text-gray-800 "
               style={{ tableLayout: "fixed" }}
             >
               <colgroup>
@@ -339,8 +343,8 @@ export default function FernList() {
                         onDrop={(event) => handleDrop(event, column.id)}
                         onDragOver={(event) => handleDragOver(event, column.id)}
                         onDragEnd={handleDragEnd}
-                        className={`group relative cursor-grab px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-[0.12em] text-gray-600 transition-colors hover:bg-[#e6edff] active:cursor-grabbing ${
-                          isDropTarget ? "bg-[#e6edff]" : ""
+                        className={`group relative cursor-grab px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-[0.12em] text-gray-600 transition-colors hover:bg-[#e6efe9] active:cursor-grabbing ${
+                          isDropTarget ? "bg-[#e6efe9]" : ""
                         } ${column.align === "center" ? "text-center" : ""}`}
                         title="Drag to reorder"
                       >
@@ -379,8 +383,8 @@ export default function FernList() {
                       colSpan={orderedColumns.length + 1}
                       className="px-4 py-10"
                     >
-                      <div className="rounded-xl bg-[#f3f6ff] px-4 py-6 text-center text-sm text-gray-600 shadow-sm">
-                        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#1e60d4]">
+                      <div className="rounded-xl bg-[#f3f7f4] px-4 py-6 text-center text-sm text-gray-600 shadow-sm">
+                        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#1f4d3a]">
                           No results
                         </p>
                         <p className="mt-2">
@@ -397,7 +401,7 @@ export default function FernList() {
                     className="odd:bg-white even:bg-[#fbfcff] transition-colors hover:bg-[#f1f6ff]"
                   >
                     <td className="px-3 py-3 text-left text-xs font-semibold text-gray-500">
-                      <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#f3f6ff] text-gray-700 shadow-inner">
+                      <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#f3f7f4] text-gray-700 shadow-inner">
                         {index + 1}
                       </span>
                     </td>
@@ -417,6 +421,8 @@ export default function FernList() {
             </table>
           </div>
         </div>
+
+        <Footer />
       </main>
     </div>
   );

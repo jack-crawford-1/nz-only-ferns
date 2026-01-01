@@ -1,4 +1,5 @@
 import Navbar from "../components/nav/Navbar";
+import Footer from "../components/Footer";
 
 const HABITATS = [
   {
@@ -59,13 +60,13 @@ const HABITATS = [
 
 export default function Habitats() {
   return (
-    <div className="min-h-screen bg-linear-to-b from-[#e9f3ff] via-white to-[#f6f8fb]">
+    <div className="min-h-screen bg-[#22342606]">
       <Navbar />
       <main className="mx-auto max-w-6xl px-4 pb-16 pt-32">
         <section className="mb-8 flex flex-col gap-6 rounded-2xl bg-white/80 p-6 shadow-lg ring-1 ring-gray-100 backdrop-blur">
           <div className="flex flex-wrap items-start justify-between gap-6">
             <div className="space-y-3">
-              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#1967d2]">
+              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#20624a]">
                 Habitats
               </p>
               <h1 className="text-3xl font-bold text-gray-900">
@@ -78,7 +79,7 @@ export default function Habitats() {
           </div>
         </section>
 
-        <section className="grid gap-5 md:grid-cols-2">
+        <section className="grid gap-5 md:grid-cols-3">
           {HABITATS.map((habitat) => (
             <article
               key={habitat.title}
@@ -102,7 +103,7 @@ export default function Habitats() {
                   {habitat.cues.map((cue) => (
                     <span
                       key={cue}
-                      className="rounded-full bg-[#f3f6ff] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#1e60d4]"
+                      className="rounded-full bg-[#f3f7f4] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#1f4d3a]"
                     >
                       {cue}
                     </span>
@@ -116,7 +117,7 @@ export default function Habitats() {
                     {habitat.examples.map((example) => (
                       <span
                         key={example}
-                        className="rounded-full bg-white px-3 py-1 text-[11px] font-semibold text-[#1e60d4] shadow-sm ring-1 ring-[#e3eaf7]"
+                        className="rounded-full bg-white px-3 py-1 text-[11px] font-semibold text-[#1f4d3a] shadow-sm ring-1 ring-[#dce6df]"
                       >
                         {example}
                       </span>
@@ -127,6 +128,8 @@ export default function Habitats() {
             </article>
           ))}
         </section>
+
+        <Footer />
       </main>
     </div>
   );

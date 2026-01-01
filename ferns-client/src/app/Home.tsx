@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
@@ -7,7 +8,7 @@ export default function Home() {
         <section className="mb-8 flex flex-col gap-6 rounded-2xl bg-white/80 p-6 shadow-lg ring-1 ring-gray-100 backdrop-blur">
           <div className="flex flex-wrap items-start justify-between gap-6">
             <div className="space-y-3">
-              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#1967d2]">
+              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#20624a]">
                 About the project
               </p>
               <h1 className="text-3xl font-bold text-gray-900">
@@ -21,7 +22,7 @@ export default function Home() {
           </div>
 
           <div className="flex flex-wrap items-center gap-3 text-xs text-gray-600 ">
-            <span className="inline-flex items-center gap-2 rounded-full bg-[#e0edff] px-3 py-1 font-semibold text-[#1e60d4]">
+            <span className="inline-flex items-center gap-2 rounded-full bg-[#e2f0e8] px-3 py-1 font-semibold text-[#1f4d3a]">
               5 sources
             </span>
             <span
@@ -32,7 +33,7 @@ export default function Home() {
 
           <div className="flex flex-wrap gap-3 ">
             <Link to="/ferns">
-              <button className="rounded-full bg-[#1e60d4] px-5 py-2 text-sm font-semibold text-white shadow-lg transition hover:bg-[#0f4fa4] hover:shadow-xl">
+              <button className="rounded-full bg-[#1f4d3a] px-5 py-2 text-sm font-semibold text-white shadow-lg transition hover:bg-[#143324] hover:shadow-xl">
                 Explore the fern list
               </button>
             </Link>
@@ -42,7 +43,7 @@ export default function Home() {
         <section className="space-y-4">
           <div className="flex flex-wrap items-end justify-between gap-3">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#1967d2]">
+              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#20624a]">
                 Sources
               </p>
             </div>
@@ -54,7 +55,7 @@ export default function Home() {
                 <h3 className="text-base font-semibold text-gray-900">
                   New Zealand Plant Conservation Network
                 </h3>
-                <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#1e60d4]">
+                <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#1f4d3a]">
                   NZPCN
                 </span>
               </div>
@@ -66,7 +67,7 @@ export default function Home() {
                 href="https://www.nzpcn.org.nz/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 inline-flex items-center text-sm font-semibold text-[#1e60d4] hover:text-[#0f4fa4]"
+                className="mt-4 inline-flex items-center text-sm font-semibold text-[#1f4d3a] hover:text-[#143324]"
               >
                 nzpcn.org.nz
               </a>
@@ -77,7 +78,7 @@ export default function Home() {
                 <h3 className="text-base font-semibold text-gray-900">
                   NZFlora / Landcare Research
                 </h3>
-                <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#1e60d4]">
+                <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#1f4d3a]">
                   NZFlora
                 </span>
               </div>
@@ -90,7 +91,7 @@ export default function Home() {
                 href="https://nzflora.landcareresearch.co.nz/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 inline-flex items-center text-sm font-semibold text-[#1e60d4] hover:text-[#0f4fa4]"
+                className="mt-4 inline-flex items-center text-sm font-semibold text-[#1f4d3a] hover:text-[#143324]"
               >
                 nzflora.landcareresearch.co.nz
               </a>
@@ -101,7 +102,7 @@ export default function Home() {
                 <h3 className="text-base font-semibold text-gray-900">
                   Global Biodiversity Information Facility
                 </h3>
-                <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#1e60d4]">
+                <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#1f4d3a]">
                   GBIF
                 </span>
               </div>
@@ -113,7 +114,7 @@ export default function Home() {
                 href="https://www.gbif.org/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 inline-flex items-center text-sm font-semibold text-[#1e60d4] hover:text-[#0f4fa4]"
+                className="mt-4 inline-flex items-center text-sm font-semibold text-[#1f4d3a] hover:text-[#143324]"
               >
                 gbif.org
               </a>
@@ -124,7 +125,7 @@ export default function Home() {
                 <h3 className="text-base font-semibold text-gray-900">
                   Department of Conservation
                 </h3>
-                <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#1e60d4]">
+                <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#1f4d3a]">
                   DOC
                 </span>
               </div>
@@ -137,7 +138,7 @@ export default function Home() {
                 href="https://www.doc.govt.nz/nature/biodiversity/nz-threat-classification-system/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 inline-flex items-center text-sm font-semibold text-[#1e60d4] hover:text-[#0f4fa4]"
+                className="mt-4 inline-flex items-center text-sm font-semibold text-[#1f4d3a] hover:text-[#143324]"
               >
                 doc.govt.nz/nature/biodiversity/nz-threat-classification-system/
               </a>
@@ -148,7 +149,7 @@ export default function Home() {
                 <h3 className="text-base font-semibold text-gray-900">
                   Brownsey, P. J. &amp; Perrie, L. R.
                 </h3>
-                <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#1e60d4]">
+                <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#1f4d3a]">
                   PDF
                 </span>
               </div>
@@ -162,7 +163,7 @@ export default function Home() {
                 href="https://datastore.landcareresearch.co.nz/dataset/nzflora-brownsey-perrie-2021-pteridaceae/resource/97215842-8ecc-4067-a7a6-fc18250f6fc9"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 inline-flex items-center text-sm font-semibold text-[#1e60d4] hover:text-[#0f4fa4]"
+                className="mt-4 inline-flex items-center text-sm font-semibold text-[#1f4d3a] hover:text-[#143324]"
               >
                 landcareresearch.co.nz/dataset/nzflora-brownsey-perrie-2021-pteridaceae
               </a>
@@ -170,7 +171,7 @@ export default function Home() {
 
             <article className="rounded-2xl bg-white p-5 shadow-lg ring-1 ring-gray-100 md:col-span-2">
               <div className="flex items-start justify-between gap-3">
-                <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#1e60d4]">
+                <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#1f4d3a]">
                   Guides
                 </span>
               </div>
@@ -192,6 +193,8 @@ export default function Home() {
             </article>
           </div>
         </section>
+
+        <Footer />
       </main>
     </div>
   );
