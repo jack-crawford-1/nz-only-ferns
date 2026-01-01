@@ -75,8 +75,6 @@ export default function FernDetail() {
       ? [fern.imageUrl]
       : [];
   const distributionText = fern.distribution ?? "";
-  const sourceUrl =
-    "http://datastore.landcareresearch.co.nz/dataset/nzflora-brownsey-perrie-2021-pteridaceae/resource/97215842-8ecc-4067-a7a6-fc18250f6fc9";
 
   const orderedFerns = [...allFerns].sort((a, b) =>
     a.scientificName.localeCompare(b.scientificName)
