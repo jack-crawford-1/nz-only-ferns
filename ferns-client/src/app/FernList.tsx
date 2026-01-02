@@ -224,7 +224,7 @@ export default function FernList() {
                   <div className="flex h-full flex-col gap-4">
                     <Link
                       to={`/ferns/${encodeURIComponent(fern.scientificName)}`}
-                      className="block aspect-[4/3] overflow-hidden rounded-2xl"
+                      className="block aspect-4/3 overflow-hidden rounded-2xl"
                       aria-label={`View ${fern.scientificName}`}
                     >
                       {renderFernImage(fern)}
