@@ -2,8 +2,9 @@ const WIKI_API = "https://commons.wikimedia.org/w/api.php";
 const HEADERS = {
   "User-Agent": "NZFernsApp/1.0 (developer contact unavailable)",
 };
-const MAX_IMAGES = 4;
+const MAX_IMAGES = 32;
 const IMAGE_WIDTH = "600";
+const SEARCH_FILTER = "filetype:bitmap";
 
 export async function fetchFernImages(scientificName) {
   try {
@@ -12,7 +13,7 @@ export async function fetchFernImages(scientificName) {
       action: "query",
       format: "json",
       list: "search",
-      srsearch: scientificName,
+      srsearch: `"${scientificName}" ${SEARCH_FILTER}`,
       srnamespace: "6",
       srlimit: String(MAX_IMAGES),
     }).toString();

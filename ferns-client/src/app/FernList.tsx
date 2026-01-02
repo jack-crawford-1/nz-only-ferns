@@ -228,7 +228,10 @@ export default function FernList() {
         <div className="mb-6 flex flex-col gap-3 rounded-2xl bg-white/80 p-6 shadow-lg ring-1 ring-gray-100 backdrop-blur">
           <div className="flex flex-wrap items-start justify-between gap-4">
             <div className="space-y-3">
-              <h1 className="text-2xl font-bold text-gray-900">
+              <h1
+                className="text-2xl font-bold text-gray-900"
+                style={{ fontFamily: "Cormorant Garamond" }}
+              >
                 Explore Aotearoa’s native ferns
               </h1>
               <div className="relative w-full max-w-md">

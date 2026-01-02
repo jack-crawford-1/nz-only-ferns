@@ -16,6 +16,7 @@ export default function FernDetail() {
   const [allFerns, setAllFerns] = useState<FernRecord[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
+  const [galleryPage, setGalleryPage] = useState(0);
 
   useEffect(() => {
     if (!decodedName) return;
@@ -34,6 +35,10 @@ export default function FernDetail() {
       });
   }, []);
 
+  useEffect(() => {
+    setGalleryPage(0);
+  }, [fern?.scientificName]);
+
   if (loading)
     return (
       <LoadingScreen
@@ -45,6 +50,7 @@ export default function FernDetail() {
     return <p className="text-red-500 text-center mt-10">Error: {error}</p>;
   if (!fern) return <p className="text-center mt-10">Fern not found.</p>;
 
+  const IMAGES_PER_PAGE = 4;
   const quickFacts = [
     { label: "Family", value: fern.family },
     {
@@ -75,6 +81,18 @@ export default function FernDetail() {
       ? [fern.imageUrl]
       : [];
   const distributionText = fern.distribution ?? "";
+  const galleryPageCount = Math.ceil(galleryImages.length / IMAGES_PER_PAGE);
+  const galleryStart = galleryPage * IMAGES_PER_PAGE;
+  const galleryEnd = Math.min(
+    galleryStart + IMAGES_PER_PAGE,
+    galleryImages.length
+  );
+  const galleryPageImages = galleryImages.slice(
+    galleryStart,
+    galleryStart + IMAGES_PER_PAGE
+  );
+  const canGoPrev = galleryPage > 0;
+  const canGoNext = galleryPage + 1 < galleryPageCount;
 
   const orderedFerns = [...allFerns].sort((a, b) =>
     a.scientificName.localeCompare(b.scientificName)
@@ -91,14 +109,17 @@ export default function FernDetail() {
   return (
     <div className=" h-screen bg-[#22342606]">
       <Navbar />
-      <main className="mx-auto max-w-4xl px-4 pb-16 pt-32 ">
+      <main className="mx-auto max-w-4xl px-4 pb-16 pt-32">
         <section className="mb-8 flex flex-col gap-15 rounded-2xl bg-white/80 p-6 shadow-lg ring-1 ring-gray-100 backdrop-blur">
           <div className="grid gap-0 lg:grid-cols-[minmax(0,1fr)_24rem] lg:items-start">
             <div className="space-y-3">
               <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#20624a]">
                 Fern profile
               </p>
-              <h1 className="text-3xl font-bold text-gray-900">
+              <h1
+                className="text-4xl  text-gray-900"
+                style={{ fontFamily: "Cormorant Garamond" }}
+              >
                 {fern.scientificName}
               </h1>
               <div className="text-sm text-gray-600">
@@ -125,24 +146,72 @@ export default function FernDetail() {
             <div className="lg:row-span-2 lg:flex md:items-end md:justify-center pt-10">
               <div className="w-full max-w-sm rounded-2xl bg-white p-4 shadow-lg ring-1 ring-gray-100 ">
                 {galleryImages.length > 0 ? (
-                  <div
-                    className={`grid gap-2 ${
-                      galleryImages.length > 1 ? "grid-cols-1" : "grid-cols-1"
-                    }`}
-                  >
-                    {galleryImages.map((url, index) => (
-                      <img
-                        key={`${url}-${index}`}
-                        src={url}
-                        alt={`${fern.scientificName} photo ${index + 1}`}
-                        className={`w-full rounded-xl object-cover ${
-                          galleryImages.length > 1 ? "h-28 sm:h-25" : "h-64"
-                        }`}
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    ))}
-                  </div>
+                  <>
+                    <div
+                      className={`grid gap-2 ${
+                        galleryPageImages.length > 1
+                          ? "grid-cols-1"
+                          : "grid-cols-1"
+                      }`}
+                    >
+                      {galleryPageImages.map((url, index) => (
+                        <img
+                          key={`${url}-${galleryStart + index}`}
+                          src={url}
+                          alt={`${fern.scientificName} photo ${
+                            galleryStart + index + 1
+                          }`}
+                          className={`w-full rounded-xl object-cover ${
+                            galleryPageImages.length > 1
+                              ? "h-28 sm:h-25"
+                              : "h-64"
+                          }`}
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      ))}
+                    </div>
+                    {galleryPageCount > 1 ? (
+                      <div className="mt-3 flex items-center justify-between gap-2">
+                        <p className="text-xs text-gray-500">
+                          Showing {galleryStart + 1}-{galleryEnd} of{" "}
+                          {galleryImages.length}
+                        </p>
+                        <div className="flex items-center gap-2">
+                          <button
+                            className={`rounded-full border px-3 py-1 text-xs font-semibold transition ${
+                              canGoPrev
+                                ? "border-[#c7d9cf] bg-white text-[#1f4d3a] hover:border-[#1f4d3a]"
+                                : "cursor-not-allowed border-gray-200 bg-white text-gray-400"
+                            }`}
+                            type="button"
+                            onClick={() =>
+                              setGalleryPage((page) => Math.max(page - 1, 0))
+                            }
+                            disabled={!canGoPrev}
+                          >
+                            Previous
+                          </button>
+                          <button
+                            className={`rounded-full border px-3 py-1 text-xs font-semibold transition ${
+                              canGoNext
+                                ? "border-[#c7d9cf] bg-white text-[#1f4d3a] hover:border-[#1f4d3a]"
+                                : "cursor-not-allowed border-gray-200 bg-white text-gray-400"
+                            }`}
+                            type="button"
+                            onClick={() =>
+                              setGalleryPage((page) =>
+                                Math.min(page + 1, galleryPageCount - 1)
+                              )
+                            }
+                            disabled={!canGoNext}
+                          >
+                            Next
+                          </button>
+                        </div>
+                      </div>
+                    ) : null}
+                  </>
                 ) : (
                   <div className="flex h-64 w-full items-center justify-center rounded-xl bg-[#f3f7f4] text-sm text-gray-500">
                     No image available

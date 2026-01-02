@@ -15,10 +15,13 @@ export default function Navbar() {
       <nav className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-4 py-4">
         <div className="flex items-center gap-3">
           <div className="flex flex-col leading-tight">
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#143324]">
+            <span
+              className="text-xs font-semibold uppercase tracking-[0.2em] text-[#143324]"
+              style={{ fontFamily: "Cormorant Garamond" }}
+            >
               <a href="/">NZ Only Ferns</a>
             </span>
-            <span className="text-lg font-bold text-gray-900">
+            <span className="text-md font-bold text-gray-900">
               <a href="/">Fern Library</a>
             </span>
           </div>
