@@ -8,7 +8,7 @@ export default function LoadingScreen({
   description = "Preparing the latest fern records.",
 }: LoadingScreenProps) {
   return (
-    <div className="min-h-screen bg-linear-to-b from-[#e9f3ff] via-white to-[#f6f8fb]">
+    <div className="min-h-screen bg-[#22342606]">
       <main className="mx-auto max-w-4xl px-4 pb-16 pt-24">
         <div className="rounded-2xl bg-white/80 p-6 shadow-lg ring-1 ring-gray-100 backdrop-blur">
           <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#20624a]">

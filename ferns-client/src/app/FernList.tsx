@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState, type ReactNode } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link, useSearchParams } from "react-router";
 import { fetchFerns } from "../api/fetchFerns";
 import type { FernRecord } from "../types/Ferns";
@@ -7,82 +7,20 @@ import LoadingScreen from "../components/LoadingScreen";
 import Footer from "../components/Footer";
 import { convertToCSV, downloadCSV } from "../utils/csv";
 
-type ColumnId =
-  | "image"
-  | "scientificName"
-  | "isEndemic"
-  | "commonNames"
-  | "family"
-  | "conservationStatus";
-
-type ColumnDefinition = {
-  id: ColumnId;
-  header: string;
-  width: string;
-  align?: "left" | "center";
-  renderCell: (fern: FernRecord) => ReactNode;
-};
-
-const COLUMN_DEFINITIONS: ColumnDefinition[] = [
-  {
-    id: "image",
-    header: "Image",
-    width: "120px",
-    renderCell: (fern) =>
-      fern.imageUrl ? (
-        <img
-          src={fern.imageUrl}
-          alt={fern.scientificName}
-          className="h-20 w-20 object-cover rounded-md border border-gray-200 shadow-sm"
-        />
-      ) : (
-        <div className="h-20 w-20 flex items-center justify-center bg-gray-200 text-gray-500 text-xs rounded-md">
-          No image
-        </div>
-      ),
-  },
-  {
-    id: "scientificName",
-    header: "Scientific Name",
-    width: "240px",
-    renderCell: (fern) => (
-      <Link
-        to={`/ferns/${encodeURIComponent(fern.scientificName)}`}
-        className="text-[#20624a] hover:underline"
-      >
-        {fern.scientificName}
-      </Link>
-    ),
-  },
-  {
-    id: "isEndemic",
-    header: "Endemic",
-    width: "120px",
-    align: "center",
-    renderCell: (fern) => (fern.isEndemic ? "Yes" : "No"),
-  },
-  {
-    id: "commonNames",
-    header: "Common Names",
-    width: "240px",
-    renderCell: (fern) =>
-      fern.commonNames.length > 0 ? fern.commonNames.join(", ") : "—",
-  },
-  {
-    id: "family",
-    header: "Family",
-    width: "200px",
-    renderCell: (fern) => fern.family,
-  },
-  {
-    id: "conservationStatus",
-    header: "Conservation Status",
-    width: "240px",
-    renderCell: (fern) => fern.conservationStatus || "Unknown",
-  },
-];
-
-const ROW_NUMBER_WIDTH = "52px";
+const renderFernImage = (fern: FernRecord) =>
+  fern.imageUrl ? (
+    <img
+      src={fern.imageUrl}
+      alt={fern.scientificName}
+      className="h-full w-full rounded-2xl border border-[#e2e8e0] object-cover shadow-sm"
+      loading="lazy"
+      decoding="async"
+    />
+  ) : (
+    <div className="flex h-full w-full items-center justify-center rounded-2xl bg-[#f3f7f4] text-xs text-gray-500 shadow-inner">
+      No image
+    </div>
+  );
 
 export default function FernList() {
   const [searchParams] = useSearchParams();
@@ -95,21 +33,6 @@ export default function FernList() {
   const [selectedStatus, setSelectedStatus] = useState(statusParam);
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [columnOrder, setColumnOrder] = useState<ColumnId[]>(
-    COLUMN_DEFINITIONS.map((column) => column.id)
-  );
-  const [dropTargetId, setDropTargetId] = useState<ColumnId | null>(null);
-
-  const columnsById = useMemo(
-    () =>
-      COLUMN_DEFINITIONS.reduce((acc, column) => {
-        acc[column.id] = column;
-        return acc;
-      }, {} as Record<ColumnId, ColumnDefinition>),
-    []
-  );
-
-  const orderedColumns = columnOrder.map((id) => columnsById[id]);
 
   const familyOptions = useMemo(
     () => Array.from(new Set(ferns.map((fern) => fern.family))).sort(),
@@ -162,52 +85,6 @@ export default function FernList() {
       })
     );
   }, [ferns, searchQuery, showEndemicOnly, selectedFamily, selectedStatus]);
-
-  const handleDragStart = (
-    event: React.DragEvent<HTMLElement>,
-    columnId: ColumnId
-  ) => {
-    event.dataTransfer.setData("text/plain", columnId);
-    event.dataTransfer.effectAllowed = "move";
-  };
-
-  const handleDrop = (
-    event: React.DragEvent<HTMLElement>,
-    targetId: ColumnId
-  ) => {
-    event.preventDefault();
-    const draggedId = event.dataTransfer.getData("text/plain") as ColumnId;
-
-    if (!draggedId || draggedId === targetId) {
-      setDropTargetId(null);
-      return;
-    }
-
-    setColumnOrder((prev) => {
-      const withoutDragged = prev.filter((id) => id !== draggedId);
-      const targetIndex = withoutDragged.indexOf(targetId);
-
-      if (targetIndex === -1) return prev;
-
-      const updated = [...withoutDragged];
-      updated.splice(targetIndex, 0, draggedId);
-      return updated;
-    });
-    setDropTargetId(null);
-  };
-
-  const handleDragOver = (
-    event: React.DragEvent<HTMLElement>,
-    columnId: ColumnId
-  ) => {
-    event.preventDefault();
-    event.dataTransfer.dropEffect = "move";
-    setDropTargetId((prev) => (prev === columnId ? prev : columnId));
-  };
-
-  const handleDragEnd = () => {
-    setDropTargetId(null);
-  };
 
   if (error) return <p className="text-red-500 text-center">Error: {error}</p>;
   if (isLoading)
@@ -315,114 +192,108 @@ export default function FernList() {
           </div>
         </div>
 
-        <div className="overflow-hidden rounded-2xl bg-white shadow-xl ring-1 ring-gray-100">
-          <div className="overflow-x-auto">
-            <table
-              className="min-w-full text-sm text-gray-800 "
-              style={{ tableLayout: "fixed" }}
-            >
-              <colgroup>
-                <col style={{ width: ROW_NUMBER_WIDTH }} />
-                {orderedColumns.map((column) => (
-                  <col key={column.id} style={{ width: column.width }} />
-                ))}
-              </colgroup>
+        <div className="space-y-4">
+          {filteredFerns.length === 0 ? (
+            <div className="rounded-2xl bg-white/80 px-4 py-6 text-center text-sm text-gray-600 shadow-lg ring-1 ring-gray-100 backdrop-blur">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#1f4d3a]">
+                No results
+              </p>
+              <p className="mt-2">
+                No ferns match your search yet. Try another name or status.
+              </p>
+            </div>
+          ) : (
+            filteredFerns.map((fern) => {
+              const commonNames =
+                fern.commonNames.length > 0
+                  ? fern.commonNames.join(", ")
+                  : "Not recorded";
+              const quickFacts = [
+                { label: "Family", value: fern.family },
+                {
+                  label: "Conservation status",
+                  value: fern.conservationStatus || "Unknown",
+                },
+              ];
 
-              <thead className="border-b border-[#e7ecf5] bg-[#f8faff]">
-                <tr>
-                  <th className="px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-[0.14em] text-gray-500">
-                    #
-                  </th>
-                  {orderedColumns.map((column) => {
-                    const isDropTarget = dropTargetId === column.id;
+              return (
+                <article
+                  key={fern.scientificName}
+                  className="rounded-2xl bg-white/80 p-6 shadow-lg ring-1 ring-gray-100 backdrop-blur"
+                >
+                  <Link
+                    to={`/ferns/${encodeURIComponent(fern.scientificName)}`}
+                    className="hover:text-[#1f4d3a]"
+                  ></Link>
+                  <div className="grid gap-6 md:grid-cols-[1fr_2fr] md:items-stretch">
+                    <div className="min-h-[220px] w-full md:min-h-40 md:max-h-50">
+                      {renderFernImage(fern)}
+                    </div>
 
-                    return (
-                      <th
-                        key={column.id}
-                        draggable
-                        onDragStart={(event) =>
-                          handleDragStart(event, column.id)
-                        }
-                        onDrop={(event) => handleDrop(event, column.id)}
-                        onDragOver={(event) => handleDragOver(event, column.id)}
-                        onDragEnd={handleDragEnd}
-                        className={`group relative cursor-grab px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-[0.12em] text-gray-600 transition-colors hover:bg-[#e6efe9] active:cursor-grabbing ${
-                          isDropTarget ? "bg-[#e6efe9]" : ""
-                        } ${column.align === "center" ? "text-center" : ""}`}
-                        title="Drag to reorder"
-                      >
-                        {isDropTarget && (
+                    <div className="flex flex-col justify-between gap-4">
+                      <div className="space-y-3">
+                        <h2
+                          className="text-2xl text-gray-900"
+                          style={{ fontFamily: "Cormorant Garamond" }}
+                        >
+                          <Link
+                            to={`/ferns/${encodeURIComponent(
+                              fern.scientificName
+                            )}`}
+                            className="hover:text-[#1f4d3a]"
+                          >
+                            {fern.scientificName}
+                          </Link>
+                        </h2>
+                        <div className="flex flex-wrap gap-2">
                           <span
-                            className="pointer-events-none absolute inset-1 rounded-xl shadow-[0_0_0_3px_rgba(30,96,212,0.25)]"
-                            aria-hidden
-                          />
-                        )}
-                        <div className="relative z-10 flex items-center justify-between gap-2">
-                          <span className="flex items-center gap-2">
-                            <span className="inline-flex h-4 w-4 items-center justify-center text-[#94a3b8]">
-                              <svg
-                                viewBox="0 0 16 16"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="1.6"
-                                strokeLinecap="round"
-                                aria-hidden
-                              >
-                                <path d="M3.5 4.5h9M3.5 8h9M3.5 11.5h9" />
-                              </svg>
-                            </span>
-                            <span>{column.header}</span>
+                            className={`rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] ${
+                              fern.isEndemic
+                                ? "bg-[#e2f0e8] text-[#1f4d3a]"
+                                : "bg-[#eef2f7] text-[#64748b]"
+                            }`}
+                          >
+                            {fern.isEndemic ? "Endemic" : "Not endemic"}
+                          </span>
+                          <span
+                            className={`rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] ${
+                              fern.isNative
+                                ? "bg-[#e2f0e8] text-[#1f4d3a]"
+                                : "bg-[#eef2f7] text-[#64748b]"
+                            }`}
+                          >
+                            {fern.isNative ? "Native" : "Not native"}
                           </span>
                         </div>
-                      </th>
-                    );
-                  })}
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-[#eef2f8]">
-                {filteredFerns.length === 0 && (
-                  <tr>
-                    <td
-                      colSpan={orderedColumns.length + 1}
-                      className="px-4 py-10"
-                    >
-                      <div className="rounded-xl bg-[#f3f7f4] px-4 py-6 text-center text-sm text-gray-600 shadow-sm">
-                        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#1f4d3a]">
-                          No results
-                        </p>
-                        <p className="mt-2">
-                          No ferns match your search yet. Try another name or
-                          status.
+                        <p className="text-sm text-gray-600">
+                          <span className="font-semibold text-gray-800">
+                            Common names:{" "}
+                          </span>
+                          {commonNames}
                         </p>
                       </div>
-                    </td>
-                  </tr>
-                )}
-                {filteredFerns.map((fern, index) => (
-                  <tr
-                    key={fern.scientificName}
-                    className="odd:bg-white even:bg-[#fbfcff] transition-colors hover:bg-[#f1f6ff]"
-                  >
-                    <td className="px-3 py-3 text-left text-xs font-semibold text-gray-500">
-                      <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#f3f7f4] text-gray-700 shadow-inner">
-                        {index + 1}
-                      </span>
-                    </td>
-                    {orderedColumns.map((column) => (
-                      <td
-                        key={column.id}
-                        className={`px-4 py-3 align-middle text-sm text-gray-800 ${
-                          column.align === "center" ? "text-center" : ""
-                        }`}
-                      >
-                        {column.renderCell(fern)}
-                      </td>
-                    ))}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+
+                      <div className="grid gap-3 sm:grid-cols-2">
+                        {quickFacts.map((fact) => (
+                          <div
+                            key={fact.label}
+                            className="rounded-xl bg-[#f3f7f4] px-4 py-3"
+                          >
+                            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1f4d3a]">
+                              {fact.label}
+                            </p>
+                            <p className="mt-2 text-sm font-semibold text-gray-800">
+                              {fact.value}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              );
+            })
+          )}
         </div>
 
         <Footer />

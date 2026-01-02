@@ -3,7 +3,7 @@ import Footer from "../components/Footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-linear-to-b from-[#e9f3ff] via-white to-[#f6f8fb] ">
+    <div className="min-h-screen bg-[#22342606] ">
       <main className="mx-auto max-w-6xl px-4 pb-16 pt-20 ">
         <section className="mb-8 flex flex-col gap-6 rounded-2xl bg-white/80 p-6 shadow-lg ring-1 ring-gray-100 backdrop-blur">
           <div className="flex flex-wrap items-start justify-between gap-6">
@@ -23,7 +23,7 @@ export default function Home() {
 
           <div className="flex flex-wrap items-center gap-3 text-xs text-gray-600 ">
             <span className="inline-flex items-center gap-2 rounded-full bg-[#e2f0e8] px-3 py-1 font-semibold text-[#1f4d3a]">
-              5 sources
+              8 sources
             </span>
             <span
               className="hidden h-4 w-px bg-gray-200 sm:inline-block"
@@ -49,148 +49,107 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="grid gap-4 md:grid-cols-2 ">
-            <article className="rounded-2xl bg-white p-5 shadow-lg ring-1 ring-gray-100">
-              <div className="flex items-start justify-between gap-3">
-                <h3 className="text-base font-semibold text-gray-900">
-                  New Zealand Plant Conservation Network
-                </h3>
-                <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#1f4d3a]">
-                  NZPCN
+          <div className="rounded-2xl bg-white p-5 shadow-lg ring-1 ring-gray-100">
+            <ol className="list-decimal space-y-3 pl-5 text-sm text-gray-700">
+              <li>
+                <span className="font-semibold text-gray-900">
+                  New Zealand Plant Conservation Network (NZPCN).
+                </span>{" "}
+                <a
+                  href="https://www.nzpcn.org.nz/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-[#1f4d3a] hover:text-[#143324]"
+                >
+                  nzpcn.org.nz
+                </a>
+              </li>
+              <li>
+                <span className="font-semibold text-gray-900">
+                  NZFlora / Landcare Research.
+                </span>{" "}
+                <a
+                  href="https://nzflora.landcareresearch.co.nz/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-[#1f4d3a] hover:text-[#143324]"
+                >
+                  nzflora.landcareresearch.co.nz
+                </a>
+              </li>
+              <li>
+                <span className="font-semibold text-gray-900">
+                  Global Biodiversity Information Facility (GBIF).
+                </span>{" "}
+                <a
+                  href="https://www.gbif.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-[#1f4d3a] hover:text-[#143324]"
+                >
+                  gbif.org
+                </a>
+              </li>
+              <li>
+                <span className="font-semibold text-gray-900">
+                  Department of Conservation (DOC).
+                </span>{" "}
+                <a
+                  href="https://www.doc.govt.nz/nature/biodiversity/nz-threat-classification-system/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-[#1f4d3a] hover:text-[#143324]"
+                >
+                  doc.govt.nz/nature/biodiversity/nz-threat-classification-system/
+                </a>
+              </li>
+              <li>
+                <span className="font-semibold text-gray-900">
+                  Brownsey, P. J. &amp; Perrie, L. R. (2015).{" "}
+                  <em>New Zealand Ferns and Lycophytes: A Guide to Species.</em>{" "}
+                  Te Papa Press.
+                </span>{" "}
+                <a
+                  href="https://datastore.landcareresearch.co.nz/dataset/nzflora-brownsey-perrie-2021-pteridaceae/resource/97215842-8ecc-4067-a7a6-fc18250f6fc9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-[#1f4d3a] hover:text-[#143324]"
+                >
+                  landcareresearch.co.nz/dataset/nzflora-brownsey-perrie-2021-pteridaceae
+                </a>
+              </li>
+              <li>
+                <span className="font-semibold text-gray-900">
+                  Wikimedia Commons.
+                </span>{" "}
+                <a
+                  href="https://commons.wikimedia.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-[#1f4d3a] hover:text-[#143324]"
+                >
+                  commons.wikimedia.org
+                </a>
+              </li>
+              <li>
+                <span className="font-semibold text-gray-900">
+                  NZ Plants (University of Auckland).
+                </span>{" "}
+                <a
+                  href="http://www.nzplants.auckland.ac.nz/en/about/ferns/native-ferns/pteridaceae-maidenhair-annual-rock-brake-ferns/adiantum-diaphanum.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-[#1f4d3a] hover:text-[#143324]"
+                >
+                  nzplants.auckland.ac.nz
+                </a>
+              </li>
+              <li>
+                <span className="font-semibold text-gray-900">
+                  Regional council boundaries (nz-regions.geojson, local file).
                 </span>
-              </div>
-              <p className="mt-3 text-sm text-gray-600">
-                The main flora database used to confirm endemic, indigenous, or
-                introduced biostatus and link each taxon to conservation status.
-              </p>
-              <a
-                href="https://www.nzpcn.org.nz/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 inline-flex items-center text-sm font-semibold text-[#1f4d3a] hover:text-[#143324]"
-              >
-                nzpcn.org.nz
-              </a>
-            </article>
-
-            <article className="rounded-2xl bg-white p-5 shadow-lg ring-1 ring-gray-100">
-              <div className="flex items-start justify-between gap-3">
-                <h3 className="text-base font-semibold text-gray-900">
-                  NZFlora / Landcare Research
-                </h3>
-                <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#1f4d3a]">
-                  NZFlora
-                </span>
-              </div>
-              <p className="mt-3 text-sm text-gray-600">
-                Verified endemism, synonymy, and island distribution for genera
-                such as <em>Notogrammitis</em>, <em>Tmesipteris</em>, and{" "}
-                <em>Loxsoma</em>.
-              </p>
-              <a
-                href="https://nzflora.landcareresearch.co.nz/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 inline-flex items-center text-sm font-semibold text-[#1f4d3a] hover:text-[#143324]"
-              >
-                nzflora.landcareresearch.co.nz
-              </a>
-            </article>
-
-            <article className="rounded-2xl bg-white p-5 shadow-lg ring-1 ring-gray-100">
-              <div className="flex items-start justify-between gap-3">
-                <h3 className="text-base font-semibold text-gray-900">
-                  Global Biodiversity Information Facility
-                </h3>
-                <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#1f4d3a]">
-                  GBIF
-                </span>
-              </div>
-              <p className="mt-3 text-sm text-gray-600">
-                Used to confirm that each NZ-only record had no verified
-                occurrences overseas.
-              </p>
-              <a
-                href="https://www.gbif.org/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 inline-flex items-center text-sm font-semibold text-[#1f4d3a] hover:text-[#143324]"
-              >
-                gbif.org
-              </a>
-            </article>
-
-            <article className="rounded-2xl bg-white p-5 shadow-lg ring-1 ring-gray-100">
-              <div className="flex items-start justify-between gap-3">
-                <h3 className="text-base font-semibold text-gray-900">
-                  Department of Conservation
-                </h3>
-                <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#1f4d3a]">
-                  DOC
-                </span>
-              </div>
-              <p className="mt-3 text-sm text-gray-600">
-                Cross-referenced conservation categories such as{" "}
-                <em>Threatened - Nationally Endangered</em> or{" "}
-                <em>At Risk - Relict</em>.
-              </p>
-              <a
-                href="https://www.doc.govt.nz/nature/biodiversity/nz-threat-classification-system/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 inline-flex items-center text-sm font-semibold text-[#1f4d3a] hover:text-[#143324]"
-              >
-                doc.govt.nz/nature/biodiversity/nz-threat-classification-system/
-              </a>
-            </article>
-
-            <article className="rounded-2xl bg-white p-5 shadow-lg ring-1 ring-gray-100">
-              <div className="flex items-start justify-between gap-3">
-                <h3 className="text-base font-semibold text-gray-900">
-                  Brownsey, P. J. &amp; Perrie, L. R.
-                </h3>
-                <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#1f4d3a]">
-                  PDF
-                </span>
-              </div>
-              <p className="mt-3 text-sm text-gray-600">
-                Brownsey, P. J. &amp; Perrie, L. R. (2015).{" "}
-                <em>New Zealand Ferns and Lycophytes: A Guide to Species.</em>{" "}
-                Te Papa Press. Includes data from Allan Herbarium (CHR) and
-                NZFlora archives.
-              </p>
-              <a
-                href="https://datastore.landcareresearch.co.nz/dataset/nzflora-brownsey-perrie-2021-pteridaceae/resource/97215842-8ecc-4067-a7a6-fc18250f6fc9"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 inline-flex items-center text-sm font-semibold text-[#1f4d3a] hover:text-[#143324]"
-              >
-                landcareresearch.co.nz/dataset/nzflora-brownsey-perrie-2021-pteridaceae
-              </a>
-            </article>
-
-            <article className="rounded-2xl bg-white p-5 shadow-lg ring-1 ring-gray-100 md:col-span-2">
-              <div className="flex items-start justify-between gap-3">
-                <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#1f4d3a]">
-                  Guides
-                </span>
-              </div>
-
-              <p className="mt-3 text-sm font-semibold text-gray-800">
-                A fern was treated as endemic if:
-              </p>
-              <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-gray-600">
-                <li>NZPCN biostatus = Endemic.</li>
-                <li>
-                  NZFlora distribution = North, South, Stewart, and Chatham
-                  Islands only.
-                </li>
-                <li>
-                  GBIF plus literature showed no verified records outside New
-                  Zealand.
-                </li>
-              </ul>
-            </article>
+              </li>
+            </ol>
           </div>
         </section>
 

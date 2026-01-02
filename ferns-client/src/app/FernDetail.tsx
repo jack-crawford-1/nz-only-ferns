@@ -110,7 +110,7 @@ export default function FernDetail() {
     <div className=" h-screen bg-[#22342606]">
       <Navbar />
       <main className="mx-auto max-w-4xl px-4 pb-16 pt-32">
-        <section className="mb-8 flex flex-col gap-15 rounded-2xl bg-white/80 p-6 shadow-lg ring-1 ring-gray-100 backdrop-blur">
+        <section className="mb-8 flex flex-col gap-5 rounded-2xl bg-white/80 p-6 shadow-lg ring-1 ring-gray-100 backdrop-blur">
           <div className="grid gap-0 lg:grid-cols-[minmax(0,1fr)_24rem] lg:items-start">
             <div className="space-y-3">
               <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#20624a]">
@@ -132,7 +132,7 @@ export default function FernDetail() {
               </div>
               <div className="flex flex-wrap gap-2">
                 <span
-                  className={`rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] ${
+                  className={`rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] mb-4 ${
                     fern.isEndemic
                       ? "bg-[#e2f0e8] text-[#1f4d3a]"
                       : "bg-[#eef2f7] text-[#64748b]"
@@ -163,7 +163,7 @@ export default function FernDetail() {
                           }`}
                           className={`w-full rounded-xl object-cover ${
                             galleryPageImages.length > 1
-                              ? "h-28 sm:h-25"
+                              ? "h-28 sm:h-20"
                               : "h-64"
                           }`}
                           loading="lazy"
@@ -221,7 +221,7 @@ export default function FernDetail() {
             </div>
 
             {distributionText ? (
-              <div className="w-full max-w-xs rounded-2xl bg-white p-4 shadow-lg ring-1 ring-gray-100">
+              <div className="w-full max-w-xs rounded-2xl bg-white p-0 shadow-lg ring-1 ring-gray-100">
                 <DistributionMap distributionText={distributionText} />
               </div>
             ) : null}

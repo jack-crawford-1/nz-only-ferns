@@ -233,7 +233,7 @@ export default function DistributionMap({
       </div>
       <svg
         viewBox="0 0 320 420"
-        className="mt-3 h-64 w-full"
+        className="mt-3 h-54 w-full "
         role="img"
         aria-label="New Zealand regions map"
         preserveAspectRatio="xMidYMid meet"
@@ -244,7 +244,7 @@ export default function DistributionMap({
             <path
               key={feature.name}
               d={feature.path}
-              fill={isHighlighted ? "#1f4d3a" : "#e6efe9"}
+              fill={isHighlighted ? "#41a17a" : "#e6efe9"}
               stroke={isHighlighted ? "#143324" : "#c6d3ca"}
               strokeWidth={1}
             />
