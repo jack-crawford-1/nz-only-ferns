@@ -84,6 +84,51 @@ const REGION_ALIASES: Array<{ alias: string; regions: string[] }> = [
   },
 ];
 
+const NORTH_ISLAND_REGIONS = [
+  "Northland Region",
+  "Auckland Region",
+  "Waikato Region",
+  "Bay of Plenty Region",
+  "Gisborne Region",
+  "Hawke's Bay Region",
+  "Taranaki Region",
+  "Manawatu-Wanganui Region",
+  "Wellington Region",
+];
+
+const SOUTH_ISLAND_REGIONS = [
+  "Tasman Region",
+  "Nelson Region",
+  "Marlborough Region",
+  "West Coast Region",
+  "Canterbury Region",
+  "Otago Region",
+  "Southland Region",
+];
+
+const RANGE_CONNECTORS = ["to", "through", "thru"];
+const FULL_COVERAGE_HINTS = [
+  "throughout",
+  "widespread",
+  "across",
+  "entire",
+  "whole",
+];
+const NATIONWIDE_HINTS = [
+  "throughout new zealand",
+  "throughout nz",
+  "across new zealand",
+  "across nz",
+  "widespread throughout new zealand",
+  "widespread across new zealand",
+  "throughout the country",
+  "across the country",
+  "north and south island",
+  "north and south islands",
+  "both islands",
+  "both main islands",
+];
+
 const normalizeText = (value: string) =>
   value
     .toLowerCase()
@@ -93,17 +138,124 @@ const normalizeText = (value: string) =>
     .replace(/\s+/g, " ")
     .trim();
 
+const NORMALIZED_ALIASES = REGION_ALIASES.map((entry) => ({
+  ...entry,
+  normalized: normalizeText(entry.alias),
+}));
+
+const REGION_INDEX = new Map<string, { list: string[]; index: number }>();
+
+const addRegionIndex = (list: string[]) => {
+  list.forEach((region, index) => {
+    REGION_INDEX.set(region, { list, index });
+  });
+};
+
+addRegionIndex(NORTH_ISLAND_REGIONS);
+addRegionIndex(SOUTH_ISLAND_REGIONS);
+
+const addRangeRegions = (
+  startRegion: string,
+  endRegion: string,
+  regions: Set<string>
+) => {
+  const startInfo = REGION_INDEX.get(startRegion);
+  const endInfo = REGION_INDEX.get(endRegion);
+
+  if (!startInfo || !endInfo || startInfo.list !== endInfo.list) {
+    regions.add(startRegion);
+    regions.add(endRegion);
+    return;
+  }
+
+  const list = startInfo.list;
+  const [from, to] =
+    startInfo.index <= endInfo.index
+      ? [startInfo.index, endInfo.index]
+      : [endInfo.index, startInfo.index];
+
+  list.slice(from, to + 1).forEach((region) => regions.add(region));
+};
+
+const addRegions = (list: string[], regions: Set<string>) => {
+  list.forEach((region) => regions.add(region));
+};
+
+const getIslandSegments = (
+  normalized: string,
+  islandName: string,
+  otherIsland: string
+) => {
+  const segments: string[] = [];
+  let index = normalized.indexOf(islandName);
+
+  while (index !== -1) {
+    const nextOther = normalized.indexOf(otherIsland, index + islandName.length);
+    const end = nextOther === -1 ? normalized.length : nextOther;
+    segments.push(normalized.slice(index, end));
+    index = normalized.indexOf(islandName, index + islandName.length);
+  }
+
+  return segments;
+};
+
+const hasFullCoverageHint = (segment: string) =>
+  FULL_COVERAGE_HINTS.some((hint) => segment.includes(hint));
+
 const extractRegions = (text?: string | null) => {
   if (!text) return new Set<string>();
   const normalized = normalizeText(text);
   const padded = ` ${normalized} `;
   const regions = new Set<string>();
 
-  for (const entry of REGION_ALIASES) {
-    const alias = normalizeText(entry.alias);
-    if (padded.includes(` ${alias} `)) {
+  for (const entry of NORMALIZED_ALIASES) {
+    if (padded.includes(` ${entry.normalized} `)) {
       entry.regions.forEach((region) => regions.add(region));
     }
+  }
+
+  const rangeAliases = NORMALIZED_ALIASES.filter(
+    (entry) => entry.regions.length === 1
+  );
+
+  for (const connector of RANGE_CONNECTORS) {
+    for (const start of rangeAliases) {
+      if (!padded.includes(` ${start.normalized} ${connector} `)) continue;
+      for (const end of rangeAliases) {
+        if (start === end) continue;
+        if (
+          padded.includes(
+            ` ${start.normalized} ${connector} ${end.normalized} `
+          )
+        ) {
+          addRangeRegions(start.regions[0], end.regions[0], regions);
+        }
+      }
+    }
+  }
+
+  if (NATIONWIDE_HINTS.some((hint) => normalized.includes(hint))) {
+    addRegions(NORTH_ISLAND_REGIONS, regions);
+    addRegions(SOUTH_ISLAND_REGIONS, regions);
+    return regions;
+  }
+
+  const northSegments = getIslandSegments(
+    normalized,
+    "north island",
+    "south island"
+  );
+  if (northSegments.some(hasFullCoverageHint)) {
+    addRegions(NORTH_ISLAND_REGIONS, regions);
+  }
+
+  const southSegments = getIslandSegments(
+    normalized,
+    "south island",
+    "north island"
+  );
+  if (southSegments.some(hasFullCoverageHint)) {
+    addRegions(SOUTH_ISLAND_REGIONS, regions);
   }
 
   return regions;

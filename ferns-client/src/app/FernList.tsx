@@ -192,9 +192,9 @@ export default function FernList() {
           </div>
         </div>
 
-        <div className="space-y-4">
+        <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
           {filteredFerns.length === 0 ? (
-            <div className="rounded-2xl bg-white/80 px-4 py-6 text-center text-sm text-gray-600 shadow-lg ring-1 ring-gray-100 backdrop-blur">
+            <div className="rounded-2xl bg-white/80 px-4 py-6 text-center text-sm text-gray-600 shadow-lg ring-1 ring-gray-100 backdrop-blur sm:col-span-2 xl:col-span-3">
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#1f4d3a]">
                 No results
               </p>
@@ -211,7 +211,7 @@ export default function FernList() {
               const quickFacts = [
                 { label: "Family", value: fern.family },
                 {
-                  label: "Conservation status",
+                  label: "Status",
                   value: fern.conservationStatus || "Unknown",
                 },
               ];
@@ -219,18 +219,18 @@ export default function FernList() {
               return (
                 <article
                   key={fern.scientificName}
-                  className="rounded-2xl bg-white/80 p-6 shadow-lg ring-1 ring-gray-100 backdrop-blur"
+                  className="flex h-full flex-col rounded-2xl bg-white/80 p-5 shadow-lg ring-1 ring-gray-100 backdrop-blur transition hover:-translate-y-0.5 hover:shadow-xl"
                 >
-                  <Link
-                    to={`/ferns/${encodeURIComponent(fern.scientificName)}`}
-                    className="hover:text-[#1f4d3a]"
-                  ></Link>
-                  <div className="grid gap-6 md:grid-cols-[1fr_2fr] md:items-stretch">
-                    <div className="min-h-[220px] w-full md:min-h-40 md:max-h-50">
+                  <div className="flex h-full flex-col gap-4">
+                    <Link
+                      to={`/ferns/${encodeURIComponent(fern.scientificName)}`}
+                      className="block aspect-[4/3] overflow-hidden rounded-2xl"
+                      aria-label={`View ${fern.scientificName}`}
+                    >
                       {renderFernImage(fern)}
-                    </div>
+                    </Link>
 
-                    <div className="flex flex-col justify-between gap-4">
+                    <div className="flex flex-1 flex-col justify-between gap-4">
                       <div className="space-y-3">
                         <h2
                           className="text-2xl text-gray-900"
@@ -273,19 +273,17 @@ export default function FernList() {
                         </p>
                       </div>
 
-                      <div className="grid gap-3 sm:grid-cols-2">
+                      <div className="flex flex-col gap-1 text-xs text-gray-600">
                         {quickFacts.map((fact) => (
-                          <div
-                            key={fact.label}
-                            className="rounded-xl bg-[#f3f7f4] px-4 py-3"
-                          >
-                            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1f4d3a]">
+                          <p key={fact.label} className="leading-snug">
+                            <span className="font-semibold uppercase tracking-[0.16em] text-[#1f4d3a]">
                               {fact.label}
-                            </p>
-                            <p className="mt-2 text-sm font-semibold text-gray-800">
+                            </span>
+                            <span className="px-1 text-gray-400">·</span>
+                            <span className="font-semibold text-gray-800">
                               {fact.value}
-                            </p>
-                          </div>
+                            </span>
+                          </p>
                         ))}
                       </div>
                     </div>

@@ -6,6 +6,7 @@ export default function Navbar() {
 
   const menuItems = [
     { label: "Ferns", path: "/ferns" },
+    { label: "Key", path: "/key" },
     { label: "Habitats", path: "/habitats" },
     { label: "Status", path: "/status" },
   ];
