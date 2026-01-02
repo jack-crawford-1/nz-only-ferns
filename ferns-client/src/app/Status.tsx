@@ -178,7 +178,10 @@ export default function Status() {
               <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#20624a]">
                 Status
               </p>
-              <h1 className="text-3xl font-bold text-gray-900">
+              <h1
+                className="text-3xl font-bold text-gray-900"
+                style={{ fontFamily: "Cormorant Garamond" }}
+              >
                 Conservation status
               </h1>
             </div>

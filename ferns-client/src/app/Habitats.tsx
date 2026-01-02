@@ -69,12 +69,12 @@ export default function Habitats() {
               <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#20624a]">
                 Habitats
               </p>
-              <h1 className="text-3xl font-bold text-gray-900">
+              <h1
+                className="text-3xl font-bold text-gray-900"
+                style={{ fontFamily: "Cormorant Garamond" }}
+              >
                 Where New Zealand ferns thrive
               </h1>
-              <p className="max-w-2xl text-sm text-gray-600">
-                Ferns respond quickly to moisture, shade, and temperature.
-              </p>
             </div>
           </div>
         </section>

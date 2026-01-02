@@ -8,16 +8,17 @@ import type { FernRecord } from "../types/Ferns";
 type FernTraits = {
   isTreeFern: boolean;
   isFilmy: boolean;
+  isMaidenhair: boolean;
+  isHighlyDivided: boolean;
+  isSimpleFrond: boolean;
+  isScalyOrHairy: boolean;
+  isLeathery: boolean;
   isEpiphyte: boolean;
   isClimbing: boolean;
-  isCoastal: boolean;
-  isAlpine: boolean;
-  isLimestone: boolean;
-  isWetland: boolean;
-  northIsland: boolean;
-  southIsland: boolean;
-  isEndemic: boolean;
-  isNative: boolean;
+  isDimorphic: boolean;
+  isCreeping: boolean;
+  isMarginalSori: boolean;
+  isLinearSori: boolean;
 };
 
 type FernEntry = {
@@ -29,6 +30,7 @@ type KeyQuestion = {
   id: string;
   prompt: string;
   description?: string;
+  definition?: string;
   yesLabel: string;
   noLabel: string;
   priority: number;
@@ -41,68 +43,54 @@ type KeyAnswer = {
   label: string;
 };
 
-const NORTH_ISLAND_HINTS = [
-  "north island",
-  "northland",
-  "auckland",
-  "waikato",
-  "bay of plenty",
-  "gisborne",
-  "taranaki",
-  "hawkes bay",
-  "manawatu",
-  "whanganui",
-  "wanganui",
-  "wellington",
-  "volcanic plateau",
-  "coromandel",
-  "east cape",
-  "wairarapa",
-];
-
-const SOUTH_ISLAND_HINTS = [
-  "south island",
-  "tasman",
-  "nelson",
-  "marlborough",
-  "west coast",
-  "westland",
-  "canterbury",
-  "otago",
-  "southland",
-  "fiordland",
-  "stewart island",
-  "marlborough sounds",
-  "sounds nelson",
-];
-
-const NATIONWIDE_HINTS = [
-  "throughout new zealand",
-  "throughout nz",
-  "across new zealand",
-  "across nz",
-  "widespread throughout new zealand",
-  "widespread across new zealand",
-  "throughout the country",
-  "across the country",
-  "both islands",
-  "both main islands",
-  "north and south island",
-  "north and south islands",
-];
+const QUESTION_IMAGES: Record<string, { src: string; alt: string }> = {
+  "tree-fern": {
+    src: "/key/tree-fern.jpg",
+    alt: "Tree fern with trunk and crown of fronds",
+  },
+  "filmy-fern": {
+    src: "/key/filmy-fern.jpg",
+    alt: "Filmy fern with translucent fronds",
+  },
+  maidenhair: {
+    src: "/key/maidenhair.jpg",
+    alt: "Maidenhair fern with fan-shaped leaflets",
+  },
+  "highly-divided": {
+    src: "/key/highly-divided.jpg",
+    alt: "Fern with finely divided fronds",
+  },
+  "simple-frond": {
+    src: "/key/simple-frond.jpg",
+    alt: "Fern with simple, strap-like fronds",
+  },
+  leathery: {
+    src: "/key/leathery.jpg",
+    alt: "Fern with thick, leathery fronds",
+  },
+  epiphyte: {
+    src: "/key/epiphyte.jpg",
+    alt: "Epiphytic fern growing on a trunk",
+  },
+  climbing: {
+    src: "/key/climbing.jpg",
+    alt: "Climbing fern",
+  },
+};
 
 const normalizeText = (value: string) =>
   value
     .toLowerCase()
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
-    .replace(/[^a-z\s]/g, " ")
+    .replace(/[^a-z0-9\s]/g, " ")
     .replace(/\s+/g, " ")
     .trim();
 
 const buildTraits = (fern: FernRecord): FernTraits => {
   const combinedText = [
-    fern.distribution,
+    fern.scientificName,
+    fern.family,
     fern.habitat,
     fern.recognition,
     fern.notes,
@@ -112,20 +100,39 @@ const buildTraits = (fern: FernRecord): FernTraits => {
     .join(" ");
   const text = normalizeText(combinedText);
   const family = normalizeText(fern.family || "");
-  const distribution = normalizeText(fern.distribution || "");
 
   const hasAny = (keywords: string[]) =>
     keywords.some((keyword) => text.includes(keyword));
-  const distributionHasAny = (keywords: string[]) =>
-    keywords.some((keyword) => distribution.includes(keyword));
-  const isNationwide = NATIONWIDE_HINTS.some((hint) =>
-    distribution.includes(hint)
-  );
+  const hasPattern = (pattern: RegExp) => pattern.test(text);
 
-  const northIsland =
-    isNationwide || distributionHasAny(NORTH_ISLAND_HINTS);
-  const southIsland =
-    isNationwide || distributionHasAny(SOUTH_ISLAND_HINTS);
+  const isHighlyDivided =
+    hasAny([
+      "bipinnate",
+      "tripinnate",
+      "quadripinnate",
+      "multipinnate",
+      "finely divided",
+      "highly divided",
+    ]) || hasPattern(/\b[234]\s*pinnate\b/);
+
+  const isSimpleFrond = hasAny([
+    "simple frond",
+    "simple fronds",
+    "undivided",
+    "entire frond",
+    "strap",
+    "straplike",
+    "strap like",
+    "ribbon",
+    "ribbonlike",
+    "ribbon like",
+    "tongue",
+    "linear frond",
+  ]);
+
+  const isMaidenhair =
+    hasAny(["maidenhair", "fan shaped", "fanlike", "fan like"]) ||
+    text.includes("adiantum");
 
   return {
     isTreeFern:
@@ -136,24 +143,78 @@ const buildTraits = (fern: FernRecord): FernTraits => {
       family.includes("hymenophyllaceae") ||
       text.includes("filmy") ||
       text.includes("filmy fern"),
+    isMaidenhair,
+    isHighlyDivided,
+    isSimpleFrond,
+    isScalyOrHairy: hasAny([
+      "scaly",
+      "scales",
+      "scale",
+      "hairy",
+      "hairs",
+      "hair",
+      "bristly",
+      "bristles",
+      "pubescent",
+    ]),
+    isLeathery: hasAny([
+      "leathery",
+      "coriaceous",
+      "thick",
+      "fleshy",
+      "glossy",
+      "stiff",
+    ]),
     isEpiphyte: hasAny(["epiphyte", "epiphytic"]),
     isClimbing: hasAny(["climbing", "scrambling", "clambering"]),
-    isCoastal: hasAny(["coastal", "shore", "sea cliff", "dune"]),
-    isAlpine: hasAny(["alpine", "subalpine", "montane"]),
-    isLimestone: hasAny(["limestone", "karst", "cave", "sinkhole"]),
-    isWetland: hasAny(["swamp", "bog", "wetland", "marsh"]),
-    northIsland,
-    southIsland,
-    isEndemic: fern.isEndemic,
-    isNative: fern.isNative,
+    isDimorphic: hasAny([
+      "dimorphic",
+      "fertile fronds",
+      "sterile fronds",
+      "fertile frond",
+      "sterile frond",
+    ]),
+    isCreeping: hasAny([
+      "creeping rhizome",
+      "long creeping",
+      "long-creeping",
+      "creeping rhizomes",
+      "creeping",
+      "prostrate",
+      "mat forming",
+      "mat-forming",
+    ]),
+    isMarginalSori: hasAny([
+      "marginal sori",
+      "sori along the margins",
+      "sori along margins",
+      "sori around the margins",
+      "sori around margins",
+      "sori on the margin",
+      "continuous around the margins",
+      "false indusium",
+      "false indusia",
+    ]),
+    isLinearSori: hasAny([
+      "linear sori",
+      "sori linear",
+      "elongate sori",
+      "sori in lines",
+      "continuous sori",
+      "sori along the midrib",
+      "sori along midrib",
+    ]),
   };
 };
+
 
 const QUESTIONS: KeyQuestion[] = [
   {
     id: "tree-fern",
     prompt: "Does it form a trunk (tree fern)?",
     description: "Look for a distinct trunk with a crown of fronds.",
+    definition:
+      "Tree ferns have a vertical trunk with fronds forming a crown at the top.",
     yesLabel: "Yes, a trunked tree fern",
     noLabel: "No, ground or creeping fern",
     priority: 0,
@@ -163,109 +224,137 @@ const QUESTIONS: KeyQuestion[] = [
     id: "filmy-fern",
     prompt: "Are the fronds paper-thin and translucent?",
     description: "Filmy ferns have delicate, see-through fronds.",
+    definition:
+      "Filmy fronds are one cell thick and look almost transparent.",
     yesLabel: "Yes, filmy fronds",
     noLabel: "No, thicker fronds",
     priority: 0,
     predicate: (entry) => entry.traits.isFilmy,
   },
   {
+    id: "maidenhair",
+    prompt: "Do the fronds have fan-shaped leaflets (maidenhair)?",
+    description: "Maidenhair ferns have delicate, fan-like leaflets.",
+    definition: "Look for fan-shaped leaflets on thin, dark stalks.",
+    yesLabel: "Yes, fan-shaped leaflets",
+    noLabel: "No, other frond shape",
+    priority: 0,
+    predicate: (entry) => entry.traits.isMaidenhair,
+  },
+  {
+    id: "highly-divided",
+    prompt: "Are the fronds very finely divided?",
+    description: "Look for bipinnate or tripinnate fronds.",
+    definition:
+      "Bipinnate or tripinnate fronds split into many small leaflets, giving a lacy look.",
+    yesLabel: "Yes, finely divided fronds",
+    noLabel: "No, less divided",
+    priority: 0,
+    predicate: (entry) => entry.traits.isHighlyDivided,
+  },
+  {
+    id: "simple-frond",
+    prompt: "Are the fronds simple or strap-like?",
+    description: "Undivided or ribbon-like fronds.",
+    definition: "Simple fronds are undivided, often strap-like or tongue-shaped.",
+    yesLabel: "Yes, simple fronds",
+    noLabel: "No, divided fronds",
+    priority: 0,
+    predicate: (entry) => entry.traits.isSimpleFrond,
+  },
+  {
+    id: "scaly",
+    prompt: "Are the fronds or stipes noticeably scaly or hairy?",
+    description: "Look for obvious scales or bristles.",
+    definition:
+      "Scales or hairs are visible on the stipe or rachis, often brown or reddish.",
+    yesLabel: "Yes, scaly or hairy",
+    noLabel: "No, mostly smooth",
+    priority: 1,
+    predicate: (entry) => entry.traits.isScalyOrHairy,
+  },
+  {
+    id: "leathery",
+    prompt: "Are the fronds thick or leathery?",
+    description: "Firm, stiff, or glossy fronds.",
+    definition:
+      "Leathery fronds feel thick, stiff, or glossy compared to thin fronds.",
+    yesLabel: "Yes, thick/leathery",
+    noLabel: "No, thin or delicate",
+    priority: 1,
+    predicate: (entry) => entry.traits.isLeathery,
+  },
+  {
     id: "epiphyte",
     prompt: "Does it grow on trees or other plants?",
     description: "Epiphytes often sit on trunks or branches.",
+    definition:
+      "Epiphytes sit on trunks or branches rather than rooting in soil.",
     yesLabel: "Yes, often epiphytic",
     noLabel: "Mostly terrestrial",
-    priority: 0,
+    priority: 2,
     predicate: (entry) => entry.traits.isEpiphyte,
   },
   {
     id: "climbing",
     prompt: "Does it climb or scramble over other plants?",
     description: "Look for scrambling or twining fronds.",
+    definition:
+      "Climbers have long, twining fronds or stems that scramble over other plants.",
     yesLabel: "Yes, climbing or scrambling",
     noLabel: "No, not climbing",
-    priority: 0,
+    priority: 2,
     predicate: (entry) => entry.traits.isClimbing,
   },
   {
-    id: "coastal",
-    prompt: "Is it mainly found in coastal habitats?",
-    description: "Shoreline, dunes, sea cliffs, or coastal forest.",
-    yesLabel: "Yes, coastal",
-    noLabel: "No, inland",
-    priority: 0,
-    predicate: (entry) => entry.traits.isCoastal,
-  },
-  {
-    id: "alpine",
-    prompt: "Is it mostly alpine or subalpine?",
-    description: "High-elevation or montane sites.",
-    yesLabel: "Yes, alpine or subalpine",
-    noLabel: "No, mostly lowland",
-    priority: 0,
-    predicate: (entry) => entry.traits.isAlpine,
-  },
-  {
-    id: "limestone",
-    prompt: "Is it tied to limestone or karst habitats?",
-    description: "Look for references to limestone, caves, or karst.",
-    yesLabel: "Yes, limestone or karst",
-    noLabel: "No, other substrates",
-    priority: 0,
-    predicate: (entry) => entry.traits.isLimestone,
-  },
-  {
-    id: "wetland",
-    prompt: "Is it associated with wetlands or bogs?",
-    description: "Swamps, bogs, marshes, or wet ground.",
-    yesLabel: "Yes, wetland fern",
-    noLabel: "No, drier habitats",
-    priority: 0,
-    predicate: (entry) => entry.traits.isWetland,
-  },
-  {
-    id: "north-island",
-    prompt: "Is it recorded from the North Island?",
-    description: "Based on the distribution notes.",
-    yesLabel: "Yes, North Island present",
-    noLabel: "No, North Island absent",
-    priority: 1,
-    predicate: (entry) => entry.traits.northIsland,
-  },
-  {
-    id: "south-island",
-    prompt: "Is it recorded from the South Island?",
-    description: "Based on the distribution notes.",
-    yesLabel: "Yes, South Island present",
-    noLabel: "No, South Island absent",
-    priority: 1,
-    predicate: (entry) => entry.traits.southIsland,
-  },
-  {
-    id: "endemic",
-    prompt: "Is it endemic to Aotearoa?",
-    description: "Found only in New Zealand.",
-    yesLabel: "Yes, endemic",
-    noLabel: "No, not endemic",
+    id: "dimorphic",
+    prompt: "Are fertile and sterile fronds noticeably different?",
+    description: "Look for narrow fertile fronds and broader sterile fronds.",
+    definition: "Dimorphic ferns have distinct fertile and sterile fronds.",
+    yesLabel: "Yes, fronds are dimorphic",
+    noLabel: "No, fronds look similar",
     priority: 2,
-    predicate: (entry) => entry.traits.isEndemic,
+    predicate: (entry) => entry.traits.isDimorphic,
   },
   {
-    id: "native",
-    prompt: "Is it native to Aotearoa?",
-    description: "Native species vs introduced.",
-    yesLabel: "Yes, native",
-    noLabel: "No, not native",
+    id: "creeping",
+    prompt: "Does it spread by a creeping rhizome or mat?",
+    description: "Creeping rhizomes often form mats across surfaces.",
+    definition:
+      "Creeping rhizomes spread along the surface and can form mats.",
+    yesLabel: "Yes, creeping or mat-forming",
+    noLabel: "No, tufted or upright",
     priority: 2,
-    predicate: (entry) => entry.traits.isNative,
+    predicate: (entry) => entry.traits.isCreeping,
+  },
+  {
+    id: "linear-sori",
+    prompt: "Are the sori arranged in long lines?",
+    description: "Look for elongated sori rather than round dots.",
+    definition: "Linear sori appear as lines instead of round dots.",
+    yesLabel: "Yes, linear sori",
+    noLabel: "No, round or scattered sori",
+    priority: 2,
+    predicate: (entry) => entry.traits.isLinearSori,
+  },
+  {
+    id: "marginal-sori",
+    prompt: "Are the sori right on the frond margins?",
+    description: "Marginal sori often sit on the very edge of the frond.",
+    definition:
+      "Marginal sori sit on the leaf edge, sometimes under a rolled margin.",
+    yesLabel: "Yes, marginal sori",
+    noLabel: "No, sori away from edges",
+    priority: 2,
+    predicate: (entry) => entry.traits.isMarginalSori,
   },
 ];
 
-const QUESTIONS_BY_ID = new Map(QUESTIONS.map((question) => [question.id, question]));
+const QUESTIONS_BY_ID = new Map(
+  QUESTIONS.map((question) => [question.id, question])
+);
 
-const pickBestQuestion = (
-  entries: FernEntry[],
-  answeredIds: Set<string>
-) => {
+const pickBestQuestion = (entries: FernEntry[], answeredIds: Set<string>) => {
   const candidates = QUESTIONS.flatMap((question) => {
     if (answeredIds.has(question.id)) return [];
     let yesCount = 0;
@@ -392,6 +481,9 @@ export default function Key() {
   const matchCount = filteredEntries.length;
   const matches = filteredEntries.slice(0, 6);
   const stepNumber = answers.length + 1;
+  const currentImage = currentQuestion
+    ? QUESTION_IMAGES[currentQuestion.id]
+    : null;
 
   return (
     <div className="min-h-screen bg-[#22342606]">
@@ -411,8 +503,8 @@ export default function Key() {
               </h1>
               <p className="max-w-2xl text-sm text-gray-600">
                 Work through the steps and the key will narrow the list using
-                the notes in the database. Choose the closest match if you are
-                unsure.
+                visual and growth-form notes from the database. Choose the
+                closest match if you are unsure.
               </p>
             </div>
             <div className="rounded-2xl bg-[#f3f7f4] px-4 py-3 text-xs text-gray-600">
@@ -461,11 +553,44 @@ export default function Key() {
                     ) : null}
                   </div>
 
+                  {currentQuestion.definition ? (
+                    <div className="rounded-xl bg-[#f3f7f4] px-4 py-3 text-xs text-gray-600">
+                      <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#1f4d3a]">
+                        Definition
+                      </p>
+                      <p className="mt-2">{currentQuestion.definition}</p>
+                    </div>
+                  ) : null}
+
+                  {currentImage ? (
+                    <div className="rounded-xl bg-white p-4 shadow-sm ring-1 ring-[#e2e8e0]">
+                      <div className="flex flex-wrap items-center gap-4">
+                        <div className="h-24 w-32 overflow-hidden rounded-xl bg-[#f3f7f4]">
+                          <img
+                            src={currentImage.src}
+                            alt={currentImage.alt}
+                            className="h-full w-full object-cover"
+                            loading="lazy"
+                            decoding="async"
+                          />
+                        </div>
+                        <div>
+                          <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#1f4d3a]">
+                            Reference image
+                          </p>
+                          <p className="text-xs text-gray-600">
+                            Visual cue for the current step.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  ) : null}
+
                   <div className="grid gap-3 sm:grid-cols-2">
                     <button
                       type="button"
                       onClick={() => handleChoice(true)}
-                      className="rounded-2xl border border-transparent bg-[#1f4d3a] px-4 py-4 text-left text-sm font-semibold text-white shadow-lg transition hover:bg-[#143324]"
+                      className="rounded-2xl border border-[#c7d9cf] bg-white px-4 py-4 text-left text-sm font-semibold text-[#1f4d3a] shadow-sm transition hover:border-[#1f4d3a]"
                     >
                       {currentQuestion.yesLabel}
                     </button>
@@ -578,7 +703,9 @@ export default function Key() {
                       <p className="mt-2 text-xs font-semibold text-gray-700">
                         {question?.prompt}
                       </p>
-                      <p className="mt-1 text-xs text-gray-600">{answer.label}</p>
+                      <p className="mt-1 text-xs text-gray-600">
+                        {answer.label}
+                      </p>
                     </div>
                   );
                 })
