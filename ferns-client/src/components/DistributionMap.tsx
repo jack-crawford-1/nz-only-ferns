@@ -303,6 +303,7 @@ export default function DistributionMap({
   distributionText,
 }: DistributionMapProps) {
   const [geoData, setGeoData] = useState<GeoCollection | null>(null);
+  const hasDistribution = Boolean(distributionText?.trim());
 
   useEffect(() => {
     let isActive = true;
@@ -321,8 +322,8 @@ export default function DistributionMap({
   }, []);
 
   const highlightedRegions = useMemo(
-    () => extractRegions(distributionText),
-    [distributionText]
+    () => (hasDistribution ? extractRegions(distributionText) : new Set()),
+    [distributionText, hasDistribution]
   );
 
   const paths = useMemo(() => {
@@ -375,34 +376,58 @@ export default function DistributionMap({
     );
   }
 
+  const inactiveFill = "#e5e7eb";
+  const inactiveStroke = "#cbd5e1";
+  const activeFill = "#e6efe9";
+  const activeStroke = "#c6d3ca";
+
   return (
     <div className="rounded-2xl bg-[#f3f7f4] p-4 shadow-inner">
       <div className="flex items-center justify-between text-[11px] font-semibold uppercase tracking-[0.18em] text-gray-500">
         <span>Regional map</span>
-        <span className="rounded-full bg-white px-2 py-1 text-[10px] text-[#1f4d3a] shadow-sm">
-          Approximate
+        <span
+          className={`rounded-full px-2 py-1 text-[10px] shadow-sm ${
+            hasDistribution
+              ? "bg-white text-[#1f4d3a]"
+              : "bg-gray-100 text-gray-500"
+          }`}
+        >
+          {hasDistribution ? "Approximate" : "No data"}
         </span>
       </div>
       <svg
         viewBox="0 0 320 420"
-        className="mt-3 h-54 w-full "
+        className={`mt-3 h-54 w-full ${hasDistribution ? "" : "opacity-70"}`}
         role="img"
         aria-label="New Zealand regions map"
         preserveAspectRatio="xMidYMid meet"
       >
         {paths.map((feature) => {
           const isHighlighted = highlightedRegions.has(feature.name);
+          const fillColor = hasDistribution
+            ? isHighlighted
+              ? "#41a17a"
+              : activeFill
+            : inactiveFill;
+          const strokeColor = hasDistribution
+            ? isHighlighted
+              ? "#143324"
+              : activeStroke
+            : inactiveStroke;
           return (
             <path
               key={feature.name}
               d={feature.path}
-              fill={isHighlighted ? "#41a17a" : "#e6efe9"}
-              stroke={isHighlighted ? "#143324" : "#c6d3ca"}
+              fill={fillColor}
+              stroke={strokeColor}
               strokeWidth={1}
             />
           );
         })}
       </svg>
+      {!hasDistribution ? (
+        <p className="mt-3 text-xs text-gray-500">Distribution not recorded.</p>
+      ) : null}
     </div>
   );
 }

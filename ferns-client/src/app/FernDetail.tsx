@@ -8,6 +8,29 @@ import LoadingScreen from "../components/LoadingScreen";
 import DistributionMap from "../components/DistributionMap";
 import Footer from "../components/Footer";
 
+const formatTitleCase = (value: string) =>
+  value ? value.charAt(0).toUpperCase() + value.slice(1) : value;
+
+const formatBiostatus = (
+  biostatus: FernRecord["biostatus"] | null | undefined
+) => {
+  if (!biostatus) return "Not recorded";
+
+  const parts: string[] = [];
+  if (biostatus.origin) parts.push(formatTitleCase(biostatus.origin));
+  if (biostatus.occurrence) parts.push(formatTitleCase(biostatus.occurrence));
+  if (biostatus.endemicToNZ === true) parts.push("Endemic");
+  if (biostatus.endemicToNZ === false) parts.push("Not endemic");
+
+  return parts.length ? parts.join(" · ") : "Not recorded";
+};
+
+const formatYesNo = (value: boolean | null | undefined) => {
+  if (value === true) return "Yes";
+  if (value === false) return "No";
+  return "Unknown";
+};
+
 export default function FernDetail() {
   const { name } = useParams();
   const decodedName = name ? decodeURIComponent(name) : "";
@@ -25,6 +48,11 @@ export default function FernDetail() {
       .then((data) => setFern(data))
       .catch((err) => setError(err.message))
       .finally(() => setLoading(false));
+  }, [decodedName]);
+
+  useEffect(() => {
+    if (!decodedName) return;
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, [decodedName]);
 
   useEffect(() => {
@@ -51,26 +79,82 @@ export default function FernDetail() {
   if (!fern) return <p className="text-center mt-10">Fern not found.</p>;
 
   const IMAGES_PER_PAGE = 4;
+  const commonNames =
+    fern.commonNames && fern.commonNames.length > 0
+      ? fern.commonNames.join(", ")
+      : "Not recorded";
+  const conservationStatus =
+    fern.conservationStatus ?? fern.notes?.conservationStatus ?? null;
+  const altitudinalRange =
+    fern.altitudinalRange ?? fern.notes?.altitudinalRange ?? null;
+  const distribution = fern.distribution ?? fern.notes?.distributionNZ ?? null;
+  const habitat = fern.habitat ?? fern.notes?.habitat ?? null;
+  const notesText = fern.notesText ?? null;
+  const biostatusLabel = formatBiostatus(fern.biostatus);
+  const endemicLabel = formatYesNo(fern.isEndemic);
+  const nativeLabel = formatYesNo(fern.isNative);
+  const synonyms = fern.synonyms?.filter(Boolean) ?? [];
+  const synonymsText = synonyms.length ? synonyms.join(", ") : "None recorded";
+  const sourceText =
+    [fern.source?.document, fern.source?.publisher]
+      .filter(Boolean)
+      .join(" · ") || "Not recorded";
+  const externalIds: string[] = [];
+
+  if (fern.notes?.iNaturalistTaxonId) {
+    externalIds.push(`iNaturalist: ${fern.notes.iNaturalistTaxonId}`);
+  }
+  if (fern.notes?.wikidataId) {
+    externalIds.push(`Wikidata: ${fern.notes.wikidataId}`);
+  }
+
+  const externalIdsText = externalIds.length
+    ? externalIds.join(" · ")
+    : "Not recorded";
+  const endemicBadge =
+    fern.isEndemic === true
+      ? { label: "Endemic", className: "bg-[#e2f0e8] text-[#1f4d3a]" }
+      : fern.isEndemic === false
+      ? { label: "Not endemic", className: "bg-[#eef2f7] text-[#64748b]" }
+      : { label: "Endemic unknown", className: "bg-[#f8fafc] text-[#94a3b8]" };
   const quickFacts = [
     { label: "Family", value: fern.family },
     {
       label: "Conservation status",
-      value: fern.conservationStatus || "Unknown",
+      value: conservationStatus || "Unknown",
     },
-    { label: "Biostatus", value: fern.biostatus || "Not recorded" },
+    { label: "Biostatus", value: biostatusLabel },
     {
       label: "Altitudinal range",
-      value: fern.altitudinalRange || "Not recorded",
+      value: altitudinalRange || "Not recorded",
     },
-    { label: "Endemic to NZ?", value: fern.isEndemic ? "Yes" : "No" },
-    { label: "Native to NZ?", value: fern.isNative ? "Yes" : "No" },
+    { label: "Endemic to NZ?", value: endemicLabel },
+    { label: "Native to NZ?", value: nativeLabel },
+  ];
+  const taxonomyFacts = [
+    { label: "Rank", value: fern.rank || "Not recorded" },
+    { label: "Genus", value: fern.genus || "Not recorded" },
+    {
+      label: "Specific epithet",
+      value: fern.specificEpithet || "Not recorded",
+    },
+    { label: "Authorship", value: fern.authorship || "Not recorded" },
+    { label: "Order", value: fern.order || "Not recorded" },
+    { label: "Class", value: fern.class || "Not recorded" },
+    { label: "Subphylum", value: fern.subphylum || "Not recorded" },
+    { label: "Catalogue ID", value: fern.id || "Not recorded" },
+  ];
+  const referenceFacts = [
+    { label: "Synonyms", value: synonymsText },
+    { label: "Source", value: sourceText },
+    { label: "External IDs", value: externalIdsText },
   ];
 
   const detailSections = [
-    { title: "Distribution", value: fern.distribution },
-    { title: "Habitat", value: fern.habitat },
+    { title: "Distribution", value: distribution },
+    { title: "Habitat", value: habitat },
     { title: "Identification", value: fern.recognition },
-    { title: "Notes", value: fern.notes },
+    { title: "Notes", value: notesText },
   ].filter((section): section is { title: string; value: string } =>
     Boolean(section.value)
   );
@@ -80,7 +164,7 @@ export default function FernDetail() {
       : fern.imageUrl
       ? [fern.imageUrl]
       : [];
-  const distributionText = fern.distribution ?? "";
+  const distributionText = distribution ?? "";
   const galleryPageCount = Math.ceil(galleryImages.length / IMAGES_PER_PAGE);
   const galleryStart = galleryPage * IMAGES_PER_PAGE;
   const galleryEnd = Math.min(
@@ -122,23 +206,22 @@ export default function FernDetail() {
               >
                 {fern.scientificName}
               </h1>
+              {fern.authorship ? (
+                <p className="text-sm text-gray-500 italic">
+                  {fern.authorship}
+                </p>
+              ) : null}
               <div className="text-sm text-gray-600">
                 <span className="font-semibold text-gray-800">
                   Common names:{" "}
                 </span>
-                {fern.commonNames.length > 0
-                  ? fern.commonNames.join(", ")
-                  : "Not recorded"}
+                {commonNames}
               </div>
               <div className="flex flex-wrap gap-2">
                 <span
-                  className={`rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] mb-4 ${
-                    fern.isEndemic
-                      ? "bg-[#e2f0e8] text-[#1f4d3a]"
-                      : "bg-[#eef2f7] text-[#64748b]"
-                  }`}
+                  className={`rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] mb-4 ${endemicBadge.className}`}
                 >
-                  {fern.isEndemic ? "Endemic" : "Not endemic"}
+                  {endemicBadge.label}
                 </span>
               </div>
             </div>
@@ -220,11 +303,9 @@ export default function FernDetail() {
               </div>
             </div>
 
-            {distributionText ? (
-              <div className="w-full max-w-xs rounded-2xl bg-white p-0 shadow-lg ring-1 ring-gray-100">
-                <DistributionMap distributionText={distributionText} />
-              </div>
-            ) : null}
+            <div className="w-full max-w-xs rounded-2xl bg-white p-0 shadow-lg ring-1 ring-gray-100">
+              <DistributionMap distributionText={distributionText} />
+            </div>
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -241,6 +322,29 @@ export default function FernDetail() {
                 </p>
               </div>
             ))}
+          </div>
+
+          <div className="mt-6 space-y-5">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gray-500">
+                Taxonomy
+              </p>
+              <div className="mt-3 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                {taxonomyFacts.map((fact) => (
+                  <div
+                    key={fact.label}
+                    className="rounded-xl bg-[#f3f7f4] px-4 py-3"
+                  >
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1f4d3a]">
+                      {fact.label}
+                    </p>
+                    <p className="mt-2 text-sm font-semibold text-gray-800">
+                      {fact.value}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
 
           <div className="flex flex-wrap gap-3">

@@ -22,6 +22,23 @@ const renderFernImage = (fern: FernRecord) =>
     </div>
   );
 
+const formatTitleCase = (value: string) =>
+  value ? value.charAt(0).toUpperCase() + value.slice(1) : value;
+
+const formatBiostatus = (
+  biostatus: FernRecord["biostatus"] | null | undefined
+) => {
+  if (!biostatus) return "";
+
+  const parts: string[] = [];
+  if (biostatus.origin) parts.push(formatTitleCase(biostatus.origin));
+  if (biostatus.occurrence) parts.push(formatTitleCase(biostatus.occurrence));
+  if (biostatus.endemicToNZ === true) parts.push("Endemic");
+  if (biostatus.endemicToNZ === false) parts.push("Not endemic");
+
+  return parts.join(" ");
+};
+
 export default function FernList() {
   const [searchParams] = useSearchParams();
   const statusParam = searchParams.get("status") || "";
@@ -39,7 +56,10 @@ export default function FernList() {
     [ferns]
   );
   const statusOptions = useMemo(() => {
-    const statuses = ferns.map((fern) => fern.conservationStatus || "Unknown");
+    const statuses = ferns.map(
+      (fern) =>
+        fern.conservationStatus ?? fern.notes?.conservationStatus ?? "Unknown"
+    );
     return Array.from(new Set(statuses)).sort();
   }, [ferns]);
 
@@ -66,17 +86,38 @@ export default function FernList() {
 
         if (selectedFamily && fern.family !== selectedFamily) return false;
 
-        const statusLabel = fern.conservationStatus || "Unknown";
+        const statusLabel =
+          fern.conservationStatus ?? fern.notes?.conservationStatus ?? "Unknown";
         if (selectedStatus && statusLabel !== selectedStatus) return false;
 
         if (!query) return true;
 
+        const commonNames = fern.commonNames ?? [];
+        const biostatusLabel = formatBiostatus(fern.biostatus);
+        const synonyms = fern.synonyms?.join(" ") ?? "";
+        const taxonomy = [
+          fern.genus,
+          fern.rank,
+          fern.order,
+          fern.class,
+          fern.subphylum,
+          fern.authorship,
+        ]
+          .filter(Boolean)
+          .join(" ");
         const searchableValues = [
           fern.scientificName,
-          fern.commonNames.join(" "),
+          commonNames.join(" "),
           fern.family,
-          fern.conservationStatus || "",
-          fern.isEndemic ? "yes" : "no",
+          statusLabel,
+          biostatusLabel,
+          synonyms,
+          taxonomy,
+          fern.isEndemic === true
+            ? "yes"
+            : fern.isEndemic === false
+            ? "no"
+            : "unknown",
         ]
           .join(" ")
           .toLowerCase();
@@ -204,15 +245,43 @@ export default function FernList() {
             </div>
           ) : (
             filteredFerns.map((fern) => {
+              const endemicLabel =
+                fern.isEndemic === true
+                  ? "Endemic"
+                  : fern.isEndemic === false
+                  ? "Not endemic"
+                  : "Endemic unknown";
+              const endemicClass =
+                fern.isEndemic === true
+                  ? "bg-[#e2f0e8] text-[#1f4d3a]"
+                  : fern.isEndemic === false
+                  ? "bg-[#eef2f7] text-[#64748b]"
+                  : "bg-[#f8fafc] text-[#94a3b8]";
+              const nativeLabel =
+                fern.isNative === true
+                  ? "Native"
+                  : fern.isNative === false
+                  ? "Not native"
+                  : "Native unknown";
+              const nativeClass =
+                fern.isNative === true
+                  ? "bg-[#e2f0e8] text-[#1f4d3a]"
+                  : fern.isNative === false
+                  ? "bg-[#eef2f7] text-[#64748b]"
+                  : "bg-[#f8fafc] text-[#94a3b8]";
               const commonNames =
-                fern.commonNames.length > 0
+                fern.commonNames && fern.commonNames.length > 0
                   ? fern.commonNames.join(", ")
                   : "Not recorded";
+              const statusLabel =
+                fern.conservationStatus ??
+                fern.notes?.conservationStatus ??
+                "Unknown";
               const quickFacts = [
                 { label: "Family", value: fern.family },
                 {
                   label: "Status",
-                  value: fern.conservationStatus || "Unknown",
+                  value: statusLabel,
                 },
               ];
 
@@ -247,22 +316,14 @@ export default function FernList() {
                         </h2>
                         <div className="flex flex-wrap gap-2">
                           <span
-                            className={`rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] ${
-                              fern.isEndemic
-                                ? "bg-[#e2f0e8] text-[#1f4d3a]"
-                                : "bg-[#eef2f7] text-[#64748b]"
-                            }`}
+                            className={`rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] ${endemicClass}`}
                           >
-                            {fern.isEndemic ? "Endemic" : "Not endemic"}
+                            {endemicLabel}
                           </span>
                           <span
-                            className={`rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] ${
-                              fern.isNative
-                                ? "bg-[#e2f0e8] text-[#1f4d3a]"
-                                : "bg-[#eef2f7] text-[#64748b]"
-                            }`}
+                            className={`rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] ${nativeClass}`}
                           >
-                            {fern.isNative ? "Native" : "Not native"}
+                            {nativeLabel}
                           </span>
                         </div>
                         <p className="text-sm text-gray-600">

@@ -88,13 +88,18 @@ const normalizeText = (value: string) =>
     .trim();
 
 const buildTraits = (fern: FernRecord): FernTraits => {
+  const habitat = fern.habitat ?? fern.notes?.habitat ?? null;
+  const notesText = fern.notesText ?? null;
+  const commonNames = fern.commonNames ?? [];
+  const synonyms = fern.synonyms ?? [];
   const combinedText = [
     fern.scientificName,
     fern.family,
-    fern.habitat,
+    habitat,
     fern.recognition,
-    fern.notes,
-    fern.commonNames.join(" "),
+    notesText,
+    commonNames.join(" "),
+    synonyms.join(" "),
   ]
     .filter(Boolean)
     .join(" ");

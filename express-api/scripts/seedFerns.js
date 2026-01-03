@@ -8,7 +8,7 @@ dotenv.config();
 
 const uri = process.env.URI;
 const dbName = process.env.DB_NAME;
-const dataPath = `${process.cwd()}/nz_ferns_updated.json`;
+const dataPath = `${process.cwd()}/nz_ferns2025.json`;
 
 async function seedFerns() {
   try {

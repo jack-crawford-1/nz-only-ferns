@@ -152,7 +152,8 @@ export default function Status() {
         const nextExamples: Record<string, string[]> = {};
 
         data.forEach((fern) => {
-          const status = fern.conservationStatus || "Unknown";
+          const status =
+            fern.conservationStatus ?? fern.notes?.conservationStatus ?? "Unknown";
           if (!nextExamples[status]) {
             nextExamples[status] = [];
           }
