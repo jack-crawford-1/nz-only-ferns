@@ -109,12 +109,7 @@ export default function FernDetail() {
   const biostatusLabel = formatBiostatus(fern.biostatus);
   const endemicLabel = formatYesNo(fern.isEndemic);
   const nativeLabel = formatYesNo(fern.isNative);
-  const synonyms = fern.synonyms?.filter(Boolean) ?? [];
-  const synonymsText = synonyms.length ? synonyms.join(", ") : "None recorded";
-  const sourceText =
-    [fern.source?.document, fern.source?.publisher]
-      .filter(Boolean)
-      .join(" · ") || "Not recorded";
+
   const externalIds: string[] = [];
 
   if (fern.notes?.iNaturalistTaxonId) {
@@ -124,9 +119,6 @@ export default function FernDetail() {
     externalIds.push(`Wikidata: ${fern.notes.wikidataId}`);
   }
 
-  const externalIdsText = externalIds.length
-    ? externalIds.join(" · ")
-    : "Not recorded";
   const endemicBadge =
     fern.isEndemic === true
       ? { label: "Endemic", className: "bg-[#e2f0e8] text-[#1f4d3a]" }
@@ -159,11 +151,6 @@ export default function FernDetail() {
     { label: "Class", value: fern.class || "Not recorded" },
     { label: "Subphylum", value: fern.subphylum || "Not recorded" },
     { label: "Catalogue ID", value: fern.id || "Not recorded" },
-  ];
-  const referenceFacts = [
-    { label: "Synonyms", value: synonymsText },
-    { label: "Source", value: sourceText },
-    { label: "External IDs", value: externalIdsText },
   ];
 
   const detailSections = [
