@@ -340,46 +340,21 @@ export default function FernDetail() {
             ))}
           </div>
 
-          <div className="mt-6 space-y-5">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gray-500">
-                Taxonomy
-              </p>
-              <div className="mt-3 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                {taxonomyFacts.map((fact) => (
-                  <div
-                    key={fact.label}
-                    className="rounded-xl bg-[#f3f7f4] px-4 py-3"
-                  >
-                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1f4d3a]">
-                      {fact.label}
-                    </p>
-                    <p className="mt-2 text-sm font-semibold text-gray-800">
-                      {formatFactValue(fact.value)}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gray-500">
-                References
-              </p>
-              <div className="mt-3 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {referenceFacts.map((fact) => (
-                  <div
-                    key={fact.label}
-                    className="rounded-xl bg-[#f3f7f4] px-4 py-3"
-                  >
-                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1f4d3a]">
-                      {fact.label}
-                    </p>
-                    <p className="mt-2 text-sm font-semibold text-gray-800">
-                      {formatFactValue(fact.value)}
-                    </p>
-                  </div>
-                ))}
-              </div>
+          <div>
+            <div className="mt-0 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {taxonomyFacts.map((fact) => (
+                <div
+                  key={fact.label}
+                  className="rounded-xl bg-[#f3f7f4] px-4 py-3"
+                >
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1f4d3a]">
+                    {fact.label}
+                  </p>
+                  <p className="mt-2 text-sm font-semibold text-gray-800">
+                    {formatFactValue(fact.value)}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
 
@@ -448,9 +423,9 @@ export default function FernDetail() {
               </div>
 
               <div className="mt-4 flex flex-col gap-4 lg:flex-row">
-                <div className="lg:w-3/5">
+                <div className="">
                   <p className="whitespace-pre-line text-sm text-gray-600">
-                    {section.value}
+                    {section.value}'
                   </p>
                 </div>
               </div>
