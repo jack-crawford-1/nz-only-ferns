@@ -20,6 +20,23 @@ export default function Demo() {
     isNative: true,
   };
 
+  const biostatusLabel =
+    typeof fern.biostatus === "string"
+      ? fern.biostatus
+      : fern.biostatus
+      ? [
+          fern.biostatus.origin,
+          fern.biostatus.occurrence,
+          fern.biostatus.endemicToNZ === true
+            ? "Endemic"
+            : fern.biostatus.endemicToNZ === false
+            ? "Not endemic"
+            : null,
+        ]
+          .filter(Boolean)
+          .join(" · ")
+      : "Not recorded";
+
   const distributionText = fern.distribution ?? "";
 
   const gallery = [
@@ -34,7 +51,7 @@ export default function Demo() {
   const quickFacts = [
     { label: "Family", value: fern.family },
     { label: "Conservation status", value: fern.conservationStatus },
-    { label: "Biostatus", value: fern.biostatus },
+    { label: "Biostatus", value: biostatusLabel },
     { label: "Altitudinal range", value: fern.altitudinalRange },
     { label: "Endemic to NZ?", value: fern.isEndemic ? "Yes" : "No" },
     { label: "Native to NZ?", value: fern.isNative ? "Yes" : "No" },
