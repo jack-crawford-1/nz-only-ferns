@@ -4,7 +4,6 @@ import FernDetail from "../app/FernDetail";
 import Home from "../app/Home";
 import Habitats from "../app/Habitats";
 import Status from "../app/Status";
-import Demo from "../app/Demo";
 import Key from "../app/Key";
 
 export function AppRoutes() {
@@ -17,7 +16,6 @@ export function AppRoutes() {
       <Route path="/habitats" element={<Habitats />} />
       <Route path="/status" element={<Status />} />
       <Route path="/key" element={<Key />} />
-      <Route path="/demo" element={<Demo />} />
     </Routes>
   );
 }
