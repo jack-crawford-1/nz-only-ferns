@@ -26,9 +26,10 @@ const formatTitleCase = (value: string) =>
   value ? value.charAt(0).toUpperCase() + value.slice(1) : value;
 
 const formatBiostatus = (
-  biostatus: FernRecord["biostatus"] | null | undefined
+  biostatus: FernRecord["biostatus"] | string | null | undefined
 ) => {
   if (!biostatus) return "";
+  if (typeof biostatus === "string") return biostatus;
 
   const parts: string[] = [];
   if (biostatus.origin) parts.push(formatTitleCase(biostatus.origin));

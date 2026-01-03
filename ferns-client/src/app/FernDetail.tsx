@@ -12,9 +12,10 @@ const formatTitleCase = (value: string) =>
   value ? value.charAt(0).toUpperCase() + value.slice(1) : value;
 
 const formatBiostatus = (
-  biostatus: FernRecord["biostatus"] | null | undefined
+  biostatus: FernRecord["biostatus"] | string | null | undefined
 ) => {
   if (!biostatus) return "Not recorded";
+  if (typeof biostatus === "string") return biostatus;
 
   const parts: string[] = [];
   if (biostatus.origin) parts.push(formatTitleCase(biostatus.origin));
@@ -29,6 +30,21 @@ const formatYesNo = (value: boolean | null | undefined) => {
   if (value === true) return "Yes";
   if (value === false) return "No";
   return "Unknown";
+};
+
+const formatFactValue = (value: unknown) => {
+  if (value === null || value === undefined) return "Not recorded";
+  if (typeof value === "string") return value;
+  if (typeof value === "number" || typeof value === "boolean")
+    return String(value);
+  if (Array.isArray(value)) {
+    const joined = value.filter(Boolean).join(", ");
+    return joined || "Not recorded";
+  }
+  if (typeof value === "object") {
+    return formatBiostatus(value as FernRecord["biostatus"]);
+  }
+  return String(value);
 };
 
 export default function FernDetail() {
@@ -318,7 +334,7 @@ export default function FernDetail() {
                   {fact.label}
                 </p>
                 <p className="mt-2 text-sm font-semibold text-gray-800">
-                  {fact.value}
+                  {formatFactValue(fact.value)}
                 </p>
               </div>
             ))}
@@ -339,7 +355,27 @@ export default function FernDetail() {
                       {fact.label}
                     </p>
                     <p className="mt-2 text-sm font-semibold text-gray-800">
-                      {fact.value}
+                      {formatFactValue(fact.value)}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gray-500">
+                References
+              </p>
+              <div className="mt-3 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {referenceFacts.map((fact) => (
+                  <div
+                    key={fact.label}
+                    className="rounded-xl bg-[#f3f7f4] px-4 py-3"
+                  >
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#1f4d3a]">
+                      {fact.label}
+                    </p>
+                    <p className="mt-2 text-sm font-semibold text-gray-800">
+                      {formatFactValue(fact.value)}
                     </p>
                   </div>
                 ))}
