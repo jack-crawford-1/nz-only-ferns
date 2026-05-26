@@ -1,40 +1,34 @@
+import Layout from "./Layout";
+
 type LoadingScreenProps = {
   title?: string;
   description?: string;
 };
 
 export default function LoadingScreen({
-  title = "Loading",
-  description = "Preparing the latest fern records.",
+  title = "Loading the archive",
+  description = "Retrieving species records.",
 }: LoadingScreenProps) {
   return (
-    <div className="min-h-screen bg-[#22342606]">
-      <main className="mx-auto max-w-4xl px-4 pb-16 pt-24">
-        <div className="rounded-2xl bg-white/80 p-6 shadow-lg ring-1 ring-gray-100 backdrop-blur">
-          <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#20624a]">
-            Loading
-          </p>
-          <h1 className="mt-2 text-2xl font-bold text-gray-900">{title}</h1>
-          <p className="mt-2 text-sm text-gray-600">{description}</p>
-
-          <div className="mt-6 flex items-center gap-3">
-            <div className="flex items-center gap-1">
-              <span className="h-2 w-2 animate-pulse rounded-full bg-[#1f4d3a]" />
-              <span className="h-2 w-2 animate-pulse rounded-full bg-[#0fb59c] [animation-delay:150ms]" />
-              <span className="h-2 w-2 animate-pulse rounded-full bg-[#1f4d3a] [animation-delay:300ms]" />
-            </div>
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-400">
-              Please wait
-            </span>
-          </div>
-
-          <div className="mt-6 grid gap-3 sm:grid-cols-3">
-            <div className="h-20 rounded-xl bg-[#f3f7f4]" />
-            <div className="h-20 rounded-xl bg-[#f3f7f4]" />
-            <div className="h-20 rounded-xl bg-[#f3f7f4]" />
-          </div>
+    <Layout>
+      <div className="border-b border-line py-10">
+        <span className="label">Pteridophyta · Loading</span>
+      </div>
+      <div className="py-16">
+        <h1 className="max-w-2xl text-3xl font-extrabold tracking-[-0.02em] md:text-4xl">
+          {title}
+        </h1>
+        <p className="mt-3 max-w-md text-[14px] text-ink-3">{description}</p>
+        <div className="mt-10 flex items-center gap-2" aria-hidden>
+          {[0, 1, 2, 3, 4].map((i) => (
+            <span
+              key={i}
+              className="h-6 w-1 animate-pulse bg-fern"
+              style={{ animationDelay: `${i * 120}ms`, opacity: 0.35 + i * 0.13 }}
+            />
+          ))}
         </div>
-      </main>
-    </div>
+      </div>
+    </Layout>
   );
 }

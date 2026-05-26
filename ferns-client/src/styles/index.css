@@ -1,1 +1,103 @@
 @import "tailwindcss";
+
+/* ------------------------------------------------------------------ *
+   Pteridophyta, design tokens
+   International Typographic Style: herbarium paper, ink, one signal
+   green. Real type (Archivo + IBM Plex Mono). Hairlines, no shadows.
+ * ------------------------------------------------------------------ */
+@theme {
+  --font-sans: "Archivo", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  /* Surfaces */
+  --color-paper: #f3f2ea; /* page */
+  --color-paper-2: #ebe9dd; /* panel / hover */
+  --color-card: #faf9f3; /* raised surface */
+
+  /* Ink */
+  --color-ink: #16160f; /* primary text */
+  --color-ink-2: #45443a; /* secondary */
+  --color-ink-3: #76746a; /* muted / captions */
+
+  /* Hairlines */
+  --color-line: #d7d4c5;
+  --color-line-2: #c2bfae;
+
+  /* Signal */
+  --color-fern: #1c6b3c;
+  --color-fern-ink: #103e23;
+  --color-fern-soft: #e3ece4;
+
+  /* Conservation tiers */
+  --color-alert: #b23b2e; /* threatened */
+  --color-warn: #9a6a14; /* at risk */
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-feature-settings: "kern", "liga";
+  }
+
+  ::selection {
+    background: var(--color-fern);
+    color: var(--color-paper);
+  }
+
+  /* Tame native form controls so they read as part of the system */
+  input,
+  select,
+  button {
+    font-family: inherit;
+    color: inherit;
+  }
+
+  select {
+    appearance: none;
+    background-image: none;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-fern);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  /* Mono metadata label, the recurring "scientific" caption */
+  .label {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    line-height: 1.1;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-ink-3);
+  }
+
+  /* Underline-on-hover text link */
+  .link-ink {
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 1px;
+    transition: background-size 0.18s ease;
+  }
+  .link-ink:hover {
+    background-size: 100% 1px;
+  }
+}
+
+/* Thin scrollbars to match the precise feel */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-line-2) transparent;
+}

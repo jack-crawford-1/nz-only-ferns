@@ -1,5 +1,5 @@
-import Navbar from "../components/nav/Navbar";
-import Footer from "../components/Footer";
+import { Link } from "react-router";
+import Layout from "../components/Layout";
 
 const HABITATS = [
   {
@@ -23,7 +23,7 @@ const HABITATS = [
   {
     title: "Stream and river margins",
     description:
-      "Riparian zones provide constant moisture and nutrient-rich soils. Many fern species tolerate occasional flooding and stabilize banks with dense root mats.",
+      "Riparian zones provide constant moisture and nutrient-rich soils. Many fern species tolerate occasional flooding and stabilise banks with dense root mats.",
     image: "/habitats/margins.png",
     alt: "A clear stream running through green vegetation",
     cues: ["Flowing water", "Gravelly soils", "Seasonal flooding"],
@@ -60,77 +60,80 @@ const HABITATS = [
 
 export default function Habitats() {
   return (
-    <div className="min-h-screen bg-[#22342606]">
-      <Navbar />
-      <main className="mx-auto max-w-6xl px-4 pb-16 pt-32">
-        <section className="mb-8 flex flex-col gap-6 rounded-2xl bg-white/80 p-6 shadow-lg ring-1 ring-gray-100 backdrop-blur">
-          <div className="flex flex-wrap items-start justify-between gap-6">
-            <div className="space-y-3">
-              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#20624a]">
-                Habitats
-              </p>
-              <h1
-                className="text-3xl font-bold text-gray-900"
-                style={{ fontFamily: "Cormorant Garamond" }}
-              >
-                Where New Zealand ferns thrive
-              </h1>
+    <Layout>
+      <header className="border-b-2 border-ink py-10">
+        <span className="label">Field notes · {HABITATS.length} habitats</span>
+        <h1 className="mt-4 text-[2.5rem] font-extrabold leading-[0.95] tracking-[-0.03em] md:text-[3.75rem]">
+          Where ferns thrive
+        </h1>
+        <p className="mt-5 max-w-2xl text-[15px] leading-relaxed text-ink-2">
+          From dripping gully floors to wind-scoured coast, Aotearoa's ferns
+          occupy a wide spread of niches. These are the recurring settings,
+          and the cues that mark each one.
+        </p>
+      </header>
+
+      {HABITATS.map((habitat, i) => (
+        <article
+          key={habitat.title}
+          className="grid items-center gap-6 border-b border-line py-10 md:grid-cols-2 md:gap-12"
+        >
+          <div
+            className={`relative aspect-4/3 overflow-hidden border border-line bg-paper-2 ${
+              i % 2 === 1 ? "md:order-2" : ""
+            }`}
+          >
+            <img
+              src={habitat.image}
+              alt={habitat.alt}
+              loading="lazy"
+              decoding="async"
+              className="h-full w-full object-cover"
+            />
+            <span className="absolute left-0 top-0 bg-paper px-2 py-1 font-mono text-[12px] text-ink">
+              № {String(i + 1).padStart(2, "0")}
+            </span>
+          </div>
+
+          <div>
+            <h2 className="text-[1.75rem] font-extrabold leading-tight tracking-[-0.02em] md:text-[2.25rem]">
+              {habitat.title}
+            </h2>
+            <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-ink-2">
+              {habitat.description}
+            </p>
+
+            <div className="mt-5">
+              <span className="label">Field cues</span>
+              <div className="mt-2 flex flex-wrap gap-2">
+                {habitat.cues.map((cue) => (
+                  <span
+                    key={cue}
+                    className="border border-line-2 px-2.5 py-1 font-mono text-[11px] uppercase tracking-wide text-ink-2"
+                  >
+                    {cue}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-5">
+              <span className="label">Typical species</span>
+              <div className="mt-2 flex flex-wrap gap-x-5 gap-y-1">
+                {habitat.examples.map((example) => (
+                  <Link
+                    key={example}
+                    to={`/ferns/${encodeURIComponent(example)}`}
+                    className="link-ink text-[15px] italic text-ink hover:text-fern"
+                  >
+                    {example}
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
-        </section>
-
-        <section className="grid gap-5 md:grid-cols-3">
-          {HABITATS.map((habitat) => (
-            <article
-              key={habitat.title}
-              className="overflow-hidden rounded-2xl bg-white shadow-lg ring-1 ring-gray-100"
-            >
-              <div className="h-48 w-full overflow-hidden">
-                <img
-                  src={habitat.image}
-                  alt={habitat.alt}
-                  className="h-full w-full object-cover"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <div className="space-y-3 p-5">
-                <h2 className="text-lg font-semibold text-gray-900">
-                  {habitat.title}
-                </h2>
-                <p className="text-sm text-gray-600">{habitat.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {habitat.cues.map((cue) => (
-                    <span
-                      key={cue}
-                      className="rounded-full bg-[#f3f7f4] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#1f4d3a]"
-                    >
-                      {cue}
-                    </span>
-                  ))}
-                </div>
-                <div>
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-gray-500">
-                    Example ferns
-                  </p>
-                  <div className="mt-2 flex flex-wrap gap-2 text-sm text-gray-700">
-                    {habitat.examples.map((example) => (
-                      <span
-                        key={example}
-                        className="rounded-full bg-white px-3 py-1 text-[11px] font-semibold text-[#1f4d3a] shadow-sm ring-1 ring-[#dce6df]"
-                      >
-                        {example}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </article>
-          ))}
-        </section>
-
-        <Footer />
-      </main>
-    </div>
+        </article>
+      ))}
+    </Layout>
   );
 }

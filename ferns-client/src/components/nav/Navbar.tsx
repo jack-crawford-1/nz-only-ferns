@@ -1,58 +1,46 @@
-import { useNavigate, useLocation } from "react-router";
+import { Link, useLocation } from "react-router";
+
+const NAV = [
+  { label: "Index", path: "/", match: (p: string) => p === "/" || p.startsWith("/ferns") },
+  { label: "Identify", path: "/identify", match: (p: string) => p.startsWith("/identify") || p.startsWith("/key") },
+  { label: "Habitats", path: "/habitats", match: (p: string) => p.startsWith("/habitats") },
+  { label: "Conservation", path: "/status", match: (p: string) => p.startsWith("/status") },
+  { label: "About", path: "/about", match: (p: string) => p.startsWith("/about") },
+];
 
 export default function Navbar() {
-  const navigate = useNavigate();
-  const location = useLocation();
-
-  const menuItems = [
-    { label: "Ferns", path: "/ferns" },
-    { label: "Key", path: "/key" },
-    { label: "Habitats", path: "/habitats" },
-    { label: "Status", path: "/status" },
-  ];
+  const { pathname } = useLocation();
 
   return (
-    <div className="fixed top-0 left-0 z-50 w-full bg-white/80 backdrop-blur">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-4 py-4">
-        <div className="flex items-center gap-3">
-          <div className="flex flex-col leading-tight">
-            <span
-              className="text-xs font-semibold uppercase tracking-[0.2em] text-[#143324]"
-              style={{ fontFamily: "Cormorant Garamond" }}
-            >
-              <a href="/">NZ Only Ferns</a>
-            </span>
-            <span className="text-md font-bold text-gray-900">
-              <a href="/">Fern Library</a>
-            </span>
-          </div>
-        </div>
+    <header className="sticky top-0 z-50 border-b border-line bg-paper/90 backdrop-blur-sm">
+      <div className="mx-auto flex max-w-[1400px] flex-col gap-2.5 px-5 py-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4 md:px-8">
+        <Link to="/" className="group flex items-baseline gap-2.5">
+          <span className="h-3 w-3 translate-y-px bg-fern" aria-hidden />
+          <span className="text-[15px] font-extrabold uppercase tracking-[-0.01em] text-ink">
+            Pteridophyta
+          </span>
+          <span className="label hidden sm:inline">Ferns of Aotearoa</span>
+        </Link>
 
-        <div className="hidden items-center gap-2 rounded-full bg-gray-100 px-2 py-1 text-sm text-gray-700 shadow-inner sm:flex">
-          {menuItems.map(({ label, path }) => {
-            const isActive =
-              (path === "/ferns" && location.pathname.startsWith("/ferns")) ||
-              location.pathname === path;
-
+        <nav className="-mx-1 flex items-center gap-x-4 gap-y-1 overflow-x-auto px-1 md:gap-x-5">
+          {NAV.map((item) => {
+            const active = item.match(pathname);
             return (
-              <button
-                key={label}
-                onClick={() => navigate(path)}
-                className={`rounded-full px-3 py-1 font-medium transition-colors ${
-                  isActive
-                    ? "bg-white text-[#1f4d3a] shadow-sm"
-                    : "text-gray-600 hover:bg-white hover:text-gray-900"
+              <Link
+                key={item.path}
+                to={item.path}
+                className={`shrink-0 border-b-2 pb-0.5 font-mono text-[12px] uppercase tracking-[0.04em] transition-colors ${
+                  active
+                    ? "border-fern text-ink"
+                    : "border-transparent text-ink-3 hover:text-ink"
                 }`}
               >
-                {label}
-              </button>
+                {item.label}
+              </Link>
             );
           })}
-        </div>
-
-        <div className="flex flex-1 items-center justify-end gap-3" />
-      </nav>
-      <div className="h-px w-full bg-[#d6e2d9]" aria-hidden />
-    </div>
+        </nav>
+      </div>
+    </header>
   );
 }

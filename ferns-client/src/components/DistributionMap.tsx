@@ -370,34 +370,31 @@ export default function DistributionMap({
 
   if (!geoData) {
     return (
-      <div className="rounded-2xl bg-[#f3f7f4] p-4 text-xs text-gray-500 shadow-inner">
-        Loading map...
-      </div>
+      <div className="p-2 font-mono text-[12px] text-ink-3">Loading map…</div>
     );
   }
 
-  const inactiveFill = "#e5e7eb";
-  const inactiveStroke = "#cbd5e1";
-  const activeFill = "#e6efe9";
-  const activeStroke = "#c6d3ca";
+  const inactiveFill = "#ebe9dd"; // paper-2
+  const inactiveStroke = "#d7d4c5"; // line
+  const activeFill = "#e3ece4"; // fern-soft (land present)
+  const activeStroke = "#c2bfae"; // line-2
 
   return (
-    <div className="rounded-2xl bg-[#f3f7f4] p-4 shadow-inner">
-      <div className="flex items-center justify-between text-[11px] font-semibold uppercase tracking-[0.18em] text-gray-500">
-        <span>Regional map</span>
+    <div>
+      <div className="flex items-center justify-between border-b border-line pb-2">
+        <span className="label">Distribution map</span>
         <span
-          className={`rounded-full px-2 py-1 text-[10px] shadow-sm ${
-            hasDistribution
-              ? "bg-white text-[#1f4d3a]"
-              : "bg-gray-100 text-gray-500"
-          }`}
+          className="font-mono text-[11px] uppercase tracking-wide"
+          style={{
+            color: hasDistribution ? "var(--color-fern)" : "var(--color-ink-3)",
+          }}
         >
           {hasDistribution ? "Approximate" : "No data"}
         </span>
       </div>
       <svg
         viewBox="0 0 320 420"
-        className={`mt-3 h-54 w-full ${hasDistribution ? "" : "opacity-70"}`}
+        className={`mt-2 w-full ${hasDistribution ? "" : "opacity-60"}`}
         role="img"
         aria-label="New Zealand regions map"
         preserveAspectRatio="xMidYMid meet"
@@ -406,12 +403,12 @@ export default function DistributionMap({
           const isHighlighted = highlightedRegions.has(feature.name);
           const fillColor = hasDistribution
             ? isHighlighted
-              ? "#41a17a"
+              ? "#1c6b3c"
               : activeFill
             : inactiveFill;
           const strokeColor = hasDistribution
             ? isHighlighted
-              ? "#143324"
+              ? "#103e23"
               : activeStroke
             : inactiveStroke;
           return (
@@ -420,14 +417,21 @@ export default function DistributionMap({
               d={feature.path}
               fill={fillColor}
               stroke={strokeColor}
-              strokeWidth={1}
+              strokeWidth={0.75}
             />
           );
         })}
       </svg>
-      {!hasDistribution ? (
-        <p className="mt-3 text-xs text-gray-500">Distribution not recorded.</p>
-      ) : null}
+      <p className="mt-1 flex items-center gap-2 text-[12px] text-ink-3">
+        {hasDistribution ? (
+          <>
+            <span className="inline-block h-2 w-2 bg-fern" aria-hidden />
+            Shaded regions indicate recorded presence.
+          </>
+        ) : (
+          "Distribution not recorded."
+        )}
+      </p>
     </div>
   );
 }

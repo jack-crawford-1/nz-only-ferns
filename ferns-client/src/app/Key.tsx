@@ -1,9 +1,14 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router";
-import Navbar from "../components/nav/Navbar";
-import Footer from "../components/Footer";
+import Layout from "../components/Layout";
+import StatusTag from "../components/StatusTag";
 import { fetchFerns } from "../api/fetchFerns";
 import type { FernRecord } from "../types/Ferns";
+import { commonNamesOf, primaryImageOf, statusOf } from "../utils/format";
+
+/* ------------------------------------------------------------------ *
+   Identification logic, preserved from the original dichotomous key.
+ * ------------------------------------------------------------------ */
 
 type FernTraits = {
   isTreeFern: boolean;
@@ -21,10 +26,7 @@ type FernTraits = {
   isLinearSori: boolean;
 };
 
-type FernEntry = {
-  fern: FernRecord;
-  traits: FernTraits;
-};
+type FernEntry = { fern: FernRecord; traits: FernTraits };
 
 type KeyQuestion = {
   id: string;
@@ -37,52 +39,24 @@ type KeyQuestion = {
   predicate: (entry: FernEntry) => boolean;
 };
 
-type KeyAnswer = {
-  questionId: string;
-  choice: boolean;
-  label: string;
-};
+type KeyAnswer = { questionId: string; choice: boolean; label: string };
 
 const QUESTION_IMAGES: Record<string, { src: string; alt: string }> = {
-  "tree-fern": {
-    src: "/key/tree-fern.jpg",
-    alt: "Tree fern with trunk and crown of fronds",
-  },
-  "filmy-fern": {
-    src: "/key/filmy-fern.jpg",
-    alt: "Filmy fern with translucent fronds",
-  },
-  maidenhair: {
-    src: "/key/maidenhair.jpg",
-    alt: "Maidenhair fern with fan-shaped leaflets",
-  },
-  "highly-divided": {
-    src: "/key/highly-divided.jpg",
-    alt: "Fern with finely divided fronds",
-  },
-  "simple-frond": {
-    src: "/key/simple-frond.jpg",
-    alt: "Fern with simple, strap-like fronds",
-  },
-  leathery: {
-    src: "/key/leathery.jpg",
-    alt: "Fern with thick, leathery fronds",
-  },
-  epiphyte: {
-    src: "/key/epiphyte.jpg",
-    alt: "Epiphytic fern growing on a trunk",
-  },
-  climbing: {
-    src: "/key/climbing.jpg",
-    alt: "Climbing fern",
-  },
+  "tree-fern": { src: "/key/tree-fern.jpg", alt: "Tree fern with trunk and crown of fronds" },
+  "filmy-fern": { src: "/key/filmy-fern.jpg", alt: "Filmy fern with translucent fronds" },
+  maidenhair: { src: "/key/maidenhair.jpg", alt: "Maidenhair fern with fan-shaped leaflets" },
+  "highly-divided": { src: "/key/highly-divided.jpg", alt: "Fern with finely divided fronds" },
+  "simple-frond": { src: "/key/simple-frond.jpg", alt: "Fern with simple, strap-like fronds" },
+  leathery: { src: "/key/leathery.jpg", alt: "Fern with thick, leathery fronds" },
+  epiphyte: { src: "/key/epiphyte.jpg", alt: "Epiphytic fern growing on a trunk" },
+  climbing: { src: "/key/climbing.jpg", alt: "Climbing fern" },
 };
 
 const normalizeText = (value: string) =>
   value
     .toLowerCase()
     .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[̀-ͯ]/g, "")
     .replace(/[^a-z0-9\s]/g, " ")
     .replace(/\s+/g, " ")
     .trim();
@@ -212,205 +186,78 @@ const buildTraits = (fern: FernRecord): FernTraits => {
   };
 };
 
-
 const QUESTIONS: KeyQuestion[] = [
-  {
-    id: "tree-fern",
-    prompt: "Does it form a trunk (tree fern)?",
-    description: "Look for a distinct trunk with a crown of fronds.",
-    definition:
-      "Tree ferns have a vertical trunk with fronds forming a crown at the top.",
-    yesLabel: "Yes, a trunked tree fern",
-    noLabel: "No, ground or creeping fern",
-    priority: 0,
-    predicate: (entry) => entry.traits.isTreeFern,
-  },
-  {
-    id: "filmy-fern",
-    prompt: "Are the fronds paper-thin and translucent?",
-    description: "Filmy ferns have delicate, see-through fronds.",
-    definition:
-      "Filmy fronds are one cell thick and look almost transparent.",
-    yesLabel: "Yes, filmy fronds",
-    noLabel: "No, thicker fronds",
-    priority: 0,
-    predicate: (entry) => entry.traits.isFilmy,
-  },
-  {
-    id: "maidenhair",
-    prompt: "Do the fronds have fan-shaped leaflets (maidenhair)?",
-    description: "Maidenhair ferns have delicate, fan-like leaflets.",
-    definition: "Look for fan-shaped leaflets on thin, dark stalks.",
-    yesLabel: "Yes, fan-shaped leaflets",
-    noLabel: "No, other frond shape",
-    priority: 0,
-    predicate: (entry) => entry.traits.isMaidenhair,
-  },
-  {
-    id: "highly-divided",
-    prompt: "Are the fronds very finely divided?",
-    description: "Look for bipinnate or tripinnate fronds.",
-    definition:
-      "Bipinnate or tripinnate fronds split into many small leaflets, giving a lacy look.",
-    yesLabel: "Yes, finely divided fronds",
-    noLabel: "No, less divided",
-    priority: 0,
-    predicate: (entry) => entry.traits.isHighlyDivided,
-  },
-  {
-    id: "simple-frond",
-    prompt: "Are the fronds simple or strap-like?",
-    description: "Undivided or ribbon-like fronds.",
-    definition: "Simple fronds are undivided, often strap-like or tongue-shaped.",
-    yesLabel: "Yes, simple fronds",
-    noLabel: "No, divided fronds",
-    priority: 0,
-    predicate: (entry) => entry.traits.isSimpleFrond,
-  },
-  {
-    id: "scaly",
-    prompt: "Are the fronds or stipes noticeably scaly or hairy?",
-    description: "Look for obvious scales or bristles.",
-    definition:
-      "Scales or hairs are visible on the stipe or rachis, often brown or reddish.",
-    yesLabel: "Yes, scaly or hairy",
-    noLabel: "No, mostly smooth",
-    priority: 1,
-    predicate: (entry) => entry.traits.isScalyOrHairy,
-  },
-  {
-    id: "leathery",
-    prompt: "Are the fronds thick or leathery?",
-    description: "Firm, stiff, or glossy fronds.",
-    definition:
-      "Leathery fronds feel thick, stiff, or glossy compared to thin fronds.",
-    yesLabel: "Yes, thick/leathery",
-    noLabel: "No, thin or delicate",
-    priority: 1,
-    predicate: (entry) => entry.traits.isLeathery,
-  },
-  {
-    id: "epiphyte",
-    prompt: "Does it grow on trees or other plants?",
-    description: "Epiphytes often sit on trunks or branches.",
-    definition:
-      "Epiphytes sit on trunks or branches rather than rooting in soil.",
-    yesLabel: "Yes, often epiphytic",
-    noLabel: "Mostly terrestrial",
-    priority: 2,
-    predicate: (entry) => entry.traits.isEpiphyte,
-  },
-  {
-    id: "climbing",
-    prompt: "Does it climb or scramble over other plants?",
-    description: "Look for scrambling or twining fronds.",
-    definition:
-      "Climbers have long, twining fronds or stems that scramble over other plants.",
-    yesLabel: "Yes, climbing or scrambling",
-    noLabel: "No, not climbing",
-    priority: 2,
-    predicate: (entry) => entry.traits.isClimbing,
-  },
-  {
-    id: "dimorphic",
-    prompt: "Are fertile and sterile fronds noticeably different?",
-    description: "Look for narrow fertile fronds and broader sterile fronds.",
-    definition: "Dimorphic ferns have distinct fertile and sterile fronds.",
-    yesLabel: "Yes, fronds are dimorphic",
-    noLabel: "No, fronds look similar",
-    priority: 2,
-    predicate: (entry) => entry.traits.isDimorphic,
-  },
-  {
-    id: "creeping",
-    prompt: "Does it spread by a creeping rhizome or mat?",
-    description: "Creeping rhizomes often form mats across surfaces.",
-    definition:
-      "Creeping rhizomes spread along the surface and can form mats.",
-    yesLabel: "Yes, creeping or mat-forming",
-    noLabel: "No, tufted or upright",
-    priority: 2,
-    predicate: (entry) => entry.traits.isCreeping,
-  },
-  {
-    id: "linear-sori",
-    prompt: "Are the sori arranged in long lines?",
-    description: "Look for elongated sori rather than round dots.",
-    definition: "Linear sori appear as lines instead of round dots.",
-    yesLabel: "Yes, linear sori",
-    noLabel: "No, round or scattered sori",
-    priority: 2,
-    predicate: (entry) => entry.traits.isLinearSori,
-  },
-  {
-    id: "marginal-sori",
-    prompt: "Are the sori right on the frond margins?",
-    description: "Marginal sori often sit on the very edge of the frond.",
-    definition:
-      "Marginal sori sit on the leaf edge, sometimes under a rolled margin.",
-    yesLabel: "Yes, marginal sori",
-    noLabel: "No, sori away from edges",
-    priority: 2,
-    predicate: (entry) => entry.traits.isMarginalSori,
-  },
+  { id: "tree-fern", prompt: "Does it form a trunk (tree fern)?", description: "Look for a distinct trunk with a crown of fronds.", definition: "Tree ferns have a vertical trunk with fronds forming a crown at the top.", yesLabel: "Yes, a trunked tree fern", noLabel: "No, ground or creeping fern", priority: 0, predicate: (e) => e.traits.isTreeFern },
+  { id: "filmy-fern", prompt: "Are the fronds paper-thin and translucent?", description: "Filmy ferns have delicate, see-through fronds.", definition: "Filmy fronds are one cell thick and look almost transparent.", yesLabel: "Yes, filmy fronds", noLabel: "No, thicker fronds", priority: 0, predicate: (e) => e.traits.isFilmy },
+  { id: "maidenhair", prompt: "Do the fronds have fan-shaped leaflets?", description: "Maidenhair ferns have delicate, fan-like leaflets.", definition: "Look for fan-shaped leaflets on thin, dark stalks.", yesLabel: "Yes, fan-shaped leaflets", noLabel: "No, other frond shape", priority: 0, predicate: (e) => e.traits.isMaidenhair },
+  { id: "highly-divided", prompt: "Are the fronds very finely divided?", description: "Look for bipinnate or tripinnate fronds.", definition: "Bipinnate or tripinnate fronds split into many small leaflets, giving a lacy look.", yesLabel: "Yes, finely divided", noLabel: "No, less divided", priority: 0, predicate: (e) => e.traits.isHighlyDivided },
+  { id: "simple-frond", prompt: "Are the fronds simple or strap-like?", description: "Undivided or ribbon-like fronds.", definition: "Simple fronds are undivided, often strap-like or tongue-shaped.", yesLabel: "Yes, simple fronds", noLabel: "No, divided fronds", priority: 0, predicate: (e) => e.traits.isSimpleFrond },
+  { id: "scaly", prompt: "Are the fronds or stipes noticeably scaly or hairy?", description: "Look for obvious scales or bristles.", definition: "Scales or hairs are visible on the stipe or rachis, often brown or reddish.", yesLabel: "Yes, scaly or hairy", noLabel: "No, mostly smooth", priority: 1, predicate: (e) => e.traits.isScalyOrHairy },
+  { id: "leathery", prompt: "Are the fronds thick or leathery?", description: "Firm, stiff, or glossy fronds.", definition: "Leathery fronds feel thick, stiff, or glossy compared to thin fronds.", yesLabel: "Yes, thick / leathery", noLabel: "No, thin or delicate", priority: 1, predicate: (e) => e.traits.isLeathery },
+  { id: "epiphyte", prompt: "Does it grow on trees or other plants?", description: "Epiphytes often sit on trunks or branches.", definition: "Epiphytes sit on trunks or branches rather than rooting in soil.", yesLabel: "Yes, often epiphytic", noLabel: "No, mostly terrestrial", priority: 2, predicate: (e) => e.traits.isEpiphyte },
+  { id: "climbing", prompt: "Does it climb or scramble over other plants?", description: "Look for scrambling or twining fronds.", definition: "Climbers have long, twining fronds or stems that scramble over other plants.", yesLabel: "Yes, climbing", noLabel: "No, not climbing", priority: 2, predicate: (e) => e.traits.isClimbing },
+  { id: "dimorphic", prompt: "Are fertile and sterile fronds noticeably different?", description: "Look for narrow fertile fronds and broader sterile fronds.", definition: "Dimorphic ferns have distinct fertile and sterile fronds.", yesLabel: "Yes, dimorphic fronds", noLabel: "No, fronds look similar", priority: 2, predicate: (e) => e.traits.isDimorphic },
+  { id: "creeping", prompt: "Does it spread by a creeping rhizome or mat?", description: "Creeping rhizomes often form mats across surfaces.", definition: "Creeping rhizomes spread along the surface and can form mats.", yesLabel: "Yes, creeping / mat-forming", noLabel: "No, tufted or upright", priority: 2, predicate: (e) => e.traits.isCreeping },
+  { id: "linear-sori", prompt: "Are the sori arranged in long lines?", description: "Look for elongated sori rather than round dots.", definition: "Linear sori appear as lines instead of round dots.", yesLabel: "Yes, linear sori", noLabel: "No, round or scattered", priority: 2, predicate: (e) => e.traits.isLinearSori },
+  { id: "marginal-sori", prompt: "Are the sori right on the frond margins?", description: "Marginal sori often sit on the very edge of the frond.", definition: "Marginal sori sit on the leaf edge, sometimes under a rolled margin.", yesLabel: "Yes, marginal sori", noLabel: "No, sori away from edges", priority: 2, predicate: (e) => e.traits.isMarginalSori },
 ];
 
-const QUESTIONS_BY_ID = new Map(
-  QUESTIONS.map((question) => [question.id, question])
-);
+const QUESTIONS_BY_ID = new Map(QUESTIONS.map((q) => [q.id, q]));
 
 const pickBestQuestion = (entries: FernEntry[], answeredIds: Set<string>) => {
   const candidates = QUESTIONS.flatMap((question) => {
     if (answeredIds.has(question.id)) return [];
     let yesCount = 0;
     let noCount = 0;
-
     for (const entry of entries) {
       if (question.predicate(entry)) yesCount += 1;
       else noCount += 1;
     }
-
     if (yesCount === 0 || noCount === 0) return [];
-    return [
-      {
-        question,
-        yesCount,
-        noCount,
-        balance: Math.abs(yesCount - noCount),
-      },
-    ];
+    return [{ question, balance: Math.abs(yesCount - noCount) }];
   });
-
   if (candidates.length === 0) return null;
-
-  const minPriority = Math.min(
-    ...candidates.map((candidate) => candidate.question.priority)
-  );
-
+  const minPriority = Math.min(...candidates.map((c) => c.question.priority));
   const priorityCandidates = candidates.filter(
-    (candidate) => candidate.question.priority === minPriority
+    (c) => c.question.priority === minPriority
   );
-
   priorityCandidates.sort((a, b) => a.balance - b.balance);
   return priorityCandidates[0]?.question ?? null;
 };
 
-const renderMatchImage = (fern: FernRecord) =>
-  fern.imageUrl ? (
-    <img
-      src={fern.imageUrl}
-      alt={fern.scientificName}
-      className="h-full w-full object-cover"
-      loading="lazy"
-      decoding="async"
-    />
-  ) : (
-    <div className="flex h-full w-full items-center justify-center bg-[#f3f7f4] text-[10px] text-gray-500">
-      No image
-    </div>
-  );
+/* ------------------------------------------------------------------ *
+   Identification console, presentation
+ * ------------------------------------------------------------------ */
 
-export default function Key() {
+function CandidateRow({ fern, n }: { fern: FernRecord; n: number }) {
+  const img = primaryImageOf(fern);
+  return (
+    <Link
+      to={`/ferns/${encodeURIComponent(fern.scientificName)}`}
+      className="group flex items-center gap-3 border-b border-line py-2.5 last:border-b-0"
+    >
+      <span className="w-6 shrink-0 font-mono text-[11px] text-ink-3">
+        {String(n).padStart(2, "0")}
+      </span>
+      <span className="h-10 w-10 shrink-0 overflow-hidden border border-line bg-paper-2">
+        {img ? (
+          <img src={img} alt="" loading="lazy" className="h-full w-full object-cover" />
+        ) : null}
+      </span>
+      <span className="min-w-0 flex-1">
+        <span className="block truncate text-[14px] italic text-ink group-hover:text-fern">
+          {fern.scientificName}
+        </span>
+        <span className="block truncate font-mono text-[11px] text-ink-3">
+          {fern.family}
+        </span>
+      </span>
+      <StatusTag status={statusOf(fern)} variant="code" />
+    </Link>
+  );
+}
+
+export default function Identify() {
   const [ferns, setFerns] = useState<FernRecord[]>([]);
   const [answers, setAnswers] = useState<KeyAnswer[]>([]);
   const [error, setError] = useState<string | null>(null);
@@ -424,30 +271,24 @@ export default function Key() {
   }, []);
 
   const fernEntries = useMemo(
-    () =>
-      ferns.map((fern) => ({
-        fern,
-        traits: buildTraits(fern),
-      })),
+    () => ferns.map((fern) => ({ fern, traits: buildTraits(fern) })),
     [ferns]
   );
-
   const answeredIds = useMemo(
-    () => new Set(answers.map((answer) => answer.questionId)),
+    () => new Set(answers.map((a) => a.questionId)),
     [answers]
   );
-
-  const filteredEntries = useMemo(() => {
-    return fernEntries.filter((entry) =>
-      answers.every((answer) => {
-        const question = QUESTIONS_BY_ID.get(answer.questionId);
-        if (!question) return true;
-        const matches = question.predicate(entry);
-        return answer.choice ? matches : !matches;
-      })
-    );
-  }, [fernEntries, answers]);
-
+  const filteredEntries = useMemo(
+    () =>
+      fernEntries.filter((entry) =>
+        answers.every((answer) => {
+          const q = QUESTIONS_BY_ID.get(answer.questionId);
+          if (!q) return true;
+          return answer.choice ? q.predicate(entry) : !q.predicate(entry);
+        })
+      ),
+    [fernEntries, answers]
+  );
   const currentQuestion = useMemo(() => {
     if (filteredEntries.length <= 1) return null;
     return pickBestQuestion(filteredEntries, answeredIds);
@@ -462,265 +303,254 @@ export default function Key() {
     ]);
   };
 
-  const handleBack = () => {
-    setAnswers((prev) => prev.slice(0, -1));
-  };
-
-  const handleReset = () => {
-    setAnswers([]);
-  };
-
-  if (error) return <p className="text-red-500 text-center">Error: {error}</p>;
-  if (isLoading)
-    return (
-      <div className="min-h-screen bg-[#22342606]">
-        <Navbar />
-        <main className="mx-auto max-w-6xl px-4 pb-16 pt-32">
-          <div className="rounded-2xl bg-white/80 p-6 text-sm text-gray-600 shadow-lg ring-1 ring-gray-100 backdrop-blur">
-            Loading key...
-          </div>
-        </main>
-      </div>
-    );
-
+  const total = fernEntries.length || 1;
   const matchCount = filteredEntries.length;
-  const matches = filteredEntries.slice(0, 6);
-  const stepNumber = answers.length + 1;
-  const currentImage = currentQuestion
-    ? QUESTION_IMAGES[currentQuestion.id]
-    : null;
+  const progress = Math.round((1 - matchCount / total) * 100);
+  const currentImage = currentQuestion ? QUESTION_IMAGES[currentQuestion.id] : null;
+  const candidates = filteredEntries.slice(0, 12);
 
   return (
-    <div className="min-h-screen bg-[#22342606]">
-      <Navbar />
-      <main className="mx-auto max-w-6xl px-4 pb-16 pt-32">
-        <section className="mb-6 rounded-2xl bg-white/80 p-6 shadow-lg ring-1 ring-gray-100 backdrop-blur">
-          <div className="flex flex-wrap items-start justify-between gap-6">
-            <div className="space-y-3">
-              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#20624a]">
-                Dichotomous key
-              </p>
-              <h1
-                className="text-3xl font-bold text-gray-900"
-                style={{ fontFamily: "Cormorant Garamond" }}
-              >
-                Identify a fern from the library
-              </h1>
-              <p className="max-w-2xl text-sm text-gray-600">
-                Work through the steps and the key will narrow the list using
-                visual and growth-form notes from the database. Choose the
-                closest match if you are unsure.
-              </p>
-            </div>
-            <div className="rounded-2xl bg-[#f3f7f4] px-4 py-3 text-xs text-gray-600">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#1f4d3a]">
-                Matches
-              </p>
-              <p className="mt-1 text-2xl font-semibold text-[#1f4d3a]">
-                {matchCount}
-              </p>
-            </div>
+    <Layout>
+      {/* Header */}
+      <header className="border-b-2 border-ink py-8">
+        <div className="flex flex-wrap items-end justify-between gap-6">
+          <div>
+            <span className="label">Interactive key · Dichotomous</span>
+            <h1 className="mt-3 text-[2.25rem] font-extrabold leading-[0.95] tracking-[-0.02em] md:text-[3.25rem]">
+              Identify a fern
+            </h1>
+            <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-ink-2">
+              Answer each question from what you can see. The key narrows the
+              archive after every choice. Pick the closest match if unsure, you
+              can step back at any point.
+            </p>
           </div>
-        </section>
+          <div className="text-right">
+            <div className="label">Candidates</div>
+            <div className="mt-1 text-[3.5rem] font-extrabold leading-none tabular-nums tracking-[-0.03em]">
+              {isLoading ? "–" : matchCount}
+            </div>
+            <div className="mt-1 font-mono text-[12px] text-ink-3">of {total}</div>
+          </div>
+        </div>
+        <div className="mt-6 h-1 w-full bg-paper-2">
+          <div
+            className="h-full bg-fern transition-all duration-500"
+            style={{ width: `${isLoading ? 0 : progress}%` }}
+          />
+        </div>
+      </header>
 
-        <section className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
-          <div className="space-y-6">
-            <div className="rounded-2xl bg-white/80 p-6 shadow-lg ring-1 ring-gray-100 backdrop-blur">
-              <div className="flex flex-wrap items-center justify-between gap-4 text-xs text-gray-500">
-                <span className="font-semibold uppercase tracking-[0.16em] text-[#1f4d3a]">
-                  Step {stepNumber}
-                </span>
-                <span className="rounded-full bg-white px-3 py-1 text-[11px] font-semibold text-[#1f4d3a] shadow-sm">
-                  {matchCount} matches
-                </span>
+      {error ? (
+        <div className="py-16">
+          <span className="label text-alert">Error</span>
+          <p className="mt-3 text-lg">{error}</p>
+        </div>
+      ) : (
+        <div className="grid gap-10 py-10 lg:grid-cols-[1.4fr_1fr]">
+          {/* Console */}
+          <div>
+            <div className="flex items-center justify-between border-b border-line pb-3">
+              <span className="label">Step {answers.length + 1}</span>
+              <span className="font-mono text-[12px] text-ink-3">
+                {matchCount} remaining
+              </span>
+            </div>
+
+            {isLoading ? (
+              <p className="py-16 font-mono text-[13px] text-ink-3">
+                Loading the key…
+              </p>
+            ) : matchCount === 0 ? (
+              <div className="py-12">
+                <h2 className="text-2xl font-extrabold tracking-[-0.02em]">
+                  No matches left
+                </h2>
+                <p className="mt-3 max-w-md text-[15px] text-ink-2">
+                  That combination of traits rules out every species. Step back
+                  to your last choice, or reset and start again.
+                </p>
               </div>
-
-              {matchCount === 0 ? (
-                <div className="mt-6 space-y-3">
-                  <p className="text-lg font-semibold text-gray-900">
-                    No matches left
-                  </p>
-                  <p className="text-sm text-gray-600">
-                    Step back to the previous choice, or reset the key to try
-                    again.
-                  </p>
-                </div>
-              ) : currentQuestion ? (
-                <div className="mt-6 space-y-4">
-                  <div className="space-y-2">
-                    <p className="text-lg font-semibold text-gray-900">
-                      {currentQuestion.prompt}
+            ) : currentQuestion ? (
+              <div className="py-8">
+                <h2 className="max-w-xl text-[1.75rem] font-extrabold leading-tight tracking-[-0.02em]">
+                  {currentQuestion.prompt}
+                </h2>
+                {currentQuestion.definition ? (
+                  <div className="mt-4 border-l-2 border-line-2 pl-4">
+                    <span className="label">Definition</span>
+                    <p className="mt-1 max-w-lg text-[14px] leading-relaxed text-ink-2">
+                      {currentQuestion.definition}
                     </p>
-                    {currentQuestion.description ? (
-                      <p className="text-sm text-gray-600">
-                        {currentQuestion.description}
-                      </p>
-                    ) : null}
                   </div>
-
-                  {currentQuestion.definition ? (
-                    <div className="rounded-xl bg-[#f3f7f4] px-4 py-3 text-xs text-gray-600">
-                      <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#1f4d3a]">
-                        Definition
-                      </p>
-                      <p className="mt-2">{currentQuestion.definition}</p>
-                    </div>
-                  ) : null}
-
-                  {currentImage ? (
-                    <div className="rounded-xl bg-white p-4 shadow-sm ring-1 ring-[#e2e8e0]">
-                      <div className="flex flex-wrap items-center gap-4">
-                        <div className="h-24 w-32 overflow-hidden rounded-xl bg-[#f3f7f4]">
-                          <img
-                            src={currentImage.src}
-                            alt={currentImage.alt}
-                            className="h-full w-full object-cover"
-                            loading="lazy"
-                            decoding="async"
-                          />
-                        </div>
-                        <div>
-                          <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#1f4d3a]">
-                            Reference image
-                          </p>
-                          <p className="text-xs text-gray-600">
-                            Visual cue for the current step.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  ) : null}
-
-                  <div className="grid gap-3 sm:grid-cols-2">
-                    <button
-                      type="button"
-                      onClick={() => handleChoice(true)}
-                      className="rounded-2xl border border-[#c7d9cf] bg-white px-4 py-4 text-left text-sm font-semibold text-[#1f4d3a] shadow-sm transition hover:border-[#1f4d3a]"
-                    >
-                      {currentQuestion.yesLabel}
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => handleChoice(false)}
-                      className="rounded-2xl border border-[#c7d9cf] bg-white px-4 py-4 text-left text-sm font-semibold text-[#1f4d3a] shadow-sm transition hover:border-[#1f4d3a]"
-                    >
-                      {currentQuestion.noLabel}
-                    </button>
-                  </div>
-                </div>
-              ) : (
-                <div className="mt-6 space-y-3">
-                  <p className="text-lg font-semibold text-gray-900">
-                    {matchCount === 1 ? "Match found" : "Key complete"}
-                  </p>
-                  <p className="text-sm text-gray-600">
-                    {matchCount === 1
-                      ? "The key has narrowed down to a single fern."
-                      : "No further splits are available for these matches."}
-                  </p>
-                </div>
-              )}
-
-              <div className="mt-6 flex flex-wrap items-center gap-3">
-                <button
-                  type="button"
-                  onClick={handleBack}
-                  disabled={answers.length === 0}
-                  className={`rounded-full border px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] ${
-                    answers.length === 0
-                      ? "cursor-not-allowed border-gray-200 bg-white text-gray-400"
-                      : "border-[#c7d9cf] bg-white text-[#1f4d3a] hover:border-[#1f4d3a]"
-                  }`}
-                >
-                  Back
-                </button>
-                <button
-                  type="button"
-                  onClick={handleReset}
-                  className="rounded-full bg-[#e2f0e8] px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#1f4d3a] transition hover:bg-[#d3e7dc]"
-                >
-                  Reset
-                </button>
-              </div>
-            </div>
-
-            <div className="rounded-2xl bg-white/80 p-6 shadow-lg ring-1 ring-gray-100 backdrop-blur">
-              <div className="flex items-center justify-between text-xs text-gray-500">
-                <span className="font-semibold uppercase tracking-[0.16em] text-[#1f4d3a]">
-                  Matches
-                </span>
-                {matchCount > matches.length ? (
-                  <span className="text-[11px] text-gray-500">
-                    Showing {matches.length} of {matchCount}
-                  </span>
                 ) : null}
-              </div>
-              <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                {matches.map((entry) => (
-                  <Link
-                    key={entry.fern.scientificName}
-                    to={`/ferns/${encodeURIComponent(
-                      entry.fern.scientificName
-                    )}`}
-                    className="group flex items-center gap-3 rounded-xl bg-[#f3f7f4] p-3 transition hover:bg-white"
-                  >
-                    <div className="h-14 w-14 overflow-hidden rounded-lg bg-white shadow-sm ring-1 ring-[#e2e8e0]">
-                      {renderMatchImage(entry.fern)}
-                    </div>
+
+                {currentImage ? (
+                  <div className="mt-6 flex items-center gap-4 border border-line bg-card p-3">
+                    <img
+                      src={currentImage.src}
+                      alt={currentImage.alt}
+                      loading="lazy"
+                      className="h-20 w-28 shrink-0 border border-line object-cover"
+                    />
                     <div>
-                      <p className="text-sm font-semibold text-gray-900 group-hover:text-[#1f4d3a]">
-                        {entry.fern.scientificName}
-                      </p>
-                      <p className="text-xs text-gray-600">
-                        {entry.fern.family}
+                      <span className="label">Reference</span>
+                      <p className="mt-1 text-[13px] text-ink-2">
+                        A typical example of this trait.
                       </p>
                     </div>
-                  </Link>
-                ))}
+                  </div>
+                ) : null}
+
+                <div className="mt-7 grid grid-cols-1 gap-px border border-line-2 bg-line-2 sm:grid-cols-2">
+                  <button
+                    onClick={() => handleChoice(true)}
+                    className="group bg-paper p-5 text-left transition-colors hover:bg-fern-soft"
+                  >
+                    <span className="label group-hover:text-fern">Yes ✓</span>
+                    <span className="mt-2 block text-[16px] font-medium text-ink">
+                      {currentQuestion.yesLabel}
+                    </span>
+                  </button>
+                  <button
+                    onClick={() => handleChoice(false)}
+                    className="group bg-paper p-5 text-left transition-colors hover:bg-paper-2"
+                  >
+                    <span className="label">No ✕</span>
+                    <span className="mt-2 block text-[16px] font-medium text-ink">
+                      {currentQuestion.noLabel}
+                    </span>
+                  </button>
+                </div>
               </div>
+            ) : (
+              /* Resolved to a single (or indivisible) match */
+              <Resolved entry={filteredEntries[0]} count={matchCount} />
+            )}
+
+            <div className="flex items-center gap-3 border-t border-line pt-5">
+              <button
+                onClick={() => setAnswers((p) => p.slice(0, -1))}
+                disabled={answers.length === 0}
+                className="border border-line-2 px-4 py-2 font-mono text-[12px] uppercase tracking-[0.04em] text-ink transition-colors enabled:hover:border-ink disabled:cursor-not-allowed disabled:text-ink-3"
+              >
+                ← Back
+              </button>
+              <button
+                onClick={() => setAnswers([])}
+                disabled={answers.length === 0}
+                className="px-4 py-2 font-mono text-[12px] uppercase tracking-[0.04em] text-ink-3 transition-colors enabled:hover:text-ink disabled:cursor-not-allowed"
+              >
+                Reset
+              </button>
             </div>
           </div>
 
-          <aside className="rounded-2xl bg-white/80 p-6 shadow-lg ring-1 ring-gray-100 backdrop-blur">
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#1f4d3a]">
-              Key path
-            </p>
-            <p className="mt-2 text-sm text-gray-600">
-              Each step records a choice in the key. You can backtrack or reset
-              at any time.
-            </p>
-            <div className="mt-4 space-y-3 text-sm text-gray-700">
+          {/* Aside: path + candidates */}
+          <aside className="flex flex-col gap-8">
+            <div>
+              <div className="border-b-2 border-ink pb-2">
+                <span className="label">Decision path</span>
+              </div>
               {answers.length === 0 ? (
-                <p className="rounded-xl bg-[#f3f7f4] px-4 py-3 text-xs text-gray-500">
+                <p className="py-4 text-[13px] text-ink-3">
                   No choices yet. Start with the first question.
                 </p>
               ) : (
-                answers.map((answer, index) => {
-                  const question = QUESTIONS_BY_ID.get(answer.questionId);
-                  return (
-                    <div
-                      key={`${answer.questionId}-${index}`}
-                      className="rounded-xl bg-[#f3f7f4] px-4 py-3"
-                    >
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#1f4d3a]">
-                        Step {index + 1}
-                      </p>
-                      <p className="mt-2 text-xs font-semibold text-gray-700">
-                        {question?.prompt}
-                      </p>
-                      <p className="mt-1 text-xs text-gray-600">
-                        {answer.label}
-                      </p>
-                    </div>
-                  );
-                })
+                <ol>
+                  {answers.map((answer, i) => {
+                    const q = QUESTIONS_BY_ID.get(answer.questionId);
+                    return (
+                      <li
+                        key={`${answer.questionId}-${i}`}
+                        className="flex gap-3 border-b border-line py-2.5"
+                      >
+                        <span className="font-mono text-[11px] text-ink-3">
+                          {String(i + 1).padStart(2, "0")}
+                        </span>
+                        <span className="min-w-0">
+                          <span className="block text-[13px] text-ink-3">
+                            {q?.prompt}
+                          </span>
+                          <span className="block text-[13px] font-medium text-ink">
+                            {answer.choice ? "✓ " : "✕ "}
+                            {answer.label}
+                          </span>
+                        </span>
+                      </li>
+                    );
+                  })}
+                </ol>
+              )}
+            </div>
+
+            <div>
+              <div className="flex items-center justify-between border-b-2 border-ink pb-2">
+                <span className="label">Candidates</span>
+                {matchCount > candidates.length ? (
+                  <span className="font-mono text-[11px] text-ink-3">
+                    {candidates.length} of {matchCount}
+                  </span>
+                ) : null}
+              </div>
+              {isLoading ? null : candidates.length === 0 ? (
+                <p className="py-4 text-[13px] text-ink-3">No candidates.</p>
+              ) : (
+                candidates.map((entry, i) => (
+                  <CandidateRow
+                    key={entry.fern.scientificName}
+                    fern={entry.fern}
+                    n={i + 1}
+                  />
+                ))
               )}
             </div>
           </aside>
-        </section>
+        </div>
+      )}
+    </Layout>
+  );
+}
 
-        <Footer />
-      </main>
+function Resolved({ entry, count }: { entry?: FernEntry; count: number }) {
+  if (!entry) return null;
+  const fern = entry.fern;
+  const img = primaryImageOf(fern);
+  const common = commonNamesOf(fern);
+  return (
+    <div className="py-8">
+      <span className="label text-fern">
+        {count === 1 ? "Single match" : "Closest matches"}
+      </span>
+      <div className="mt-4 flex flex-col gap-5 border border-line bg-card p-4 sm:flex-row">
+        <div className="h-40 w-full shrink-0 overflow-hidden border border-line bg-paper-2 sm:w-40">
+          {img ? (
+            <img src={img} alt={fern.scientificName} className="h-full w-full object-cover" />
+          ) : (
+            <div className="flex h-full w-full items-center justify-center font-mono text-[11px] text-ink-3">
+              No plate
+            </div>
+          )}
+        </div>
+        <div className="min-w-0">
+          <h2 className="text-[1.75rem] font-extrabold italic leading-tight tracking-[-0.02em]">
+            {fern.scientificName}
+          </h2>
+          <p className="mt-1 font-mono text-[12px] uppercase tracking-wide text-ink-3">
+            {fern.family}
+          </p>
+          {common ? <p className="mt-2 text-[14px] text-ink-2">{common}</p> : null}
+          <div className="mt-3">
+            <StatusTag status={statusOf(fern)} />
+          </div>
+          <Link
+            to={`/ferns/${encodeURIComponent(fern.scientificName)}`}
+            className="mt-5 inline-block bg-ink px-4 py-2 text-[12px] font-semibold uppercase tracking-[0.04em] text-paper transition-colors hover:bg-fern"
+          >
+            View full record →
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }
